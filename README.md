@@ -1,2 +1,2 @@
-# GPS
+# GPS FRDM K64F
 Se trataría de utilizar la placa de desarrollo FRDM K64F, con un módulo GPS incorporado, que fuera capaz de registrar en una tarjeta microSD la ruta seguida por el dispositivo. Para ello se debe desentramar la cadena GPS y almacenarla. La activación/desactivación de la captura GPS se hará de acuerdo a la información recogida por el acelerómetro. Se proporcionarán además estadísticas diarias. De manera adicional, se podrá incluir que la información recogida por el dispositivo se muestre en una aplicación web.
