@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-10-23, 12:24, # CodeGen: 0
+**     Date/Time   : 2018-10-23, 14:23, # CodeGen: 0
 **     Abstract    :
 **         This file collects Processor Expert components configuration 
 **         and interface files.

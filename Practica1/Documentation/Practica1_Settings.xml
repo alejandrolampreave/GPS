@@ -25,6 +25,15 @@
     <Compiler v="GNU C Compiler" />
     <CompilerProperties>
       <Compiler v="GNU C Compiler" />
+      <enumgroup name="Unhandled vectors" v="One handler for all">
+        <EmptySection_DummyValue />
+      </enumgroup>
+      <boolgroup name="Generate debugger files" v="yes">
+        <Generate_mem_file v="yes" />
+      </boolgroup>
+      <group name="Startup">
+        <Add_startup_file v="yes" />
+      </group>
       <boolgroup name="Generate linker file" v="yes">
         <Stack_size v="1024" />
         <Heap_size v="0" />
@@ -104,7 +113,7 @@
       </group>
       <boolgroup name="Generate linker file" v="yes">
         <Stack_size v="1024" />
-        <Heap_size v="3072" />
+        <Heap_size v="49152" />
         <Set_memory_segments_to_default v="Click to set default &amp;gt;" />
         <Default_memory_for_interrupts v="INTERNAL FLASH" />
         <Default_memory_for_code v="INTERNAL FLASH" />

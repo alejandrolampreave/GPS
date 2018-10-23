@@ -113,8 +113,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x209 ./Static_Code/System/Peripherals_Init.o
  .debug_macro   0x00000000     0x176e ./Static_Code/System/Peripherals_Init.o
  .debug_macro   0x00000000      0x4b1 ./Static_Code/System/Peripherals_Init.o
- .debug_line    0x00000000      0x20c ./Static_Code/System/Peripherals_Init.o
- .debug_str     0x00000000     0xb19e ./Static_Code/System/Peripherals_Init.o
+ .debug_line    0x00000000      0x206 ./Static_Code/System/Peripherals_Init.o
+ .debug_str     0x00000000     0xb198 ./Static_Code/System/Peripherals_Init.o
  .comment       0x00000000       0x71 ./Static_Code/System/Peripherals_Init.o
  .ARM.attributes
                 0x00000000       0x39 ./Static_Code/System/Peripherals_Init.o
@@ -648,8 +648,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x35 ./Generated_Code/PE_LDD.o
  .debug_macro   0x00000000       0xa3 ./Generated_Code/PE_LDD.o
  .debug_macro   0x00000000       0x16 ./Generated_Code/PE_LDD.o
- .debug_line    0x00000000      0x335 ./Generated_Code/PE_LDD.o
- .debug_str     0x00000000    0x69ddb ./Generated_Code/PE_LDD.o
+ .debug_line    0x00000000      0x323 ./Generated_Code/PE_LDD.o
+ .debug_str     0x00000000    0x69dd5 ./Generated_Code/PE_LDD.o
  .comment       0x00000000       0x71 ./Generated_Code/PE_LDD.o
  .ARM.attributes
                 0x00000000       0x39 ./Generated_Code/PE_LDD.o
@@ -676,8 +676,8 @@ Discarded input sections
  .debug_macro   0x00000000     0x176e ./Generated_Code/Pins1.o
  .debug_macro   0x00000000      0x4b1 ./Generated_Code/Pins1.o
  .debug_macro   0x00000000    0x110ae ./Generated_Code/Pins1.o
- .debug_line    0x00000000      0x1f1 ./Generated_Code/Pins1.o
- .debug_str     0x00000000    0x691d2 ./Generated_Code/Pins1.o
+ .debug_line    0x00000000      0x1eb ./Generated_Code/Pins1.o
+ .debug_str     0x00000000    0x691cc ./Generated_Code/Pins1.o
  .comment       0x00000000       0x71 ./Generated_Code/Pins1.o
  .ARM.attributes
                 0x00000000       0x39 ./Generated_Code/Pins1.o
@@ -868,7 +868,7 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x20030000                _estack = 0x20030000
                 0x20030000                __SP_INIT = _estack
                 0x20030000                __stack = _estack
-                0x00000c00                __heap_size = 0xc00
+                0x0000c000                __heap_size = 0xc000
                 0x00000400                __stack_size = 0x400
 
 .interrupts     0x00000000      0x198
@@ -1250,19 +1250,19 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x00000001                ASSERT ((data_init_end <= text_end), region m_text overflowed with text and data)
 
 ._user_heap_stack
-                0x20000270     0x1000 load address 0x00001df0
+                0x20000270     0xc400 load address 0x00001df0
                 0x20000270                . = ALIGN (0x4)
                 0x20000270                PROVIDE (end, .)
                 0x20000270                PROVIDE (_end, .)
                 0x20000270                PROVIDE (__end__, .)
                 0x20000270                __heap_addr = .
                 0x20000270                __HeapBase = .
-                0x20000e70                . = (. + __heap_size)
- *fill*         0x20000270      0xc00 
-                0x20000e70                __HeapLimit = .
-                0x20001270                . = (. + __stack_size)
- *fill*         0x20000e70      0x400 
-                0x20001270                . = ALIGN (0x4)
+                0x2000c270                . = (. + __heap_size)
+ *fill*         0x20000270     0xc000 
+                0x2000c270                __HeapLimit = .
+                0x2000c670                . = (. + __stack_size)
+ *fill*         0x2000c270      0x400 
+                0x2000c670                . = ALIGN (0x4)
 
 .ARM.attributes
                 0x00000000       0x30
@@ -1462,27 +1462,27 @@ OUTPUT(Practica1.elf elf32-littlearm)
  .debug_macro   0x0001d854    0x110a2 ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x0002e8f6      0x117 ./Generated_Code/Cpu.o
 
-.debug_line     0x00000000     0x216a
- .debug_line    0x00000000      0x4a5 ./Static_Code/System/CPU_Init.o
- .debug_line    0x000004a5      0xa50 ./Static_Code/System/Vectors.o
- .debug_line    0x00000ef5      0x560 ./Sources/Events.o
- .debug_line    0x00001455      0x5d7 ./Sources/main.o
- .debug_line    0x00001a2c      0x3cb ./Project_Settings/Startup_Code/startup.o
- .debug_line    0x00001df7      0x373 ./Generated_Code/Cpu.o
+.debug_line     0x00000000     0x20e6
+ .debug_line    0x00000000      0x48d ./Static_Code/System/CPU_Init.o
+ .debug_line    0x0000048d      0xa38 ./Static_Code/System/Vectors.o
+ .debug_line    0x00000ec5      0x548 ./Sources/Events.o
+ .debug_line    0x0000140d      0x5bf ./Sources/main.o
+ .debug_line    0x000019cc      0x3bf ./Project_Settings/Startup_Code/startup.o
+ .debug_line    0x00001d8b      0x35b ./Generated_Code/Cpu.o
 
-.debug_str      0x00000000    0xea405
- .debug_str     0x00000000    0x6b04d ./Static_Code/System/CPU_Init.o
-                              0x6b1f7 (size before relaxing)
- .debug_str     0x0006b04d      0x984 ./Static_Code/System/Vectors.o
-                              0x6b61b (size before relaxing)
- .debug_str     0x0006b9d1    0x7be73 ./Sources/Events.o
-                              0xe5aa5 (size before relaxing)
- .debug_str     0x000e7844     0x1b10 ./Sources/main.o
-                              0xe7606 (size before relaxing)
- .debug_str     0x000e9354     0x1099 ./Project_Settings/Startup_Code/startup.o
-                              0x636a0 (size before relaxing)
- .debug_str     0x000ea3ed       0x18 ./Generated_Code/Cpu.o
-                              0x69c5f (size before relaxing)
+.debug_str      0x00000000    0xea3ff
+ .debug_str     0x00000000    0x6b047 ./Static_Code/System/CPU_Init.o
+                              0x6b1f1 (size before relaxing)
+ .debug_str     0x0006b047      0x984 ./Static_Code/System/Vectors.o
+                              0x6b615 (size before relaxing)
+ .debug_str     0x0006b9cb    0x7be73 ./Sources/Events.o
+                              0xe5a9f (size before relaxing)
+ .debug_str     0x000e783e     0x1b10 ./Sources/main.o
+                              0xe7600 (size before relaxing)
+ .debug_str     0x000e934e     0x1099 ./Project_Settings/Startup_Code/startup.o
+                              0x6369a (size before relaxing)
+ .debug_str     0x000ea3e7       0x18 ./Generated_Code/Cpu.o
+                              0x69c59 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ./Static_Code/System/CPU_Init.o
