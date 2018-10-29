@@ -113,7 +113,7 @@
       </group>
       <boolgroup name="Generate linker file" v="yes">
         <Stack_size v="1024" />
-        <Heap_size v="0" />
+        <Heap_size v="49152" />
         <Set_memory_segments_to_default v="Click to set default &amp;gt;" />
         <Default_memory_for_interrupts v="INTERNAL FLASH" />
         <Default_memory_for_code v="INTERNAL FLASH" />

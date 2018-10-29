@@ -1,0 +1,14 @@
+pruebaGPS/Static_Code/System/Peripherals_Init.o: \
+ ../pruebaGPS/Static_Code/System/Peripherals_Init.c \
+ ../pruebaGPS/Static_Code/System/Peripherals_Init.h \
+ D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/Init_Config.h \
+ D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/PE_Types.h \
+ D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/CPU_Config.h
+
+../pruebaGPS/Static_Code/System/Peripherals_Init.h:
+
+D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/Init_Config.h:
+
+D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/PE_Types.h:
+
+D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/CPU_Config.h:

@@ -1,0 +1,97 @@
+/* ###################################################################
+**     Filename    : main.c
+**     Project     : Practica2
+**     Processor   : MK64FN1M0VLQ12
+**     Version     : Driver 01.01
+**     Compiler    : GNU C Compiler
+**     Date/Time   : 2018-10-23, 15:09, # CodeGen: 0
+**     Abstract    :
+**         Main module.
+**         This module contains user's application code.
+**     Settings    :
+**     Contents    :
+**         No public methods
+**
+** ###################################################################*/
+/*!
+** @file main.c
+** @version 01.01
+** @brief
+**         Main module.
+**         This module contains user's application code.
+*/         
+/*!
+**  @addtogroup main_module main module documentation
+**  @{
+*/         
+/* MODULE main */
+
+
+/* Including needed modules to compile this module/procedure */
+#include "Cpu.h"
+#include "Events.h"
+#include "Pins1.h"
+/* Including shared modules, which are used for whole project */
+#include "PE_Types.h"
+#include "PE_Error.h"
+#include "PE_Const.h"
+#include "IO_Map.h"
+#include "PDD_Includes.h"
+#include "Init_Config.h"
+/* User includes (#include below this line is not maintained by Processor Expert) */
+
+/*lint -save  -e970 Disable MISRA rule (6.3) checking. */
+int main(void)
+/*lint -restore Enable MISRA rule (6.3) checking. */
+{
+  /* Write your local variable definition here */
+
+  /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+  PE_low_level_init();
+  /*** End of Processor Expert internal initialization.                    ***/
+  ///////////////////////////////////////////////////////////////
+  unsigned int val = 0x00000000;
+  //Habilitar el reloj para el puerto GPIO.
+  SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK; /*Habilita el Control de reloj en el puerto B*/
+  SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK; /*Habilita el Control de reloj en el puerto C*/
+  /* Podía haber enmascarado las dos a la vez escribiendo SIM_SCGC5 |= 0xC00;*/
+  //Definir en el registro PORTx_PCRn la función GPIO.
+  PORTB_PCR22 = 0x100; /*Led rojo, configurado como alternativa 1 (GPIO)*/
+  PORTC_PCR6 = 0x100; /*Pulsador SW3, configurado como alternativa 1 (GPIO)*/
+  ////Definir en el registro PORTx_PCRn la función GPIO.
+  GPIOB_PDDR |= (1 << 22); /*Establezco el bit 22 del puerto como salida*/
+  GPIOC_PDDR |= (0 << 6); /*Establezco el bit 6 del puerto como entrada*/
+  // Modificar los valores de entrada y salida de los registros.
+  for (;;) {
+  val= GPIOC_PDIR & (1 << 6);
+  if(val==0x00000000) GPIOB_PCOR = (1 << 22); /*Enciendo la luz roja*/
+  //Se podría poner tb GPIOB_PDOR = (0 << 22);
+  else GPIOB_PSOR = (1 << 22); /*Apago la luz roja*/
+  //Se podría poner tb GPIOB_PDOR = (1 << 22);
+  //////////////////////////////////////////////////////////
+  /* Write your code here */
+  /* For example: for(;;) { } */
+
+  /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+  } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+
+/* END main */
+/*!
+** @}
+*/
+/*
+** ###################################################################
+**
+**     This file was created by Processor Expert 10.5 [05.21]
+**     for the Freescale Kinetis series of microcontrollers.
+**
+** ###################################################################
+*/

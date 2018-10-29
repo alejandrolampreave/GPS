@@ -1,0 +1,34 @@
+18:52:55 **** Incremental Build of configuration Debug for project Practica2 ****
+make all 
+Building file: ../Static_Code/System/CPU_Init.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/Practica2/Sources" -I"D:/G ing informatica/TFG/GPS/Practica2/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/CPU_Init.d" -MT"Static_Code/System/CPU_Init.o" -c -o "Static_Code/System/CPU_Init.o" "../Static_Code/System/CPU_Init.c"
+Finished building: ../Static_Code/System/CPU_Init.c
+ 
+Building file: ../Static_Code/System/Peripherals_Init.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/Practica2/Sources" -I"D:/G ing informatica/TFG/GPS/Practica2/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/Peripherals_Init.d" -MT"Static_Code/System/Peripherals_Init.o" -c -o "Static_Code/System/Peripherals_Init.o" "../Static_Code/System/Peripherals_Init.c"
+Finished building: ../Static_Code/System/Peripherals_Init.c
+ 
+Building file: ../Static_Code/System/Vectors.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/Practica2/Sources" -I"D:/G ing informatica/TFG/GPS/Practica2/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/Vectors.d" -MT"Static_Code/System/Vectors.o" -c -o "Static_Code/System/Vectors.o" "../Static_Code/System/Vectors.c"
+Finished building: ../Static_Code/System/Vectors.c
+ 
+Building file: ../Sources/Events.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/Practica2/Sources" -I"D:/G ing informatica/TFG/GPS/Practica2/Generated_Code" -std=c99 -MMD -MP -MF"Sources/Events.d" -MT"Sources/Events.o" -c -o "Sources/Events.o" "../Sources/Events.c"
+Finished building: ../Sources/Events.c
+ 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/Practica2/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/Practica2/Sources" -I"D:/G ing informatica/TFG/GPS/Practica2/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:85:1: error: expected declaration or statement at end of input
+ } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+ ^
+Sources/subdir.mk:21: recipe for target 'Sources/main.o' failed
+make: *** [Sources/main.o] Error 1
+
+18:53:03 Build Finished (took 8s.175ms)
+
