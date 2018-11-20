@@ -7,7 +7,7 @@
 **     Component   : FXOS8700CQ
 **     Version     : Component 01.031, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-10-24, 19:07, # CodeGen: 7
+**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
 **     Abstract    :
 **         Implements a Driver for the MMA8451 accelerometer from Freescale.
 **     Settings    :

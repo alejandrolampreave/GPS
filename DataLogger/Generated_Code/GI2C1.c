@@ -7,7 +7,7 @@
 **     Version     : Component 01.035, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-10-24, 19:34, # CodeGen: 8
+**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :

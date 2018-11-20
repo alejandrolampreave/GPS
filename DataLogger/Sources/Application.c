@@ -11,6 +11,11 @@
 #include "FAT1.h"
 #include "UTIL1.h"
 #include "PORT_PDD.h"
+#include "AS1.h"
+#include "GPS.h"
+#include "LEDR.h"
+#include "LEDG.h"
+//#include "FX1.h"
 
 static FAT1_FATFS fileSystemObject;
 static FIL file;
@@ -60,9 +65,43 @@ static void LogToFile(int16_t x, int16_t y, int16_t z) {
   (void)FAT1_close(&file);
 }
 
+static void LogToFileGPS(char ch) {
+  UINT bandwidth;
+  TIMEREC hora;
+  uint8_t buffer[48];
+
+  /* Abrir fichero */
+  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
+    Err();
+  }
+  /* Nos posicionamos en el final del archivo */
+  if (FAT1_lseek(&file, f_size(&file)) != FR_OK || file.fptr != f_size(&file)) {
+    Err();
+  }
+  /* Obtener la hora
+  if (TmDt1_GetTime(&hora)!=ERR_OK) {
+	printf("%i",(hora));
+    Err();
+  }*/
+  /* Escribir la informacion */
+  buffer[0] = '\0';
+
+  UTIL1_chcat(buffer, sizeof(buffer), ch);
+
+  if (FAT1_write(&file, buffer, UTIL1_strlen((char*)buffer), &bandwidth)!=FR_OK) {
+    (void)FAT1_close(&file);
+    Err();
+  }
+  /* Cerrar el fichero */
+  (void)FAT1_close(&file);
+}
+
+
 void APP_Run(void) {
   int16_t x,y,z;
   uint8_t ack;
+  byte err;
+  AS1_TComData ch;
 
   /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
   PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
@@ -78,14 +117,24 @@ void APP_Run(void) {
   if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
     Err();
   }
+
   for(;;) {
     /* Captura los datos del acelerometro */
-    x = FX1_GetX();
-    y = FX1_GetY();
-    z = FX1_GetZ();
+    //x = FX1_GetX();
+    //y = FX1_GetY();
+    //z = FX1_GetZ();
     /* Los mete en el archivo de la SD */
-    LogToFile(x, y, z);
+   // LogToFile(x, y, z);
+
     /* Repite la operacion cada segundo */
-    WAIT1_Waitms(1000);
+    //WAIT1_Waitms(1000);
+
+    do {
+    	    err = GPS_RecvChar(&ch);
+    	    //err2 = AS1_RecvChar(&ch);
+    	  } while((err != ERR_OK));
+
+    	  //AS1_SendChar(ch);
+    	  LogToFileGPS(ch);
   }
 }

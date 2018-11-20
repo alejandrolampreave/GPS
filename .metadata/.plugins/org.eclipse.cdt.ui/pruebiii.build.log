@@ -1,0 +1,6 @@
+12:34:28 **** Incremental Build of configuration Debug for project pruebiii ****
+make all 
+make: Nothing to be done for 'all'.
+
+12:34:29 Build Finished (took 1s.409ms)
+

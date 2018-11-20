@@ -1,0 +1,129 @@
+19:18:44 **** Incremental Build of configuration Debug for project miprueba ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building file: ../Generated_Code/CD1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CD1.d" -MT"Generated_Code/CD1.o" -c -o "Generated_Code/CD1.o" "../Generated_Code/CD1.c"
+Finished building: ../Generated_Code/CD1.c
+ 
+Building file: ../Generated_Code/CI2C1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CI2C1.d" -MT"Generated_Code/CI2C1.o" -c -o "Generated_Code/CI2C1.o" "../Generated_Code/CI2C1.c"
+Finished building: ../Generated_Code/CI2C1.c
+ 
+Building file: ../Generated_Code/CS1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CS1.d" -MT"Generated_Code/CS1.o" -c -o "Generated_Code/CS1.o" "../Generated_Code/CS1.c"
+Finished building: ../Generated_Code/CS1.c
+ 
+Building file: ../Generated_Code/Cpu.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+Finished building: ../Generated_Code/Cpu.c
+ 
+Building file: ../Generated_Code/ExtIntLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ExtIntLdd1.d" -MT"Generated_Code/ExtIntLdd1.o" -c -o "Generated_Code/ExtIntLdd1.o" "../Generated_Code/ExtIntLdd1.c"
+Finished building: ../Generated_Code/ExtIntLdd1.c
+ 
+Building file: ../Generated_Code/FAT1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/FAT1.d" -MT"Generated_Code/FAT1.o" -c -o "Generated_Code/FAT1.o" "../Generated_Code/FAT1.c"
+Finished building: ../Generated_Code/FAT1.c
+ 
+Building file: ../Generated_Code/FX1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/FX1.d" -MT"Generated_Code/FX1.o" -c -o "Generated_Code/FX1.o" "../Generated_Code/FX1.c"
+Finished building: ../Generated_Code/FX1.c
+ 
+Building file: ../Generated_Code/GI2C1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/GI2C1.d" -MT"Generated_Code/GI2C1.o" -c -o "Generated_Code/GI2C1.o" "../Generated_Code/GI2C1.c"
+../Generated_Code/GI2C1.c: In function 'GI2C1_ScanDevice':
+../Generated_Code/GI2C1.c:527:5: warning: implicit declaration of function 'CI2C1_GetError' [-Wimplicit-function-declaration]
+     (void)CI2C1_GetError(GI2C1_deviceData.handle, &errMask);
+     ^
+Finished building: ../Generated_Code/GI2C1.c
+ 
+Building file: ../Generated_Code/MCUC1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/MCUC1.d" -MT"Generated_Code/MCUC1.o" -c -o "Generated_Code/MCUC1.o" "../Generated_Code/MCUC1.c"
+Finished building: ../Generated_Code/MCUC1.c
+ 
+Building file: ../Generated_Code/PE_LDD.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+Finished building: ../Generated_Code/PE_LDD.c
+ 
+Building file: ../Generated_Code/PPS.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PPS.d" -MT"Generated_Code/PPS.o" -c -o "Generated_Code/PPS.o" "../Generated_Code/PPS.c"
+Finished building: ../Generated_Code/PPS.c
+ 
+Building file: ../Generated_Code/SD1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SD1.d" -MT"Generated_Code/SD1.o" -c -o "Generated_Code/SD1.o" "../Generated_Code/SD1.c"
+Finished building: ../Generated_Code/SD1.c
+ 
+Building file: ../Generated_Code/SM1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SM1.d" -MT"Generated_Code/SM1.o" -c -o "Generated_Code/SM1.o" "../Generated_Code/SM1.c"
+Finished building: ../Generated_Code/SM1.c
+ 
+Building file: ../Generated_Code/SS1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SS1.d" -MT"Generated_Code/SS1.o" -c -o "Generated_Code/SS1.o" "../Generated_Code/SS1.c"
+Finished building: ../Generated_Code/SS1.c
+ 
+Building file: ../Generated_Code/TI1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TI1.d" -MT"Generated_Code/TI1.o" -c -o "Generated_Code/TI1.o" "../Generated_Code/TI1.c"
+Finished building: ../Generated_Code/TI1.c
+ 
+Building file: ../Generated_Code/TMOUT1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TMOUT1.d" -MT"Generated_Code/TMOUT1.o" -c -o "Generated_Code/TMOUT1.o" "../Generated_Code/TMOUT1.c"
+Finished building: ../Generated_Code/TMOUT1.c
+ 
+Building file: ../Generated_Code/TU1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU1.d" -MT"Generated_Code/TU1.o" -c -o "Generated_Code/TU1.o" "../Generated_Code/TU1.c"
+Finished building: ../Generated_Code/TU1.c
+ 
+Building file: ../Generated_Code/TimerIntLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TimerIntLdd1.d" -MT"Generated_Code/TimerIntLdd1.o" -c -o "Generated_Code/TimerIntLdd1.o" "../Generated_Code/TimerIntLdd1.c"
+Finished building: ../Generated_Code/TimerIntLdd1.c
+ 
+Building file: ../Generated_Code/TmDt1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TmDt1.d" -MT"Generated_Code/TmDt1.o" -c -o "Generated_Code/TmDt1.o" "../Generated_Code/TmDt1.c"
+Finished building: ../Generated_Code/TmDt1.c
+ 
+Building file: ../Generated_Code/UTIL1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/UTIL1.d" -MT"Generated_Code/UTIL1.o" -c -o "Generated_Code/UTIL1.o" "../Generated_Code/UTIL1.c"
+Finished building: ../Generated_Code/UTIL1.c
+ 
+Building file: ../Generated_Code/WAIT1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/WAIT1.d" -MT"Generated_Code/WAIT1.o" -c -o "Generated_Code/WAIT1.o" "../Generated_Code/WAIT1.c"
+Finished building: ../Generated_Code/WAIT1.c
+ 
+Building file: ../Generated_Code/ff.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/miprueba/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/miprueba/Sources" -I"D:/G ing informatica/TFG/GPS/miprueba/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ff.d" -MT"Generated_Code/ff.o" -c -o "Generated_Code/ff.o" "../Generated_Code/ff.c"
+Finished building: ../Generated_Code/ff.c
+ 
+Building target: .elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/miprueba/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/miprueba/Project_Settings/Linker_Files" -Wl,-Map,".map" -specs=nano.specs -specs=nosys.specs -o ".elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/WAIT1.o ./Generated_Code/ff.o   
+Finished building target: .elf
+ 
+
+19:19:26 Build Finished (took 41s.531ms)
+

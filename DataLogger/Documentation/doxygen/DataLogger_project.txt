@@ -33,6 +33,10 @@
 - \subpage TimerIntLdd1
 - \subpage CI2C1
 - \subpage ExtIntLdd1
+- \subpage ASerialLdd2
+- \subpage ASerialLdd1
+- \subpage BitIoLdd1
+- \subpage BitIoLdd2
 
 */
 
@@ -72,6 +76,10 @@
 - \subpage TimerIntLdd1
 - \subpage CI2C1
 - \subpage ExtIntLdd1
+- \subpage ASerialLdd2
+- \subpage ASerialLdd1
+- \subpage BitIoLdd1
+- \subpage BitIoLdd2
 
 */
 

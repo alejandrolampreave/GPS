@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-10-25, 20:34, # CodeGen: 13
+**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
 **     Abstract    :
 **
 **     Settings    :
@@ -132,6 +132,18 @@ void Components_Init(void)
   /* Write code here ... */
   /* ### ExtInt_LDD "ExtIntLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)ExtIntLdd1_Init(NULL);
+  /* ### Asynchro serial "GPS" init code ... */
+  GPS_Init();
+  /* ### Asynchro serial "AS1" init code ... */
+  AS1_Init();
+  /* ### BitIO_LDD "BitIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd1_Init(NULL);
+  /* ### LED "LEDR" init code ... */
+  LEDR_Init(); /* initialize LED driver */
+  /* ### BitIO_LDD "BitIoLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd2_Init(NULL);
+  /* ### LED "LEDG" init code ... */
+  LEDG_Init(); /* initialize LED driver */
 }
 #endif /* CPU_COMPONENTS_INIT */
 
