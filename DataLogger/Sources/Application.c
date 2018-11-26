@@ -15,7 +15,6 @@
 #include "GPS.h"
 #include "LEDR.h"
 #include "LEDG.h"
-//#include "FX1.h"
 
 static FAT1_FATFS fileSystemObject;
 static FIL file;
@@ -117,18 +116,28 @@ void APP_Run(void) {
   if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
     Err();
   }
+  //FX1_CalibrateX1g();
+  //FX1_CalibrateY1g();
+  //FX1_CalibrateZ1g();
 
   for(;;) {
     /* Captura los datos del acelerometro */
     //x = FX1_GetX();
+    //x=FX1_GetX1gValue();
     //y = FX1_GetY();
+    //y=FX1_GetY1gValue();
     //z = FX1_GetZ();
+    //z=FX1_GetZ1gValue();
     /* Los mete en el archivo de la SD */
-   // LogToFile(x, y, z);
+    //LogToFile(x, y, z);
 
     /* Repite la operacion cada segundo */
     //WAIT1_Waitms(1000);
-
+	  if (GPS_GetCharsInRxBuf()==0) {
+				LEDR_Neg(); LEDG_Off(); /* Luz roja en caso de no recibir señal GPS */
+			  } else {
+				LEDR_Off(); LEDG_Neg(); /* Luz ver en caso contrario */
+			  }
     do {
     	    err = GPS_RecvChar(&ch);
     	    //err2 = AS1_RecvChar(&ch);
