@@ -7,7 +7,7 @@
 **     Version     : Component 01.033, Driver 01.03, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **         The HAL BitIO component provides a low level API for unified
 **         access to general purpose digital input/output pins across
@@ -81,7 +81,7 @@
 
 /* MODULE SS1. */
 
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 #include "SS1.h"
 
 #ifdef __cplusplus
@@ -94,7 +94,7 @@ typedef struct {
 
 typedef SS1_TDeviceData *SS1_TDeviceDataPtr ; /* Pointer to the device data structure. */
 
-/* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
+/* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static SS1_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
 /*
 ** ===================================================================
@@ -123,7 +123,7 @@ LDD_TDeviceData* SS1_Init(LDD_TUserData *UserDataPtr)
   /* Allocate device structure */
   SS1_TDeviceDataPtr DeviceDataPrv;
 
-  /* {Default RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
+  /* {FreeRTOS RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Enable device clock gate */
@@ -168,7 +168,7 @@ void SS1_Deinit(LDD_TDeviceData *DeviceDataPtr)
   /* Unregistration of the device structure */
   PE_LDD_UnregisterDeviceStructure(PE_LDD_COMPONENT_SS1_ID);
   /* Deallocation of the device structure */
-  /* {Default RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
+  /* {FreeRTOS RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
 }
 
 /*

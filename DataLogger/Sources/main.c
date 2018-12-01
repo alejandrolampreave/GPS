@@ -26,8 +26,8 @@
 */         
 /* MODULE main */
 
-
 /* Including needed modules to compile this module/procedure */
+#include "stdio.h"
 #include "Cpu.h"
 #include "Events.h"
 #include "FAT1.h"
@@ -47,6 +47,9 @@
 #include "LEDG.h"
 #include "LEDpin2.h"
 #include "BitIoLdd2.h"
+#include "UTIL2.h"
+#include "FRTOS1.h"
+#include "KSDK1.h"
 #include "TmDt1.h"
 #include "WAIT1.h"
 #include "TMOUT1.h"
@@ -59,6 +62,8 @@
 #include "GI2C1.h"
 #include "CI2C1.h"
 #include "FX1.h"
+#include "PORT_PDD.h"
+
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -66,22 +71,154 @@
 #include "IO_Map.h"
 #include "PDD_Includes.h"
 #include "Init_Config.h"
-/* User includes (#include below this line is not maintained by Processor Expert) */
+#include "FRTOS1.h"
+#include <queue.h>
+#include "KSDK1.h"
+#include "task.h"
 #include "Application.h"
+
+
+const static byte longitud = 24;
+const static byte tamano   =  8;
+static FAT1_FATFS fileSystemObject;
+static FIL file;
+
+static xQueueHandle caracteres;
+
+static void Err(void) {
+  for(;;){}
+}
+
+static void CharGPS(void) {
+	byte err;
+	byte ch[1];
+	for(;;) {
+		LEDR_Off(); LEDG_Neg();
+	do {err = GPS_RecvChar(&ch);
+	   } while((err != ERR_OK));
+	FRTOS1_xQueueSendToFront(caracteres, ch ,(portTickType) 100);//aqui pasa la mayoría del tiempo
+
+	}
+}
+
+static void Imprime (void) {
+	char ch[1];
+	int i;
+	for(;;) {
+		LEDR_Neg(); LEDG_Off();//rojo
+		if(xQueueReceive(caracteres , (void *) ch ,(portTickType) 0xFFFFFFFF) == pdTRUE){
+		/* Se ha recibido un dato. Se escribe por el puerto serie */
+			for(i = 0; i < sizeof(ch); i++)
+			while(AS1_SendChar(ch[i]) != ERR_OK) {}
+		}
+
+		}
+	}
+
+static void EscribeSD(void){
+	  UINT bandwidth;
+	  uint8_t buffer[24];//48
+	  char ch[1];
+	  int i;
+	  for(;;) {
+	  LEDR_Off(); LEDG_Neg();
+	  /* Abrir fichero */
+	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
+	    Err();
+	  }
+	  /* Nos posicionamos en el final del archivo */
+	  if (FAT1_lseek(&file, f_size(&file)) != FR_OK || file.fptr != f_size(&file)) {
+	    Err();
+	  }
+	  /* Escribir la informacion */
+	  buffer[0] = '\0';
+	  if(xQueueReceive(caracteres , (void *) ch ,(portTickType) 0xFFFFFFFF) == pdTRUE){
+	  /* Se ha recibido un dato. Se escribe en la SD */
+		  for(i = 0; i < sizeof(ch); i++)
+			  UTIL1_chcat(buffer, sizeof(buffer), ch[i]);
+
+	  }
+
+	  if (FAT1_write(&file, buffer, UTIL1_strlen((char*)buffer), &bandwidth)!=FR_OK) {
+	    (void)FAT1_close(&file);
+	    Err();
+	  }
+	  /* Cerrar el fichero */
+	  (void)FAT1_close(&file);
+	}
+}
+
+
+
+/* User includes (#include below this line is not maintained by Processor Expert) */
+//#include "Application.h"
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
+	caracteres=FRTOS1_xQueueCreate(longitud,tamano);
+	//int16_t x,y,z;
+	uint8_t ack;
 
-  /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
-  PE_low_level_init();
+	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+	PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
-  /* Write your code here */
-  /* For example: for(;;) { } */
 
-  APP_Run();
+  /* Write your code here */
+//	/* Deteccion de la tarjeta SD: PTE6 con pull-down! */
+//	  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+//	  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
+//
+//	  ack = FX1_Enable(); /* Activa el acelerometro */
+//	  if (ack!=ERR_OK) {
+//	    Err();
+//	  }
+//	  if (FAT1_Init()!=ERR_OK) { /* Comprueba FAT */
+//	    Err();
+//	  }
+//	  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
+//	    Err();
+//	  }
+
+
+  if (xTaskCreate(
+  	   CharGPS, /* función de la tarea*/
+  	  "gps", /* nombre de la tarea para el kernel */
+  	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
+  	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
+  	  3,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+  	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
+    ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
+  	  for(;;){} /* error! Probablemente sin memoria */
+  	  }
+
+    if (xTaskCreate(
+    	   Imprime, /* función de la tarea*/
+    	  "print", /* nombre de la tarea para el kernel */
+    	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
+    	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
+    	  4,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+    	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
+      ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
+    	  for(;;){} /* error! Probablemente sin memoria */
+    	  }
+
+    if (xTaskCreate(
+      	   EscribeSD, /* función de la tarea*/
+      	  "SD", /* nombre de la tarea para el kernel */
+      	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
+      	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
+      	  2,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+      	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
+        ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
+      	  for(;;){} /* error! Probablemente sin memoria */
+      	  }
+
+  /* For example: for(;;) { } */
+  //APP_Run();
+  FRTOS1_vTaskStartScheduler();
 
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

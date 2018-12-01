@@ -78,6 +78,9 @@
 #include "LEDG.h"
 #include "LEDpin2.h"
 #include "BitIoLdd2.h"
+#include "UTIL2.h"
+#include "KSDK1.h"
+#include "FRTOS1.h"
 #include "Events.h"
 
 #ifdef __cplusplus
@@ -98,11 +101,11 @@ extern "C" {
 #define VECTOR_8          (tIsrFunc)&UnhandledInterrupt         /* 0x08 -    ivINT_Reserved8                unused by PE */
 #define VECTOR_9          (tIsrFunc)&UnhandledInterrupt         /* 0x09 -    ivINT_Reserved9                unused by PE */
 #define VECTOR_10         (tIsrFunc)&UnhandledInterrupt         /* 0x0A -    ivINT_Reserved10               unused by PE */
-#define VECTOR_11         (tIsrFunc)&UnhandledInterrupt         /* 0x0B -    ivINT_SVCall                   unused by PE */
+#define VECTOR_11         (tIsrFunc)&vPortSVCHandler            /* 0x0B -    ivINT_SVCall                   used by PE */
 #define VECTOR_12         (tIsrFunc)&UnhandledInterrupt         /* 0x0C -    ivINT_DebugMonitor             unused by PE */
 #define VECTOR_13         (tIsrFunc)&UnhandledInterrupt         /* 0x0D -    ivINT_Reserved13               unused by PE */
-#define VECTOR_14         (tIsrFunc)&UnhandledInterrupt         /* 0x0E -    ivINT_PendableSrvReq           unused by PE */
-#define VECTOR_15         (tIsrFunc)&UnhandledInterrupt         /* 0x0F -    ivINT_SysTick                  unused by PE */
+#define VECTOR_14         (tIsrFunc)&vPortPendSVHandler         /* 0x0E -    ivINT_PendableSrvReq           used by PE */
+#define VECTOR_15         (tIsrFunc)&vPortTickHandler           /* 0x0F -    ivINT_SysTick                  used by PE */
 #define VECTOR_16         (tIsrFunc)&UnhandledInterrupt         /* 0x10 -    ivINT_DMA0                     unused by PE */
 #define VECTOR_17         (tIsrFunc)&UnhandledInterrupt         /* 0x11 -    ivINT_DMA1                     unused by PE */
 #define VECTOR_18         (tIsrFunc)&UnhandledInterrupt         /* 0x12 -    ivINT_DMA2                     unused by PE */

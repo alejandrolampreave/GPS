@@ -7,7 +7,7 @@
 **     Version     : Component 02.156, Driver 01.02, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **         This component, "ExtInt_LDD", provide a low level API 
 **         for unified access of external interrupts handling
@@ -77,7 +77,7 @@
 
 #include "PPS.h"
 #include "ExtIntLdd1.h"
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 
 #ifdef __cplusplus
 extern "C" {
@@ -87,10 +87,10 @@ typedef struct {
   LDD_TUserData *UserData;             /* RTOS device data structure */
 } ExtIntLdd1_TDeviceData, *ExtIntLdd1_TDeviceDataPtr; /* Device data structure type */
 
-/* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
+/* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static ExtIntLdd1_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
-/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
-static ExtIntLdd1_TDeviceData * INT_PORTC__DEFAULT_RTOS_ISRPARAM;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static ExtIntLdd1_TDeviceData * INT_PORTC__BAREBOARD_RTOS_ISRPARAM;
 
 /*
 ** ===================================================================
@@ -116,13 +116,13 @@ LDD_TDeviceData* ExtIntLdd1_Init(LDD_TUserData *UserDataPtr)
   /* Allocate LDD device structure */
   ExtIntLdd1_TDeviceData *DeviceDataPrv;
 
-  /* {Default RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
+  /* {FreeRTOS RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   /* Store the UserData pointer */
   DeviceDataPrv->UserData = UserDataPtr;
   /* Interrupt vector(s) allocation */
-  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
-  INT_PORTC__DEFAULT_RTOS_ISRPARAM = DeviceDataPrv;
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_PORTC__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
   /* Enable device clock gate */
   /* SIM_SCGC5: PORTC=1 */
   SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
@@ -162,8 +162,8 @@ LDD_TDeviceData* ExtIntLdd1_Init(LDD_TUserData *UserDataPtr)
 */
 PE_ISR(ExtIntLdd1_Interrupt)
 {
-  /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
-  ExtIntLdd1_TDeviceDataPtr DeviceDataPrv = INT_PORTC__DEFAULT_RTOS_ISRPARAM;
+  /* {FreeRTOS RTOS Adapter} ISR parameter is passed through the global variable */
+  ExtIntLdd1_TDeviceDataPtr DeviceDataPrv = INT_PORTC__BAREBOARD_RTOS_ISRPARAM;
 
   /* Clear the interrupt flag */
   PORT_PDD_ClearPinInterruptFlag(PORTC_BASE_PTR, ExtIntLdd1_PIN_INDEX);

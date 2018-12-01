@@ -64,9 +64,11 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\Cpu.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\ExtIntLdd1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FAT1.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FRTOS1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FX1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\GI2C1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\GPS.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\KSDK1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDG.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDR.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDpin1.c</PathName>
@@ -83,8 +85,23 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TimerIntLdd1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TmDt1.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL1.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL2.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\WAIT1.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\croutine.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\event_groups.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\ff.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_1.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_2.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_3.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_4.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_5.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\heap_useNewlib.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\list.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\mpu_wrappers.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\port.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\queue.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\tasks.c</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\timers.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Project_Settings\Startup_Code\startup.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Application.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Events.c</PathName>
@@ -107,13 +124,18 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\Cpu.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\ExtIntLdd1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FAT1.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FRTOS1.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FRTOS1config.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FX1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FX1config.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FreeRTOS.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\FreeRTOSConfig.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\GI2C1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\GI2C1config.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\GPS.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\IO_Map.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\Init_Config.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\KSDK1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDG.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDGconfig.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\LEDR.h</PathName>
@@ -130,6 +152,7 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\SD1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\SM1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\SS1.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\StackMacros.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TI1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TMOUT1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TMOUT1config.h</PathName>
@@ -139,13 +162,30 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\TmDt1config.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL1config.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL2.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\UTIL2config.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\Vectors_Config.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\WAIT1.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\WAIT1config.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\croutine.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\deprecated_definitions.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\diskio.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\event_groups.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\ff.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\ffconf.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\freertos_tasks_c_additions.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\integer.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\list.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\mpu_prototypes.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\mpu_wrappers.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\portTicks.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\portable.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\portmacro.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\projdefs.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\queue.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\semphr.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\task.h</PathName>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\timers.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Application.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Events.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\IO_Map\MK64F12.h</PathName>
@@ -193,6 +233,9 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\System\PDD_Includes.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\System\Peripherals_Init.h</PathName>
     </GeneratedHs>
+    <GeneratedASMs>
+      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\portasm.s</PathName>
+    </GeneratedASMs>
   </FILES>
   <OPTIONS>
   </OPTIONS>

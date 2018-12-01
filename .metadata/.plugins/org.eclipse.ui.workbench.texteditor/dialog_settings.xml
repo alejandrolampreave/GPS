@@ -3,26 +3,26 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="191" key="DIALOG_Y_ORIGIN"/>
-		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="63" key="DIALOG_X_ORIGIN"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="LogToFile" key="selection"/>
+		<item value="PORT_PDD" key="selection"/>
 		<list key="findhistory">
+			<item value="PORT_PDD"/>
+			<item value="KSDK1"/>
+			<item value="FRTOS1"/>
+			<item value="GPS"/>
+			<item value="AS1"/>
 			<item value="LogToFile"/>
 			<item value="ParseGPRMC"/>
 			<item value="parsemsg"/>
-			<item value="FX1"/>
-			<item value="frtos"/>
-			<item value=""/>
-			<item value="pvParameters"/>
-			<item value="AppTask"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ack"/>

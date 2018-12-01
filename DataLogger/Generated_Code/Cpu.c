@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **
 **     Settings    :
@@ -63,7 +63,7 @@
 
 /* MODULE Cpu. */
 
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 #include "Cpu.h"
 #include "Events.h"
 #include "Init_Config.h"
@@ -144,6 +144,10 @@ void Components_Init(void)
   (void)BitIoLdd2_Init(NULL);
   /* ### LED "LEDG" init code ... */
   LEDG_Init(); /* initialize LED driver */
+  /* ### KinetisSDK "KSDK1" init code ... */
+  /* Write code here ... */
+  /* ### FreeRTOS "FRTOS1" init code ... */
+  /* PEX_RTOS_INIT() should have been called at this time already with the most critical setup */
 }
 #endif /* CPU_COMPONENTS_INIT */
 

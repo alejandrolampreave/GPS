@@ -7,7 +7,7 @@
 **     Version     : Component 01.111, Driver 01.08, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **         This component "SPIMaster_LDD" implements MASTER part of synchronous
 **         serial master-slave communication.
@@ -133,7 +133,7 @@
 #include "Events.h"
 #include "SD1.h"
 #include "SM1.h"
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 
 #ifdef __cplusplus
 extern "C" {
@@ -166,10 +166,10 @@ typedef struct {
 
 typedef SM1_TDeviceData* SM1_TDeviceDataPtr ; /* Pointer to the device data structure. */
 
-/* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
+/* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static SM1_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
-/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
-static SM1_TDeviceDataPtr INT_SPI1__DEFAULT_RTOS_ISRPARAM;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static SM1_TDeviceDataPtr INT_SPI1__BAREBOARD_RTOS_ISRPARAM;
 /* Internal method prototypes */
 
 /*
@@ -200,12 +200,12 @@ LDD_TDeviceData* SM1_Init(LDD_TUserData *UserDataPtr)
   /* Allocate LDD device structure */
   SM1_TDeviceDataPtr DeviceDataPrv;
 
-  /* {Default RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
+  /* {FreeRTOS RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserData = UserDataPtr; /* Store the RTOS device structure */
   /* Interrupt vector(s) allocation */
-  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
-  INT_SPI1__DEFAULT_RTOS_ISRPARAM = DeviceDataPrv;
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_SPI1__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
   DeviceDataPrv->TxCommand = 0x80000000U; /* Initialization of current Tx command */
   DeviceDataPrv->ErrFlag = 0x00U;      /* Clear error flags */
   /* Clear the receive counters and pointer */
@@ -317,11 +317,11 @@ void SM1_Deinit(LDD_TDeviceData *DeviceDataPtr)
              SPI_MCR_SMPL_PT(0x00) |
              SPI_MCR_HALT_MASK;        /* Disable device */
   /* Restoring the interrupt vector */
-  /* {Default RTOS Adapter} Restore interrupt vector: IVT is static, no code is generated */
+  /* {FreeRTOS RTOS Adapter} Restore interrupt vector: IVT is static, no code is generated */
   /* Unregistration of the device structure */
   PE_LDD_UnregisterDeviceStructure(PE_LDD_COMPONENT_SM1_ID);
   /* Deallocation of the device structure */
-  /* {Default RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
+  /* {FreeRTOS RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
   /* SIM_SCGC6: SPI1=0 */
   SIM_SCGC6 &= (uint32_t)~(uint32_t)(SIM_SCGC6_SPI1_MASK);
 }
@@ -369,12 +369,12 @@ LDD_TError SM1_ReceiveBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *BufferPtr
   if (((SM1_TDeviceDataPtr)DeviceDataPtr)->InpDataNumReq != 0x00U) { /* Is the previous receive operation pending? */
     return ERR_BUSY;                   /* If yes then error */
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->InpDataPtr = (uint8_t*)BufferPtr; /* Store a pointer to the input data. */
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->InpDataNumReq = Size; /* Store a number of characters to be received. */
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->InpRecvDataNum = 0x00U; /* Set number of received characters to zero. */
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }
@@ -416,13 +416,13 @@ LDD_TError SM1_SendBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *BufferPtr, u
   if (((SM1_TDeviceDataPtr)DeviceDataPtr)->OutDataNumReq != 0x00U) { /* Is the previous transmit operation pending? */
     return ERR_BUSY;                   /* If yes then error */
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->OutDataPtr = (uint8_t*)BufferPtr; /* Set a pointer to the output data. */
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->OutDataNumReq = Size; /* Set the counter of characters to be sent. */
   ((SM1_TDeviceDataPtr)DeviceDataPtr)->OutSentDataNum = 0x00U; /* Clear the counter of sent characters. */
   SPI_PDD_EnableDmasInterrupts(SPI1_BASE_PTR, SPI_PDD_TX_FIFO_FILL_INT_DMA); /* Enable TX interrupt */
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }
@@ -491,8 +491,8 @@ LDD_TError SM1_SelectConfiguration(LDD_TDeviceData *DeviceDataPtr, uint8_t ChipS
 */
 PE_ISR(SM1_Interrupt)
 {
-  /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
-  SM1_TDeviceDataPtr DeviceDataPrv = INT_SPI1__DEFAULT_RTOS_ISRPARAM;
+  /* {FreeRTOS RTOS Adapter} ISR parameter is passed through the global variable */
+  SM1_TDeviceDataPtr DeviceDataPrv = INT_SPI1__BAREBOARD_RTOS_ISRPARAM;
   uint32_t StatReg = SPI_PDD_GetInterruptFlags(SPI1_BASE_PTR); /* Read status register */
   uint16_t Data;                       /* Temporary variable for data */
 

@@ -7,7 +7,7 @@
 **     Version     : Component 01.188, Driver 01.12, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **         This component "Serial_LDD" implements an asynchronous serial
 **         communication. The component supports different settings of
@@ -116,7 +116,7 @@
 /* MODULE ASerialLdd2. */
 /*lint -save  -e926 -e927 -e928 -e929 -e572 Disable MISRA rule (11.4,12.8) checking. */
 
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 #include "ASerialLdd2.h"
 #include "GPS.h"
 #include "UART_PDD.h"
@@ -129,12 +129,12 @@ extern "C" {
 /*! The mask of available events used to enable/disable events during runtime. */
 #define AVAILABLE_EVENTS_MASK (LDD_SERIAL_ON_BLOCK_RECEIVED | LDD_SERIAL_ON_BLOCK_SENT | LDD_SERIAL_ON_BREAK | LDD_SERIAL_ON_ERROR)
 
-/* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
+/* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static ASerialLdd2_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
-/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
-static ASerialLdd2_TDeviceDataPtr INT_UART3_RX_TX__DEFAULT_RTOS_ISRPARAM;
-/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
-static ASerialLdd2_TDeviceDataPtr INT_UART3_ERR__DEFAULT_RTOS_ISRPARAM;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static ASerialLdd2_TDeviceDataPtr INT_UART3_RX_TX__BAREBOARD_RTOS_ISRPARAM;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static ASerialLdd2_TDeviceDataPtr INT_UART3_ERR__BAREBOARD_RTOS_ISRPARAM;
 
 /*
 ** ===================================================================
@@ -161,7 +161,7 @@ LDD_TDeviceData* ASerialLdd2_Init(LDD_TUserData *UserDataPtr)
 {
   /* Allocate device structure */
   ASerialLdd2_TDeviceDataPtr DeviceDataPrv;
-  /* {Default RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
+  /* {FreeRTOS RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
 
   /* Clear the receive counters and pointer */
@@ -174,10 +174,10 @@ LDD_TDeviceData* ASerialLdd2_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv->OutDataPtr = NULL;    /* Clear the buffer pointer for data to be transmitted */
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Allocate interrupt vectors */
-  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
-  INT_UART3_RX_TX__DEFAULT_RTOS_ISRPARAM = DeviceDataPrv;
-  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
-  INT_UART3_ERR__DEFAULT_RTOS_ISRPARAM = DeviceDataPrv;
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_UART3_RX_TX__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_UART3_ERR__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
   /* SIM_SCGC4: UART3=1 */
   SIM_SCGC4 |= SIM_SCGC4_UART3_MASK;
   /* SIM_SCGC5: PORTC=1 */
@@ -284,12 +284,12 @@ LDD_TError ASerialLdd2_ReceiveBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *B
   if (DeviceDataPrv->InpDataNumReq != 0x00U) { /* Is the previous receive operation pending? */
     return ERR_BUSY;                   /* If yes then error */
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   DeviceDataPrv->InpDataPtr = (uint8_t*)BufferPtr; /* Store a pointer to the input data. */
   DeviceDataPrv->InpDataNumReq = Size; /* Store a number of characters to be received. */
   DeviceDataPrv->InpRecvDataNum = 0x00U; /* Set number of received characters to zero. */
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }
@@ -344,14 +344,14 @@ LDD_TError ASerialLdd2_SendBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *Buff
   if (DeviceDataPrv->OutDataNumReq != 0x00U) { /* Is the previous transmit operation pending? */
     return ERR_BUSY;                   /* If yes then error */
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   DeviceDataPrv->OutDataPtr = (uint8_t*)BufferPtr; /* Set a pointer to the output data. */
   DeviceDataPrv->OutDataNumReq = Size; /* Set the counter of characters to be sent. */
   DeviceDataPrv->OutSentDataNum = 0x00U; /* Clear the counter of sent characters. */
   DeviceDataPrv->SerFlag |= ENABLED_TX_INT; /* Set the flag ENABLED_TX_INT */
   UART_PDD_EnableInterrupt(UART3_BASE_PTR, UART_PDD_INTERRUPT_TRANSMITTER); /* Enable TX interrupt */
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }
@@ -419,8 +419,8 @@ static void InterruptTx(ASerialLdd2_TDeviceDataPtr DeviceDataPrv)
 */
 PE_ISR(ASerialLdd2_Interrupt)
 {
-  /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
-  ASerialLdd2_TDeviceDataPtr DeviceDataPrv = INT_UART3_RX_TX__DEFAULT_RTOS_ISRPARAM;
+  /* {FreeRTOS RTOS Adapter} ISR parameter is passed through the global variable */
+  ASerialLdd2_TDeviceDataPtr DeviceDataPrv = INT_UART3_RX_TX__BAREBOARD_RTOS_ISRPARAM;
   register uint32_t StatReg = UART_PDD_ReadInterruptStatusReg(UART3_BASE_PTR); /* Read status register */
   register uint16_t OnErrorFlags = 0U; /* Temporary variable for flags */
   register uint8_t  OnBreakFlag = 0U;  /* Temporary variable flag for OnBreak event */
@@ -496,11 +496,11 @@ LDD_TError ASerialLdd2_GetError(LDD_TDeviceData *DeviceDataPtr, LDD_SERIAL_TErro
 {
   ASerialLdd2_TDeviceDataPtr DeviceDataPrv = (ASerialLdd2_TDeviceDataPtr)DeviceDataPtr;
 
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   *ErrorPtr = DeviceDataPrv->ErrFlag;
   DeviceDataPrv->ErrFlag = 0x00U;      /* Reset error flags */
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }

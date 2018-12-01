@@ -1,0 +1,67 @@
+/*
+ * Application.c
+ *
+ *  Created on:29/10/2018
+ *      Author: Alejandro
+ */
+
+#include "Application.h"
+#include "WAIT1.h"
+#include "FX1.h"
+#include "FAT1.h"
+#include "UTIL1.h"
+#include "PORT_PDD.h"
+#include "AS1.h"
+#include "GPS.h"
+#include "LEDR.h"
+#include "LEDG.h"
+#include "FRTOS1.h"
+#include "KSDK1.h"
+#include "task.h"
+#include "queue.h"
+
+static xQueueHandle caracteres;
+
+
+static FAT1_FATFS fileSystemObject;
+static FIL file;
+
+static void Err(void) {
+  for(;;){}
+}
+
+
+
+
+void APP_Run(void) {
+  int16_t x,y,z;
+  uint8_t ack;
+
+
+  /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
+  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
+
+  ack = FX1_Enable(); /* Activa el acelerometro */
+  if (ack!=ERR_OK) {
+    Err();
+  }
+  if (FAT1_Init()!=ERR_OK) { /* Comprueba FAT */
+    Err();
+  }
+  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
+    Err();
+  }
+
+
+
+  /*for(;;) {
+
+	  if (GPS_GetCharsInRxBuf()==0) {
+				LEDR_Neg(); LEDG_Off(); /* Luz roja en caso de no recibir señal GPS */
+			 //} else {
+				//LEDR_Off(); LEDG_Neg(); /* Luz ver en caso contrario */
+			 // }
+
+  //}
+}

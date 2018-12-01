@@ -7,7 +7,7 @@
 **     Version     : Component 01.016, Driver 01.07, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-11-14, 11:42, # CodeGen: 16
+**     Date/Time   : 2018-12-01, 21:05, # CodeGen: 40
 **     Abstract    :
 **          This component encapsulates the internal I2C communication
 **          interface. The implementation of the interface is based
@@ -151,7 +151,7 @@
 #include "CI2C1.h"
 #include "PORT_PDD.h"
 #include "I2C_PDD.h"
-/* {Default RTOS Adapter} No RTOS includes */
+#include "FreeRTOS.h" /* FreeRTOS interface */
 #include "IO_Map.h"
 
 #ifdef __cplusplus
@@ -187,10 +187,10 @@ typedef struct {
 
 typedef CI2C1_TDeviceData *CI2C1_TDeviceDataPtr; /* Pointer to the device data structure. */
 
-/* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
+/* {FreeRTOS RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
 static CI2C1_TDeviceData DeviceDataPrv__DEFAULT_RTOS_ALLOC;
-/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
-static CI2C1_TDeviceDataPtr INT_I2C0__DEFAULT_RTOS_ISRPARAM;
+/* {FreeRTOS RTOS Adapter} Global variable used for passing a parameter into ISR */
+static CI2C1_TDeviceDataPtr INT_I2C0__BAREBOARD_RTOS_ISRPARAM;
 
 #define AVAILABLE_EVENTS_MASK (LDD_I2C_ON_MASTER_BLOCK_SENT | LDD_I2C_ON_MASTER_BLOCK_RECEIVED)
 
@@ -207,8 +207,8 @@ static CI2C1_TDeviceDataPtr INT_I2C0__DEFAULT_RTOS_ISRPARAM;
 
 PE_ISR(CI2C1_Interrupt)
 {
-  /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
-  CI2C1_TDeviceDataPtr DeviceDataPrv = INT_I2C0__DEFAULT_RTOS_ISRPARAM;
+  /* {FreeRTOS RTOS Adapter} ISR parameter is passed through the global variable */
+  CI2C1_TDeviceDataPtr DeviceDataPrv = INT_I2C0__BAREBOARD_RTOS_ISRPARAM;
   register uint8_t Status;             /* Temporary variable for status register */
 
   Status = I2C_PDD_ReadStatusReg(I2C0_BASE_PTR); /* Safe status register */
@@ -310,14 +310,14 @@ LDD_TDeviceData* CI2C1_Init(LDD_TUserData *UserDataPtr)
 {
   /* Allocate HAL device structure */
   CI2C1_TDeviceData *DeviceDataPrv;
-  /* {Default RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
+  /* {FreeRTOS RTOS Adapter} Driver memory allocation: Dynamic allocation is simulated by a pointer to the static object */
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
 
   DeviceDataPrv->UserData = UserDataPtr; /* Store the RTOS device structure */
 
   /* Allocate interrupt vector */
-  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
-  INT_I2C0__DEFAULT_RTOS_ISRPARAM = DeviceDataPrv;
+  /* {FreeRTOS RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_I2C0__BAREBOARD_RTOS_ISRPARAM = DeviceDataPrv;
   DeviceDataPrv->SerFlag = ADDR_7;     /* Reset all flags start with 7-bit address mode */
   DeviceDataPrv->SlaveAddr = 0x00U;    /* Set variable for slave address */
   DeviceDataPrv->SendStop = LDD_I2C_SEND_STOP; /* Set variable for sending stop condition (for master mode) */
@@ -388,11 +388,11 @@ void CI2C1_Deinit(LDD_TDeviceData *DeviceDataPtr)
   /* I2C0_C1: IICEN=0,IICIE=0,MST=0,TX=0,TXAK=0,RSTA=0,WUEN=0,DMAEN=0 */
   I2C0_C1 = 0x00U;                     /* Reset I2C Control register */
   /* Restoring the interrupt vector */
-  /* {Default RTOS Adapter} Restore interrupt vector: IVT is static, no code is generated */
+  /* {FreeRTOS RTOS Adapter} Restore interrupt vector: IVT is static, no code is generated */
   /* Unregistration of the device structure */
   PE_LDD_UnregisterDeviceStructure(PE_LDD_COMPONENT_CI2C1_ID);
   /* Deallocation of the device structure */
-  /* {Default RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
+  /* {FreeRTOS RTOS Adapter} Driver memory deallocation: Dynamic allocation is simulated, no deallocation code is generated */
   /* SIM_SCGC4: I2C0=0 */
   SIM_SCGC4 &= (uint32_t)~(uint32_t)(SIM_SCGC4_I2C0_MASK);
 }
@@ -461,7 +461,7 @@ LDD_TError CI2C1_MasterSendBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *Buff
       return ERR_BUSY;                 /* If yes then error */
     }
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   DeviceDataPrv->SerFlag |= MASTER_IN_PROGRES; /* Set flag "busy" */
   DeviceDataPrv->OutPtrM = (uint8_t *)BufferPtr; /* Save pointer to data for transmitting */
@@ -487,7 +487,7 @@ LDD_TError CI2C1_MasterSendBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *Buff
       }
     }
   }
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }
@@ -566,7 +566,7 @@ LDD_TError CI2C1_MasterReceiveBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *B
       return ERR_BUSY;               /* If yes then error */
     }
   }
-  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section begin (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   EnterCritical();
   DeviceDataPrv->SerFlag |= MASTER_IN_PROGRES; /* Set flag "busy" */
   DeviceDataPrv->InpPtrM = (uint8_t *)BufferPtr; /* Save pointer to data for reception */
@@ -587,7 +587,7 @@ LDD_TError CI2C1_MasterReceiveBlock(LDD_TDeviceData *DeviceDataPtr, LDD_TData *B
       I2C_PDD_WriteDataReg(I2C0_BASE_PTR, DeviceDataPrv->SlaveAddrHigh); /* Send slave address - high byte */
     }
   }
-  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  /* {FreeRTOS RTOS Adapter} Critical section ends (RTOS function call is defined by FreeRTOS RTOS Adapter property) */
   ExitCritical();
   return ERR_OK;                       /* OK */
 }

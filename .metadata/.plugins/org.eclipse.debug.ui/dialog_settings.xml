@@ -7,7 +7,7 @@
 	</section>
 	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATIONS_DIALOG_SECTION">
 		<item value="982" key="DIALOG_WIDTH"/>
-		<item value="ilg.gnuarmeclipse.debug.gdbjtag.jlink.launchConfigurationType, com.pemicro.debug.gdbjtag.pne.launchConfigurationType, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
+		<item value="ilg.gnuarmeclipse.debug.gdbjtag.jlink.launchConfigurationType, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
 		<item value="640" key="DIALOG_HEIGHT"/>
 		<item value="270" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1"/>
 		<item value="729" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2"/>
