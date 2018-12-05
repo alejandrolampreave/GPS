@@ -3,7 +3,7 @@
   <Header>
     <Name>DataLogger</Name>
     <SavedBy>Alejandro</SavedBy>
-    <ModificationStamp>32</ModificationStamp>
+    <ModificationStamp>33</ModificationStamp>
     <Date>2018-10-23</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -27996,7 +27996,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>8192</Value>
+        <Value>16384</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>

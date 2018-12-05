@@ -1911,7 +1911,7 @@
         </group>
       </group>
       <boolgroup name="Shell" v="Disabled" />
-      <Utility v="UTIL1" />
+      <Utility v="UTIL2" />
     </Properties>
     <Methods>
       <xTaskCreate v="generate code" />

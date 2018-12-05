@@ -1,4 +1,4 @@
-21:50:09 **** Incremental Build of configuration Debug for project DataLogger ****
+17:54:51 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
@@ -13,7 +13,7 @@ D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expect
  byte GPS_RecvChar(GPS_TComData *Chr);
       ^
 ../Sources/main.c: In function 'main':
-../Sources/main.c:193:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:202:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
      ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
      ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -22,16 +22,16 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:204:7: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-       ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-       ^
+../Sources/main.c:224:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
+         ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
                  from ../Sources/Events.h:55,
                  from ../Sources/main.c:32:
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:215:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:235:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
          ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
          ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -48,5 +48,5 @@ arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0
 Finished building target: DataLogger.elf
  
 
-21:50:15 Build Finished (took 5s.713ms)
+17:55:00 Build Finished (took 9s.36ms)
 
