@@ -78,7 +78,7 @@
 #include "Application.h"
 
 
-const static byte longitud = 24;
+const static byte longitud = 200;
 const static byte tamano   =  8;
 static FAT1_FATFS fileSystemObject;
 static FIL file;
@@ -94,10 +94,14 @@ static void CharGPS(void) {
 	byte ch[1];
 	for(;;) {
 		LEDR_Off(); LEDG_Neg();
-	do {err = GPS_RecvChar(&ch);
+	/*do err = GPS_RecvChar(&ch);
 	   } while((err != ERR_OK));
-	FRTOS1_xQueueSendToFront(caracteres, ch ,(portTickType) 100);//aqui pasa la mayoría del tiempo
-	  FRTOS1_vTaskDelay(100/portTICK_RATE_MS);
+	FRTOS1_xQueueSendToFront(caracteres, ch ,(portTickType) 100);*/
+	err = GPS_RecvChar(&ch);
+	   if(err == ERR_OK){
+		   FRTOS1_xQueueSendToFront(caracteres, ch ,(portTickType) 100);//aqui pasa la mayoría del tiempo
+	   }
+	  FRTOS1_vTaskDelay(250/portTICK_RATE_MS);
 
 
 	}
@@ -109,7 +113,7 @@ static void Acce(void) {
 		  FX1_Enable(); /* Activa el acelerometro */
 
 			x = FX1_GetX();
-			FRTOS1_vTaskDelay(250/portTICK_RATE_MS);
+			//FRTOS1_vTaskDelay(250/portTICK_RATE_MS);
 	}
 }
 
@@ -129,21 +133,21 @@ static void Acce(void) {
 
 static void EscribeSD(void){
 	  UINT bandwidth;
-	  uint8_t buffer[48];//48
+	  uint8_t buffer[200];//48
 	  //AS1_TComData ch;
 	  char ch[48];
 	  int i;
 	  for(;;) {
 
-		  /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
-		  	  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
-		  	  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
+	  /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
+		  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+		  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
 
-		  	  FAT1_Init();
-		  	  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
-		  	    Err();
-		  	  }
-	  LEDR_Off(); LEDG_Neg();
+		  FAT1_Init();
+		  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
+			Err();
+		  }
+	  LEDR_Neg(); LEDG_Off();//rojo
 	  /* Abrir fichero */
 	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
 	    Err();
@@ -155,18 +159,23 @@ static void EscribeSD(void){
 	  /* Escribir la informacion */
 	  buffer[0] = '\0';
 	  if(xQueueReceive(caracteres , (void *) ch ,(portTickType) 0xFFFFFFFF) == pdTRUE){
-		  //UTIL1_strcatNum16s(buffer, sizeof(buffer), ch);
+			  //UTIL1_strcatNum16s(buffer, sizeof(buffer), (char)ch);
+			  if (FAT1_write(&file, ch, UTIL1_strlen((char*)ch), &bandwidth)!=FR_OK) {
+			  	    //(void)FAT1_close(&file);
+			  	    Err();
+			  }
+	  }
 
 	  /* Se ha recibido un dato. Se escribe en la SD */
 		 // for(i = 0; i < sizeof(ch); i++)
 		 // UTIL1_strcat(buffer, sizeof(buffer), ch[i]);
-		 // UTIL1_strcat(buffer, sizeof(buffer), (unsigned char*)"\r\n");
-	  }
 
-	  if (FAT1_write(&file, ch, UTIL1_strlen((char*)ch), &bandwidth)!=FR_OK) {
-	    (void)FAT1_close(&file);
-	    Err();
-	  }
+
+//	  if (FAT1_write(&file, ch, UTIL1_strlen((char*)buffer), &bandwidth)!=FR_OK) {
+//	    (void)FAT1_close(&file);
+//	    Err();
+//	  }
+
 	  /* Cerrar el fichero */
 	  (void)FAT1_close(&file);
 	}
@@ -179,7 +188,7 @@ int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
-	caracteres=FRTOS1_xQueueCreate(longitud,tamano);
+ 	caracteres=FRTOS1_xQueueCreate(longitud,tamano);
 	//int16_t x,y,z;
 	uint8_t ack;
 
@@ -191,13 +200,12 @@ int main(void)
   /* Write your code here */
 
 
-
   if (xTaskCreate(
   	   CharGPS, /* función de la tarea*/
   	  "gps", /* nombre de la tarea para el kernel */
   	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
   	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-  	  3,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+  	  5,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
   	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
   	  for(;;){} /* error! Probablemente sin memoria */
@@ -219,7 +227,7 @@ int main(void)
       	  "SD", /* nombre de la tarea para el kernel */
       	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
       	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-      	  5,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+      	  4,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
       	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
       	  for(;;){} /* error! Probablemente sin memoria */

@@ -1,11 +1,44 @@
-12:18:44 **** Incremental Build of configuration Debug for project DataLogger ****
+18:20:20 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
+Building file: ../Static_Code/System/CPU_Init.c
+Building file: ../Sources/Application.c
+Building file: ../Static_Code/System/Vectors.c
+Building file: ../Static_Code/System/Peripherals_Init.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/CPU_Init.d" -MT"Static_Code/System/CPU_Init.o" -c -o "Static_Code/System/CPU_Init.o" "../Static_Code/System/CPU_Init.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/Application.d" -MT"Sources/Application.o" -c -o "Sources/Application.o" "../Sources/Application.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/Peripherals_Init.d" -MT"Static_Code/System/Peripherals_Init.o" -c -o "Static_Code/System/Peripherals_Init.o" "../Static_Code/System/Peripherals_Init.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Static_Code/System/Vectors.d" -MT"Static_Code/System/Vectors.o" -c -o "Static_Code/System/Vectors.o" "../Static_Code/System/Vectors.c"
+../Sources/Application.c: In function 'APP_Run':
+../Sources/Application.c:36:5: warning: implicit declaration of function 'Err' [-Wimplicit-function-declaration]
+     Err();
+     ^
+Finished building: ../Static_Code/System/Peripherals_Init.c
+ 
+Building file: ../Sources/Events.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/Events.d" -MT"Sources/Events.o" -c -o "Sources/Events.o" "../Sources/Events.c"
+Finished building: ../Sources/Application.c
+ 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
+Finished building: ../Static_Code/System/Vectors.c
+Finished building: ../Static_Code/System/CPU_Init.c
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+ 
+ 
+Building file: ../Generated_Code/AS1.c
+Building file: ../Generated_Code/ASerialLdd1.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/AS1.d" -MT"Generated_Code/AS1.o" -c -o "Generated_Code/AS1.o" "../Generated_Code/AS1.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd1.d" -MT"Generated_Code/ASerialLdd1.o" -c -o "Generated_Code/ASerialLdd1.o" "../Generated_Code/ASerialLdd1.c"
 ../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
+../Sources/main.c:100:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
+  err = GPS_RecvChar(&ch);
   ^
 In file included from ../Sources/Events.h:43:0,
                  from ../Sources/main.c:32:
@@ -13,7 +46,7 @@ D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expect
  byte GPS_RecvChar(GPS_TComData *Chr);
       ^
 ../Sources/main.c: In function 'main':
-../Sources/main.c:204:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:210:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
      ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
      ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -22,7 +55,7 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:226:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:232:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
          ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
          ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -31,7 +64,7 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:237:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:243:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
          ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
          ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -40,27 +73,267 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
+Finished building: ../Sources/Events.c
+Finished building: ../Generated_Code/AS1.c
+ 
+ 
+Building file: ../Generated_Code/ASerialLdd2.c
+Building file: ../Generated_Code/BitIoLdd1.c
+Finished building: ../Generated_Code/ASerialLdd1.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd2.d" -MT"Generated_Code/ASerialLdd2.o" -c -o "Generated_Code/ASerialLdd2.o" "../Generated_Code/ASerialLdd2.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BitIoLdd1.d" -MT"Generated_Code/BitIoLdd1.o" -c -o "Generated_Code/BitIoLdd1.o" "../Generated_Code/BitIoLdd1.c"
+ 
+Building file: ../Generated_Code/BitIoLdd2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BitIoLdd2.d" -MT"Generated_Code/BitIoLdd2.o" -c -o "Generated_Code/BitIoLdd2.o" "../Generated_Code/BitIoLdd2.c"
 Finished building: ../Sources/main.c
+ 
+Building file: ../Generated_Code/CD1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CD1.d" -MT"Generated_Code/CD1.o" -c -o "Generated_Code/CD1.o" "../Generated_Code/CD1.c"
+Finished building: ../Generated_Code/BitIoLdd1.c
+ 
+Building file: ../Generated_Code/CI2C1.c
+Invoking: Cross ARM C Compiler
+Finished building: ../Generated_Code/ASerialLdd2.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CI2C1.d" -MT"Generated_Code/CI2C1.o" -c -o "Generated_Code/CI2C1.o" "../Generated_Code/CI2C1.c"
+Finished building: ../Generated_Code/BitIoLdd2.c
+ 
+ 
+Building file: ../Generated_Code/CS1.c
+Building file: ../Generated_Code/Cpu.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CS1.d" -MT"Generated_Code/CS1.o" -c -o "Generated_Code/CS1.o" "../Generated_Code/CS1.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+Finished building: ../Generated_Code/CD1.c
+ 
+Building file: ../Generated_Code/ExtIntLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ExtIntLdd1.d" -MT"Generated_Code/ExtIntLdd1.o" -c -o "Generated_Code/ExtIntLdd1.o" "../Generated_Code/ExtIntLdd1.c"
+Finished building: ../Generated_Code/CS1.c
+ 
+Finished building: ../Generated_Code/CI2C1.c
+Building file: ../Generated_Code/FAT1.c
+Invoking: Cross ARM C Compiler
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/FAT1.d" -MT"Generated_Code/FAT1.o" -c -o "Generated_Code/FAT1.o" "../Generated_Code/FAT1.c"
+Building file: ../Generated_Code/FRTOS1.c
+Invoking: Cross ARM C Compiler
+Finished building: ../Generated_Code/Cpu.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/FRTOS1.d" -MT"Generated_Code/FRTOS1.o" -c -o "Generated_Code/FRTOS1.o" "../Generated_Code/FRTOS1.c"
+ 
+Building file: ../Generated_Code/FX1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/FX1.d" -MT"Generated_Code/FX1.o" -c -o "Generated_Code/FX1.o" "../Generated_Code/FX1.c"
+Finished building: ../Generated_Code/ExtIntLdd1.c
+ 
+Building file: ../Generated_Code/GI2C1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/GI2C1.d" -MT"Generated_Code/GI2C1.o" -c -o "Generated_Code/GI2C1.o" "../Generated_Code/GI2C1.c"
+../Generated_Code/GI2C1.c: In function 'GI2C1_ScanDevice':
+../Generated_Code/GI2C1.c:527:5: warning: implicit declaration of function 'CI2C1_GetError' [-Wimplicit-function-declaration]
+     (void)CI2C1_GetError(GI2C1_deviceData.handle, &errMask);
+     ^
+Finished building: ../Generated_Code/FRTOS1.c
+Finished building: ../Generated_Code/FAT1.c
+ 
+Building file: ../Generated_Code/GPS.c
+ 
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/KSDK1.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/GPS.d" -MT"Generated_Code/GPS.o" -c -o "Generated_Code/GPS.o" "../Generated_Code/GPS.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/KSDK1.d" -MT"Generated_Code/KSDK1.o" -c -o "Generated_Code/KSDK1.o" "../Generated_Code/KSDK1.c"
+Finished building: ../Generated_Code/FX1.c
+ 
+Building file: ../Generated_Code/LEDG.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/LEDG.d" -MT"Generated_Code/LEDG.o" -c -o "Generated_Code/LEDG.o" "../Generated_Code/LEDG.c"
+Finished building: ../Generated_Code/GI2C1.c
+ 
+Building file: ../Generated_Code/LEDR.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/LEDR.d" -MT"Generated_Code/LEDR.o" -c -o "Generated_Code/LEDR.o" "../Generated_Code/LEDR.c"
+Finished building: ../Generated_Code/KSDK1.c
+ 
+Building file: ../Generated_Code/LEDpin1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/LEDpin1.d" -MT"Generated_Code/LEDpin1.o" -c -o "Generated_Code/LEDpin1.o" "../Generated_Code/LEDpin1.c"
+Finished building: ../Generated_Code/LEDG.c
+Finished building: ../Generated_Code/GPS.c
+ 
+ 
+Building file: ../Generated_Code/LEDpin2.c
+Building file: ../Generated_Code/MCUC1.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/LEDpin2.d" -MT"Generated_Code/LEDpin2.o" -c -o "Generated_Code/LEDpin2.o" "../Generated_Code/LEDpin2.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/MCUC1.d" -MT"Generated_Code/MCUC1.o" -c -o "Generated_Code/MCUC1.o" "../Generated_Code/MCUC1.c"
+Finished building: ../Generated_Code/LEDR.c
+ 
+Building file: ../Generated_Code/PE_LDD.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+Finished building: ../Generated_Code/LEDpin1.c
+ 
+Building file: ../Generated_Code/PPS.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PPS.d" -MT"Generated_Code/PPS.o" -c -o "Generated_Code/PPS.o" "../Generated_Code/PPS.c"
+Finished building: ../Generated_Code/LEDpin2.c
+Finished building: ../Generated_Code/MCUC1.c
+ 
+ 
+Building file: ../Generated_Code/SD1.c
+Building file: ../Generated_Code/SM1.c
+Invoking: Cross ARM C Compiler
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SD1.d" -MT"Generated_Code/SD1.o" -c -o "Generated_Code/SD1.o" "../Generated_Code/SD1.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SM1.d" -MT"Generated_Code/SM1.o" -c -o "Generated_Code/SM1.o" "../Generated_Code/SM1.c"
+Finished building: ../Generated_Code/PE_LDD.c
+ 
+Building file: ../Generated_Code/SS1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/SS1.d" -MT"Generated_Code/SS1.o" -c -o "Generated_Code/SS1.o" "../Generated_Code/SS1.c"
+Finished building: ../Generated_Code/PPS.c
+ 
+Building file: ../Generated_Code/TI1.c
+Invoking: Cross ARM C Compiler
+Finished building: ../Generated_Code/SD1.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TI1.d" -MT"Generated_Code/TI1.o" -c -o "Generated_Code/TI1.o" "../Generated_Code/TI1.c"
+ 
+Finished building: ../Generated_Code/SM1.c
+Building file: ../Generated_Code/TMOUT1.c
+ 
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/TU1.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TMOUT1.d" -MT"Generated_Code/TMOUT1.o" -c -o "Generated_Code/TMOUT1.o" "../Generated_Code/TMOUT1.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU1.d" -MT"Generated_Code/TU1.o" -c -o "Generated_Code/TU1.o" "../Generated_Code/TU1.c"
+Finished building: ../Generated_Code/SS1.c
+ 
+Building file: ../Generated_Code/TimerIntLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TimerIntLdd1.d" -MT"Generated_Code/TimerIntLdd1.o" -c -o "Generated_Code/TimerIntLdd1.o" "../Generated_Code/TimerIntLdd1.c"
+Finished building: ../Generated_Code/TMOUT1.c
+ 
+Building file: ../Generated_Code/TmDt1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TmDt1.d" -MT"Generated_Code/TmDt1.o" -c -o "Generated_Code/TmDt1.o" "../Generated_Code/TmDt1.c"
+Finished building: ../Generated_Code/TI1.c
+Finished building: ../Generated_Code/TU1.c
+ 
+ 
+Building file: ../Generated_Code/UTIL1.c
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/UTIL2.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/UTIL1.d" -MT"Generated_Code/UTIL1.o" -c -o "Generated_Code/UTIL1.o" "../Generated_Code/UTIL1.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/UTIL2.d" -MT"Generated_Code/UTIL2.o" -c -o "Generated_Code/UTIL2.o" "../Generated_Code/UTIL2.c"
+Finished building: ../Generated_Code/TimerIntLdd1.c
+ 
+Building file: ../Generated_Code/WAIT1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/WAIT1.d" -MT"Generated_Code/WAIT1.o" -c -o "Generated_Code/WAIT1.o" "../Generated_Code/WAIT1.c"
+Finished building: ../Generated_Code/TmDt1.c
+ 
+Building file: ../Generated_Code/croutine.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/croutine.d" -MT"Generated_Code/croutine.o" -c -o "Generated_Code/croutine.o" "../Generated_Code/croutine.c"
+Finished building: ../Generated_Code/UTIL1.c
+ 
+Building file: ../Generated_Code/event_groups.c
+Invoking: Cross ARM C Compiler
+Finished building: ../Generated_Code/UTIL2.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/event_groups.d" -MT"Generated_Code/event_groups.o" -c -o "Generated_Code/event_groups.o" "../Generated_Code/event_groups.c"
+ 
+Building file: ../Generated_Code/heap_1.c
+Finished building: ../Generated_Code/WAIT1.c
+Invoking: Cross ARM C Compiler
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_1.d" -MT"Generated_Code/heap_1.o" -c -o "Generated_Code/heap_1.o" "../Generated_Code/heap_1.c"
+Building file: ../Generated_Code/heap_2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_2.d" -MT"Generated_Code/heap_2.o" -c -o "Generated_Code/heap_2.o" "../Generated_Code/heap_2.c"
+Finished building: ../Generated_Code/croutine.c
+ 
+Building file: ../Generated_Code/heap_3.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_3.d" -MT"Generated_Code/heap_3.o" -c -o "Generated_Code/heap_3.o" "../Generated_Code/heap_3.c"
+Finished building: ../Generated_Code/heap_1.c
+Finished building: ../Generated_Code/event_groups.c
+ 
+Finished building: ../Generated_Code/heap_2.c
+ 
+Building file: ../Generated_Code/heap_4.c
+ 
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/heap_5.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_4.d" -MT"Generated_Code/heap_4.o" -c -o "Generated_Code/heap_4.o" "../Generated_Code/heap_4.c"
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/heap_useNewlib.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_5.d" -MT"Generated_Code/heap_5.o" -c -o "Generated_Code/heap_5.o" "../Generated_Code/heap_5.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/heap_useNewlib.d" -MT"Generated_Code/heap_useNewlib.o" -c -o "Generated_Code/heap_useNewlib.o" "../Generated_Code/heap_useNewlib.c"
+Finished building: ../Generated_Code/heap_3.c
+ 
+Building file: ../Generated_Code/list.c
+Finished building: ../Generated_Code/heap_5.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/list.d" -MT"Generated_Code/list.o" -c -o "Generated_Code/list.o" "../Generated_Code/list.c"
+ 
+Building file: ../Generated_Code/mpu_wrappers.c
+Finished building: ../Generated_Code/heap_useNewlib.c
+Invoking: Cross ARM C Compiler
+Finished building: ../Generated_Code/heap_4.c
+ 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/mpu_wrappers.d" -MT"Generated_Code/mpu_wrappers.o" -c -o "Generated_Code/mpu_wrappers.o" "../Generated_Code/mpu_wrappers.c"
+ 
+Building file: ../Generated_Code/port.c
+Invoking: Cross ARM C Compiler
+Building file: ../Generated_Code/queue.c
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/port.d" -MT"Generated_Code/port.o" -c -o "Generated_Code/port.o" "../Generated_Code/port.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/queue.d" -MT"Generated_Code/queue.o" -c -o "Generated_Code/queue.o" "../Generated_Code/queue.c"
+Finished building: ../Generated_Code/mpu_wrappers.c
+ 
+Finished building: ../Generated_Code/list.c
+ 
+Building file: ../Generated_Code/tasks.c
+Building file: ../Generated_Code/timers.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/tasks.d" -MT"Generated_Code/tasks.o" -c -o "Generated_Code/tasks.o" "../Generated_Code/tasks.c"
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/timers.d" -MT"Generated_Code/timers.o" -c -o "Generated_Code/timers.o" "../Generated_Code/timers.c"
+Finished building: ../Generated_Code/port.c
+ 
+Finished building: ../Generated_Code/queue.c
+ 
+Finished building: ../Generated_Code/timers.c
+ 
+Finished building: ../Generated_Code/tasks.c
  
 Building target: DataLogger.elf
 Invoking: Cross ARM C++ Linker
 arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
 Finished building target: DataLogger.elf
  
-12:18:55 **** Incremental Build of configuration Debug for project DataLogger ****
+18:20:45 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
 make: Nothing to be done for 'all'.
-12:19:36 **** Incremental Build of configuration Debug for project DataLogger ****
+18:21:07 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
 make: Nothing to be done for 'all'.
-12:22:18 **** Incremental Build of configuration Debug for project DataLogger ****
+19:54:07 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
 ../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
+../Sources/main.c:100:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
+  err = GPS_RecvChar(&ch);
   ^
 In file included from ../Sources/Events.h:43:0,
                  from ../Sources/main.c:32:
@@ -68,7 +341,7 @@ D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expect
  byte GPS_RecvChar(GPS_TComData *Chr);
       ^
 ../Sources/main.c: In function 'main':
-../Sources/main.c:204:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:210:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
      ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
      ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -77,7 +350,7 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:226:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:232:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
          ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
          ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -86,7 +359,7 @@ In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRT
 D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
   BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
              ^
-../Sources/main.c:237:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
+../Sources/main.c:243:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
          ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
          ^
 In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
@@ -102,303 +375,6 @@ Invoking: Cross ARM C++ Linker
 arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
 Finished building target: DataLogger.elf
  
-12:24:38 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:204:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:226:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:237:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
-12:26:41 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:205:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:227:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:238:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
-12:29:14 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:208:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:230:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:241:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
-12:30:27 **** Incremental Build of configuration Debug for project DataLogger ****
+19:58:33 **** Incremental Build of configuration Debug for project DataLogger ****
 make -j4 all 
 make: Nothing to be done for 'all'.
-12:31:22 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-12:33:04 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:209:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:231:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:242:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
-12:34:58 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:209:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:231:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:242:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
-17:54:51 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/System" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/PDD" -I"D:/G ing informatica/TFG/GPS/DataLogger/Static_Code/IO_Map" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"D:/G ing informatica/TFG/GPS/DataLogger/Sources" -I"D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-../Sources/main.c: In function 'CharGPS':
-../Sources/main.c:97:2: warning: passing argument 1 of 'GPS_RecvChar' from incompatible pointer type [enabled by default]
-  do {err = GPS_RecvChar(&ch);
-  ^
-In file included from ../Sources/Events.h:43:0,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/GPS.h:188:6: note: expected 'GPS_TComData *' but argument is of type 'byte (*)[1]'
- byte GPS_RecvChar(GPS_TComData *Chr);
-      ^
-../Sources/main.c: In function 'main':
-../Sources/main.c:202:5: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-     ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:224:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-../Sources/main.c:235:9: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [enabled by default]
-         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-         ^
-In file included from D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/FRTOS1.h:258:0,
-                 from ../Sources/Events.h:55,
-                 from ../Sources/main.c:32:
-D:/G ing informatica/TFG/GPS/DataLogger/Generated_Code/task.h:363:13: note: expected 'TaskFunction_t' but argument is of type 'void (*)(void)'
-  BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-             ^
-Finished building: ../Sources/main.c
- 
-Building target: DataLogger.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"D:/G ing informatica/TFG/GPS/DataLogger/Project_Settings/Linker_Files" -Wl,-Map,"DataLogger.map" -specs=nano.specs -specs=nosys.specs -o "DataLogger.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Application.o ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AS1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BitIoLdd1.o ./Generated_Code/BitIoLdd2.o ./Generated_Code/CD1.o ./Generated_Code/CI2C1.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/ExtIntLdd1.o ./Generated_Code/FAT1.o ./Generated_Code/FRTOS1.o ./Generated_Code/FX1.o ./Generated_Code/GI2C1.o ./Generated_Code/GPS.o ./Generated_Code/KSDK1.o ./Generated_Code/LEDG.o ./Generated_Code/LEDR.o ./Generated_Code/LEDpin1.o ./Generated_Code/LEDpin2.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPS.o ./Generated_Code/SD1.o ./Generated_Code/SM1.o ./Generated_Code/SS1.o ./Generated_Code/TI1.o ./Generated_Code/TMOUT1.o ./Generated_Code/TU1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/TmDt1.o ./Generated_Code/UTIL1.o ./Generated_Code/UTIL2.o ./Generated_Code/WAIT1.o ./Generated_Code/croutine.o ./Generated_Code/event_groups.o ./Generated_Code/ff.o ./Generated_Code/heap_1.o ./Generated_Code/heap_2.o ./Generated_Code/heap_3.o ./Generated_Code/heap_4.o ./Generated_Code/heap_5.o ./Generated_Code/heap_useNewlib.o ./Generated_Code/list.o ./Generated_Code/mpu_wrappers.o ./Generated_Code/port.o ./Generated_Code/queue.o ./Generated_Code/tasks.o ./Generated_Code/timers.o   
-Finished building target: DataLogger.elf
- 
