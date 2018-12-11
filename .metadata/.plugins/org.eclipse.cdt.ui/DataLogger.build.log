@@ -1,6 +1,0 @@
-19:58:33 **** Incremental Build of configuration Debug for project DataLogger ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-
-19:58:34 Build Finished (took 911ms)
-
