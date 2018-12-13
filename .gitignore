@@ -1,4 +1,6 @@
 **metadata**
 *.log
 .metadata
-micarpeta
+Debug/
+.DataLogger*
+Generated_Code
