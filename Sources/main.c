@@ -103,11 +103,9 @@ void StorageOn(){
 
 void EscribeSD(char *cadena){
 	  UINT bandwidth;
-	  uint8_t buffer[48];
 	  char ch[1];
 	  int i;
 
-	  LEDR_Neg(); LEDG_Off();//rojo
 	  /* Abrir fichero */
 	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
 	    Err();
@@ -138,21 +136,22 @@ static void Acce(void) {
 static void Imprime (void) {
 	char ch;
 	int i;
+
 	StorageOn();
 	for(;;) {
-		LEDR_Neg(); LEDG_Off();//rojo
+		LEDR_Neg(); LEDG_Off();//led rojo
 		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
 			if (ch !='\n'){
 				cadena[i++] = ch;
 				cadena[i]=0;
 			}else{
 				cadena[i++] = '\n';
-				//if ((i>4 && cadena[3]=='R')||0){
+				if ((i>4 && cadena[3]=='R')){
 				/* Se ha recibido un dato. Se escribe por el puerto serie */
 				for(int j = 0; j < i; j++)
 					while(AS1_SendChar(cadena[j]) != ERR_OK) {}
 				EscribeSD(cadena);
-				//}
+				}
 				i=0;
 			}
 		}
@@ -164,7 +163,7 @@ static void CharGPS(void) {
 	char ch;
 	GPS_ClearRxBuf(); //limpiamos el buffer del gps
 	for(;;) {
-		LEDR_Off(); LEDG_Neg();
+		LEDR_Off(); LEDG_Neg(); //led verde
 	do {err = GPS_RecvChar(&ch);
 	   } while((err != ERR_OK));
 
@@ -214,17 +213,6 @@ int main(void)
       ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
     	  for(;;){} /* error! Probablemente sin memoria */
     	  }
-
-//    if (xTaskCreate(
-//      	   EscribeSD, /* función de la tarea*/
-//      	  "SD", /* nombre de la tarea para el kernel */
-//      	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
-//      	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-//      	  4,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
-//      	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
-//        ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
-//      	  for(;;){} /* error! Probablemente sin memoria */
-//      	  }
 
     if (xTaskCreate(
       	   Acce, /* función de la tarea*/
