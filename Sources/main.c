@@ -78,8 +78,8 @@
 #include "Application.h"
 
 
-const static byte longitud = 48;
-const static byte tamano   =  8;
+const static byte longitud = 1000;
+const static byte tamano   = 1;
 static FAT1_FATFS fileSystemObject;
 static FIL file;
 
@@ -151,15 +151,18 @@ static void Imprime (void) {
 	int i;
 	for(;;) {
 		LEDR_Neg(); LEDG_Off();//rojo
-		if(FRTOS1_xQueueReceive(caracteres, &ch ,(portTickType) 0xFFFFFFFF) == pdTRUE){
+		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
 			if (ch !='\n'){
 				str[i++] = ch;
 				str[i]=0;
 			}else{
+				str[i++] = '\n';
+				if ((i>4 && str[3]=='R')||0){
 				/* Se ha recibido un dato. Se escribe por el puerto serie */
 				for(int j = 0; j < i; j++)
 					while(AS1_SendChar(str[j]) != ERR_OK) {}
 				EscribeSD(str);
+				}
 				i=0;
 			}
 		}
@@ -168,7 +171,7 @@ static void Imprime (void) {
 
 static void CharGPS(void) {
 	byte err;
-	byte ch;
+	char ch;
 	GPS_ClearRxBuf(); //limpiamos el buffer del gps
 	for(;;) {
 		LEDR_Off(); LEDG_Neg();
