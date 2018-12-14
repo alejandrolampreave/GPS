@@ -103,8 +103,7 @@ void StorageOn(){
 
 void EscribeSD(char *cadena){
 	  UINT bandwidth;
-	  uint8_t buffer[48];//48
-	  //AS1_TComData ch;
+	  uint8_t buffer[48];
 	  char ch[1];
 	  int i;
 
@@ -117,20 +116,12 @@ void EscribeSD(char *cadena){
 	  if (FAT1_lseek(&file, f_size(&file)) != FR_OK || file.fptr != f_size(&file)) {
 	    Err();
 	  }
-	  /* Escribir la informacion */
-	  buffer[0] = '\0';
 
-	  //UTIL1_strcatNum16s(buffer, sizeof(buffer), (char)ch);
+	  /* Se escribe la cadena en la microSD */
 	  if (FAT1_write(&file, cadena, UTIL1_strlen(cadena), &bandwidth)!=FR_OK) {
 		  (void)FAT1_close(&file);
 		  Err();
 	  }
-
-
-
-	  /* Se ha recibido un dato. Se escribe en la SD */
-		 // for(i = 0; i < sizeof(ch); i++)
-		 // UTIL1_strcat(buffer, sizeof(buffer), ch[i]);
 
 	  /* Cerrar el fichero */
 	  (void)FAT1_close(&file);
@@ -140,9 +131,7 @@ static void Acce(void) {
 	word x;
 	for(;;) {
 		  FX1_Enable(); /* Activa el acelerometro */
-
 			x = FX1_GetX();
-			//FRTOS1_vTaskDelay(250/portTICK_RATE_MS);
 	}
 }
 
@@ -180,12 +169,6 @@ static void CharGPS(void) {
 	   } while((err != ERR_OK));
 
 	FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF);
-	//UTIL1_strcatNum16s(buffer, sizeof(buffer), (char)ch);
-	//GPS_RecvChar(&ch);
-	   //if(err != ERR_OK){
-		   //FRTOS1_xQueueSendToFront(caracteres, ch ,(portTickType) 100);//aqui pasa la mayoría del tiempo
-	   //}
-	  //FRTOS1_vTaskDelay(250/portTICK_RATE_MS);
 	}
 }
 
