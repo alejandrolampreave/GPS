@@ -83,7 +83,7 @@ const static byte tamano   = 1;
 static FAT1_FATFS fileSystemObject;
 static FIL file;
 
-char str[128];
+char cadena[128];
 
 static xQueueHandle caracteres;
 
@@ -101,13 +101,13 @@ void StorageOn(){
 	 Err();
 }
 
-void EscribeSD(char *str){
+void EscribeSD(char *cadena){
 	  UINT bandwidth;
 	  uint8_t buffer[48];//48
 	  //AS1_TComData ch;
 	  char ch[1];
 	  int i;
-	  for(;;) {
+
 	  LEDR_Neg(); LEDG_Off();//rojo
 	  /* Abrir fichero */
 	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
@@ -121,7 +121,7 @@ void EscribeSD(char *str){
 	  buffer[0] = '\0';
 
 	  //UTIL1_strcatNum16s(buffer, sizeof(buffer), (char)ch);
-	  if (FAT1_write(&file, str, UTIL1_strlen(str), &bandwidth)!=FR_OK) {
+	  if (FAT1_write(&file, cadena, UTIL1_strlen(cadena), &bandwidth)!=FR_OK) {
 		  (void)FAT1_close(&file);
 		  Err();
 	  }
@@ -134,7 +134,6 @@ void EscribeSD(char *str){
 
 	  /* Cerrar el fichero */
 	  (void)FAT1_close(&file);
-	}
 }
 
 static void Acce(void) {
@@ -155,16 +154,16 @@ static void Imprime (void) {
 		LEDR_Neg(); LEDG_Off();//rojo
 		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
 			if (ch !='\n'){
-				str[i++] = ch;
-				str[i]=0;
+				cadena[i++] = ch;
+				cadena[i]=0;
 			}else{
-				str[i++] = '\n';
-				if ((i>4 && str[3]=='R')||0){
+				cadena[i++] = '\n';
+				//if ((i>4 && cadena[3]=='R')||0){
 				/* Se ha recibido un dato. Se escribe por el puerto serie */
 				for(int j = 0; j < i; j++)
-					while(AS1_SendChar(str[j]) != ERR_OK) {}
-				EscribeSD(str);
-				}
+					while(AS1_SendChar(cadena[j]) != ERR_OK) {}
+				EscribeSD(cadena);
+				//}
 				i=0;
 			}
 		}
@@ -180,7 +179,7 @@ static void CharGPS(void) {
 	do {err = GPS_RecvChar(&ch);
 	   } while((err != ERR_OK));
 
-	FRTOS1_xQueueSendToBack(caracteres, &ch ,(portTickType) 100);
+	FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF);
 	//UTIL1_strcatNum16s(buffer, sizeof(buffer), (char)ch);
 	//GPS_RecvChar(&ch);
 	   //if(err != ERR_OK){
