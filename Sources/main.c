@@ -91,6 +91,16 @@ static void Err(void) {
   for(;;){}
 }
 
+void StorageOn(){
+/* Deteccion de la tarjeta SD: PTE6 con pull-down! */
+ PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+ PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
+
+ FAT1_Init();
+ if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) /* Comprueba el archivo del sistema */
+	 Err();
+}
+
 void EscribeSD(char *str){
 	  UINT bandwidth;
 	  uint8_t buffer[48];//48
@@ -98,15 +108,6 @@ void EscribeSD(char *str){
 	  char ch[1];
 	  int i;
 	  for(;;) {
-
-	  /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
-		  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
-		  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
-
-		  FAT1_Init();
-		  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) { /* Comprueba el archivo del sistema */
-			Err();
-		  }
 	  LEDR_Neg(); LEDG_Off();//rojo
 	  /* Abrir fichero */
 	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
@@ -149,6 +150,7 @@ static void Acce(void) {
 static void Imprime (void) {
 	char ch;
 	int i;
+	StorageOn();
 	for(;;) {
 		LEDR_Neg(); LEDG_Off();//rojo
 		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
