@@ -6387,85 +6387,85 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x00000a58       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
 OUTPUT(DataLogger.elf elf32-littlearm)
 
-.debug_info     0x00000000     0xf5d6
+.debug_info     0x00000000     0xf5a9
  .debug_info    0x00000000      0xb43 ./Static_Code/System/CPU_Init.o
  .debug_info    0x00000b43      0x8fa ./Static_Code/System/Vectors.o
  .debug_info    0x0000143d      0x28c ./Sources/Events.o
- .debug_info    0x000016c9      0x707 ./Sources/main.o
- .debug_info    0x00001dd0      0x3b0 ./Project_Settings/Startup_Code/startup.o
- .debug_info    0x00002180      0x221 ./Generated_Code/AS1.o
- .debug_info    0x000023a1      0x89d ./Generated_Code/ASerialLdd1.o
- .debug_info    0x00002c3e      0x9dc ./Generated_Code/ASerialLdd2.o
- .debug_info    0x0000361a      0x503 ./Generated_Code/BitIoLdd1.o
- .debug_info    0x00003b1d      0x503 ./Generated_Code/BitIoLdd2.o
- .debug_info    0x00004020      0x4bb ./Generated_Code/CD1.o
- .debug_info    0x000044db      0x8a2 ./Generated_Code/CI2C1.o
- .debug_info    0x00004d7d      0x17b ./Generated_Code/Cpu.o
- .debug_info    0x00004ef8      0x5fc ./Generated_Code/ExtIntLdd1.o
- .debug_info    0x000054f4      0x582 ./Generated_Code/FAT1.o
- .debug_info    0x00005a76       0xd5 ./Generated_Code/FRTOS1.o
- .debug_info    0x00005b4b      0x89b ./Generated_Code/FX1.o
- .debug_info    0x000063e6      0x6e1 ./Generated_Code/GI2C1.o
- .debug_info    0x00006ac7      0x5d8 ./Generated_Code/GPS.o
- .debug_info    0x0000709f      0x104 ./Generated_Code/LEDG.o
- .debug_info    0x000071a3      0x104 ./Generated_Code/LEDR.o
- .debug_info    0x000072a7      0x30f ./Generated_Code/PE_LDD.o
- .debug_info    0x000075b6      0x18a ./Generated_Code/PPS.o
- .debug_info    0x00007740      0x766 ./Generated_Code/SD1.o
- .debug_info    0x00007ea6      0x993 ./Generated_Code/SM1.o
- .debug_info    0x00008839      0x537 ./Generated_Code/SS1.o
- .debug_info    0x00008d70      0x18a ./Generated_Code/TI1.o
- .debug_info    0x00008efa      0x2bb ./Generated_Code/TMOUT1.o
- .debug_info    0x000091b5      0x647 ./Generated_Code/TU1.o
- .debug_info    0x000097fc      0x177 ./Generated_Code/TimerIntLdd1.o
- .debug_info    0x00009973      0xb04 ./Generated_Code/TmDt1.o
- .debug_info    0x0000a477      0x170 ./Generated_Code/WAIT1.o
- .debug_info    0x0000a5e7     0x238e ./Generated_Code/ff.o
- .debug_info    0x0000c975      0x306 ./Generated_Code/heap_4.o
- .debug_info    0x0000cc7b      0x2a8 ./Generated_Code/list.o
- .debug_info    0x0000cf23      0x35d ./Generated_Code/port.o
- .debug_info    0x0000d280      0xda1 ./Generated_Code/queue.o
- .debug_info    0x0000e021     0x15b5 ./Generated_Code/tasks.o
+ .debug_info    0x000016c9      0x6da ./Sources/main.o
+ .debug_info    0x00001da3      0x3b0 ./Project_Settings/Startup_Code/startup.o
+ .debug_info    0x00002153      0x221 ./Generated_Code/AS1.o
+ .debug_info    0x00002374      0x89d ./Generated_Code/ASerialLdd1.o
+ .debug_info    0x00002c11      0x9dc ./Generated_Code/ASerialLdd2.o
+ .debug_info    0x000035ed      0x503 ./Generated_Code/BitIoLdd1.o
+ .debug_info    0x00003af0      0x503 ./Generated_Code/BitIoLdd2.o
+ .debug_info    0x00003ff3      0x4bb ./Generated_Code/CD1.o
+ .debug_info    0x000044ae      0x8a2 ./Generated_Code/CI2C1.o
+ .debug_info    0x00004d50      0x17b ./Generated_Code/Cpu.o
+ .debug_info    0x00004ecb      0x5fc ./Generated_Code/ExtIntLdd1.o
+ .debug_info    0x000054c7      0x582 ./Generated_Code/FAT1.o
+ .debug_info    0x00005a49       0xd5 ./Generated_Code/FRTOS1.o
+ .debug_info    0x00005b1e      0x89b ./Generated_Code/FX1.o
+ .debug_info    0x000063b9      0x6e1 ./Generated_Code/GI2C1.o
+ .debug_info    0x00006a9a      0x5d8 ./Generated_Code/GPS.o
+ .debug_info    0x00007072      0x104 ./Generated_Code/LEDG.o
+ .debug_info    0x00007176      0x104 ./Generated_Code/LEDR.o
+ .debug_info    0x0000727a      0x30f ./Generated_Code/PE_LDD.o
+ .debug_info    0x00007589      0x18a ./Generated_Code/PPS.o
+ .debug_info    0x00007713      0x766 ./Generated_Code/SD1.o
+ .debug_info    0x00007e79      0x993 ./Generated_Code/SM1.o
+ .debug_info    0x0000880c      0x537 ./Generated_Code/SS1.o
+ .debug_info    0x00008d43      0x18a ./Generated_Code/TI1.o
+ .debug_info    0x00008ecd      0x2bb ./Generated_Code/TMOUT1.o
+ .debug_info    0x00009188      0x647 ./Generated_Code/TU1.o
+ .debug_info    0x000097cf      0x177 ./Generated_Code/TimerIntLdd1.o
+ .debug_info    0x00009946      0xb04 ./Generated_Code/TmDt1.o
+ .debug_info    0x0000a44a      0x170 ./Generated_Code/WAIT1.o
+ .debug_info    0x0000a5ba     0x238e ./Generated_Code/ff.o
+ .debug_info    0x0000c948      0x306 ./Generated_Code/heap_4.o
+ .debug_info    0x0000cc4e      0x2a8 ./Generated_Code/list.o
+ .debug_info    0x0000cef6      0x35d ./Generated_Code/port.o
+ .debug_info    0x0000d253      0xda1 ./Generated_Code/queue.o
+ .debug_info    0x0000dff4     0x15b5 ./Generated_Code/tasks.o
 
-.debug_abbrev   0x00000000     0x34a8
+.debug_abbrev   0x00000000     0x34a6
  .debug_abbrev  0x00000000      0x1ce ./Static_Code/System/CPU_Init.o
  .debug_abbrev  0x000001ce      0x103 ./Static_Code/System/Vectors.o
  .debug_abbrev  0x000002d1      0x107 ./Sources/Events.o
- .debug_abbrev  0x000003d8      0x1f7 ./Sources/main.o
- .debug_abbrev  0x000005cf      0x189 ./Project_Settings/Startup_Code/startup.o
- .debug_abbrev  0x00000758      0x131 ./Generated_Code/AS1.o
- .debug_abbrev  0x00000889      0x1c3 ./Generated_Code/ASerialLdd1.o
- .debug_abbrev  0x00000a4c      0x1db ./Generated_Code/ASerialLdd2.o
- .debug_abbrev  0x00000c27      0x14e ./Generated_Code/BitIoLdd1.o
- .debug_abbrev  0x00000d75      0x14e ./Generated_Code/BitIoLdd2.o
- .debug_abbrev  0x00000ec3      0x14e ./Generated_Code/CD1.o
- .debug_abbrev  0x00001011      0x1a5 ./Generated_Code/CI2C1.o
- .debug_abbrev  0x000011b6       0x93 ./Generated_Code/Cpu.o
- .debug_abbrev  0x00001249      0x15d ./Generated_Code/ExtIntLdd1.o
- .debug_abbrev  0x000013a6      0x1ad ./Generated_Code/FAT1.o
- .debug_abbrev  0x00001553       0x84 ./Generated_Code/FRTOS1.o
- .debug_abbrev  0x000015d7      0x1b5 ./Generated_Code/FX1.o
- .debug_abbrev  0x0000178c      0x1eb ./Generated_Code/GI2C1.o
- .debug_abbrev  0x00001977      0x211 ./Generated_Code/GPS.o
- .debug_abbrev  0x00001b88       0xc6 ./Generated_Code/LEDG.o
- .debug_abbrev  0x00001c4e       0xc6 ./Generated_Code/LEDR.o
- .debug_abbrev  0x00001d14      0x11c ./Generated_Code/PE_LDD.o
- .debug_abbrev  0x00001e30       0xb8 ./Generated_Code/PPS.o
- .debug_abbrev  0x00001ee8      0x235 ./Generated_Code/SD1.o
- .debug_abbrev  0x0000211d      0x1f3 ./Generated_Code/SM1.o
- .debug_abbrev  0x00002310      0x186 ./Generated_Code/SS1.o
- .debug_abbrev  0x00002496       0xb8 ./Generated_Code/TI1.o
- .debug_abbrev  0x0000254e       0xf8 ./Generated_Code/TMOUT1.o
- .debug_abbrev  0x00002646      0x16a ./Generated_Code/TU1.o
- .debug_abbrev  0x000027b0       0xdd ./Generated_Code/TimerIntLdd1.o
- .debug_abbrev  0x0000288d      0x1de ./Generated_Code/TmDt1.o
- .debug_abbrev  0x00002a6b       0xb1 ./Generated_Code/WAIT1.o
- .debug_abbrev  0x00002b1c      0x1ee ./Generated_Code/ff.o
- .debug_abbrev  0x00002d0a      0x17c ./Generated_Code/heap_4.o
- .debug_abbrev  0x00002e86       0xc1 ./Generated_Code/list.o
- .debug_abbrev  0x00002f47      0x131 ./Generated_Code/port.o
- .debug_abbrev  0x00003078      0x1a6 ./Generated_Code/queue.o
- .debug_abbrev  0x0000321e      0x28a ./Generated_Code/tasks.o
+ .debug_abbrev  0x000003d8      0x1f5 ./Sources/main.o
+ .debug_abbrev  0x000005cd      0x189 ./Project_Settings/Startup_Code/startup.o
+ .debug_abbrev  0x00000756      0x131 ./Generated_Code/AS1.o
+ .debug_abbrev  0x00000887      0x1c3 ./Generated_Code/ASerialLdd1.o
+ .debug_abbrev  0x00000a4a      0x1db ./Generated_Code/ASerialLdd2.o
+ .debug_abbrev  0x00000c25      0x14e ./Generated_Code/BitIoLdd1.o
+ .debug_abbrev  0x00000d73      0x14e ./Generated_Code/BitIoLdd2.o
+ .debug_abbrev  0x00000ec1      0x14e ./Generated_Code/CD1.o
+ .debug_abbrev  0x0000100f      0x1a5 ./Generated_Code/CI2C1.o
+ .debug_abbrev  0x000011b4       0x93 ./Generated_Code/Cpu.o
+ .debug_abbrev  0x00001247      0x15d ./Generated_Code/ExtIntLdd1.o
+ .debug_abbrev  0x000013a4      0x1ad ./Generated_Code/FAT1.o
+ .debug_abbrev  0x00001551       0x84 ./Generated_Code/FRTOS1.o
+ .debug_abbrev  0x000015d5      0x1b5 ./Generated_Code/FX1.o
+ .debug_abbrev  0x0000178a      0x1eb ./Generated_Code/GI2C1.o
+ .debug_abbrev  0x00001975      0x211 ./Generated_Code/GPS.o
+ .debug_abbrev  0x00001b86       0xc6 ./Generated_Code/LEDG.o
+ .debug_abbrev  0x00001c4c       0xc6 ./Generated_Code/LEDR.o
+ .debug_abbrev  0x00001d12      0x11c ./Generated_Code/PE_LDD.o
+ .debug_abbrev  0x00001e2e       0xb8 ./Generated_Code/PPS.o
+ .debug_abbrev  0x00001ee6      0x235 ./Generated_Code/SD1.o
+ .debug_abbrev  0x0000211b      0x1f3 ./Generated_Code/SM1.o
+ .debug_abbrev  0x0000230e      0x186 ./Generated_Code/SS1.o
+ .debug_abbrev  0x00002494       0xb8 ./Generated_Code/TI1.o
+ .debug_abbrev  0x0000254c       0xf8 ./Generated_Code/TMOUT1.o
+ .debug_abbrev  0x00002644      0x16a ./Generated_Code/TU1.o
+ .debug_abbrev  0x000027ae       0xdd ./Generated_Code/TimerIntLdd1.o
+ .debug_abbrev  0x0000288b      0x1de ./Generated_Code/TmDt1.o
+ .debug_abbrev  0x00002a69       0xb1 ./Generated_Code/WAIT1.o
+ .debug_abbrev  0x00002b1a      0x1ee ./Generated_Code/ff.o
+ .debug_abbrev  0x00002d08      0x17c ./Generated_Code/heap_4.o
+ .debug_abbrev  0x00002e84       0xc1 ./Generated_Code/list.o
+ .debug_abbrev  0x00002f45      0x131 ./Generated_Code/port.o
+ .debug_abbrev  0x00003076      0x1a6 ./Generated_Code/queue.o
+ .debug_abbrev  0x0000321c      0x28a ./Generated_Code/tasks.o
 
 .debug_aranges  0x00000000     0x1438
  .debug_aranges
@@ -6770,45 +6770,45 @@ OUTPUT(DataLogger.elf elf32-littlearm)
  .debug_macro   0x0003907a      0x2a0 ./Generated_Code/tasks.o
  .debug_macro   0x0003931a       0x10 ./Generated_Code/tasks.o
 
-.debug_line     0x00000000     0xfc52
+.debug_line     0x00000000     0xfc50
  .debug_line    0x00000000      0x8d2 ./Static_Code/System/CPU_Init.o
  .debug_line    0x000008d2      0xe7c ./Static_Code/System/Vectors.o
  .debug_line    0x0000174e      0x9e6 ./Sources/Events.o
- .debug_line    0x00002134      0xa2e ./Sources/main.o
- .debug_line    0x00002b62      0x3c1 ./Project_Settings/Startup_Code/startup.o
- .debug_line    0x00002f23      0x35b ./Generated_Code/AS1.o
- .debug_line    0x0000327e      0x4e5 ./Generated_Code/ASerialLdd1.o
- .debug_line    0x00003763      0x4fb ./Generated_Code/ASerialLdd2.o
- .debug_line    0x00003c5e      0x42e ./Generated_Code/BitIoLdd1.o
- .debug_line    0x0000408c      0x42e ./Generated_Code/BitIoLdd2.o
- .debug_line    0x000044ba      0x3fe ./Generated_Code/CD1.o
- .debug_line    0x000048b8      0x560 ./Generated_Code/CI2C1.o
- .debug_line    0x00004e18      0x806 ./Generated_Code/Cpu.o
- .debug_line    0x0000561e      0x429 ./Generated_Code/ExtIntLdd1.o
- .debug_line    0x00005a47      0x608 ./Generated_Code/FAT1.o
- .debug_line    0x0000604f      0x400 ./Generated_Code/FRTOS1.o
- .debug_line    0x0000644f      0x632 ./Generated_Code/FX1.o
- .debug_line    0x00006a81      0x526 ./Generated_Code/GI2C1.o
- .debug_line    0x00006fa7      0x9bd ./Generated_Code/GPS.o
- .debug_line    0x00007964      0x38d ./Generated_Code/LEDG.o
- .debug_line    0x00007cf1      0x38d ./Generated_Code/LEDR.o
- .debug_line    0x0000807e      0x758 ./Generated_Code/PE_LDD.o
- .debug_line    0x000087d6      0x750 ./Generated_Code/PPS.o
- .debug_line    0x00008f26      0x782 ./Generated_Code/SD1.o
- .debug_line    0x000096a8      0x839 ./Generated_Code/SM1.o
- .debug_line    0x00009ee1      0x437 ./Generated_Code/SS1.o
- .debug_line    0x0000a318      0x750 ./Generated_Code/TI1.o
- .debug_line    0x0000aa68      0x3cf ./Generated_Code/TMOUT1.o
- .debug_line    0x0000ae37      0x41f ./Generated_Code/TU1.o
- .debug_line    0x0000b256      0x411 ./Generated_Code/TimerIntLdd1.o
- .debug_line    0x0000b667      0x6f6 ./Generated_Code/TmDt1.o
- .debug_line    0x0000bd5d      0x38b ./Generated_Code/WAIT1.o
- .debug_line    0x0000c0e8     0x1538 ./Generated_Code/ff.o
- .debug_line    0x0000d620      0x4e3 ./Generated_Code/heap_4.o
- .debug_line    0x0000db03      0x439 ./Generated_Code/list.o
- .debug_line    0x0000df3c      0x534 ./Generated_Code/port.o
- .debug_line    0x0000e470      0xa02 ./Generated_Code/queue.o
- .debug_line    0x0000ee72      0xde0 ./Generated_Code/tasks.o
+ .debug_line    0x00002134      0xa2c ./Sources/main.o
+ .debug_line    0x00002b60      0x3c1 ./Project_Settings/Startup_Code/startup.o
+ .debug_line    0x00002f21      0x35b ./Generated_Code/AS1.o
+ .debug_line    0x0000327c      0x4e5 ./Generated_Code/ASerialLdd1.o
+ .debug_line    0x00003761      0x4fb ./Generated_Code/ASerialLdd2.o
+ .debug_line    0x00003c5c      0x42e ./Generated_Code/BitIoLdd1.o
+ .debug_line    0x0000408a      0x42e ./Generated_Code/BitIoLdd2.o
+ .debug_line    0x000044b8      0x3fe ./Generated_Code/CD1.o
+ .debug_line    0x000048b6      0x560 ./Generated_Code/CI2C1.o
+ .debug_line    0x00004e16      0x806 ./Generated_Code/Cpu.o
+ .debug_line    0x0000561c      0x429 ./Generated_Code/ExtIntLdd1.o
+ .debug_line    0x00005a45      0x608 ./Generated_Code/FAT1.o
+ .debug_line    0x0000604d      0x400 ./Generated_Code/FRTOS1.o
+ .debug_line    0x0000644d      0x632 ./Generated_Code/FX1.o
+ .debug_line    0x00006a7f      0x526 ./Generated_Code/GI2C1.o
+ .debug_line    0x00006fa5      0x9bd ./Generated_Code/GPS.o
+ .debug_line    0x00007962      0x38d ./Generated_Code/LEDG.o
+ .debug_line    0x00007cef      0x38d ./Generated_Code/LEDR.o
+ .debug_line    0x0000807c      0x758 ./Generated_Code/PE_LDD.o
+ .debug_line    0x000087d4      0x750 ./Generated_Code/PPS.o
+ .debug_line    0x00008f24      0x782 ./Generated_Code/SD1.o
+ .debug_line    0x000096a6      0x839 ./Generated_Code/SM1.o
+ .debug_line    0x00009edf      0x437 ./Generated_Code/SS1.o
+ .debug_line    0x0000a316      0x750 ./Generated_Code/TI1.o
+ .debug_line    0x0000aa66      0x3cf ./Generated_Code/TMOUT1.o
+ .debug_line    0x0000ae35      0x41f ./Generated_Code/TU1.o
+ .debug_line    0x0000b254      0x411 ./Generated_Code/TimerIntLdd1.o
+ .debug_line    0x0000b665      0x6f6 ./Generated_Code/TmDt1.o
+ .debug_line    0x0000bd5b      0x38b ./Generated_Code/WAIT1.o
+ .debug_line    0x0000c0e6     0x1538 ./Generated_Code/ff.o
+ .debug_line    0x0000d61e      0x4e3 ./Generated_Code/heap_4.o
+ .debug_line    0x0000db01      0x439 ./Generated_Code/list.o
+ .debug_line    0x0000df3a      0x534 ./Generated_Code/port.o
+ .debug_line    0x0000e46e      0xa02 ./Generated_Code/queue.o
+ .debug_line    0x0000ee70      0xde0 ./Generated_Code/tasks.o
 
 .debug_str      0x00000000    0xfc6ce
  .debug_str     0x00000000    0x8b71f ./Static_Code/System/CPU_Init.o

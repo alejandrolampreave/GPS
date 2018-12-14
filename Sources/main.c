@@ -103,7 +103,6 @@ void StorageOn(){
 
 void EscribeSD(char *cadena){
 	  UINT bandwidth;
-	  char ch[1];
 	  int i;
 
 	  /* Abrir fichero */
@@ -139,7 +138,7 @@ static void Imprime (void) {
 
 	StorageOn();
 	for(;;) {
-		LEDR_Neg(); LEDG_Off();//led rojo
+		LEDR_Neg(); LEDG_Off();//Led rojo
 		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
 			if (ch !='\n'){
 				cadena[i++] = ch;
@@ -182,7 +181,6 @@ int main(void)
   /* Write your local variable definition here */
  	caracteres=FRTOS1_xQueueCreate(longitud,tamano);
 	//int16_t x,y,z;
-	uint8_t ack;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
