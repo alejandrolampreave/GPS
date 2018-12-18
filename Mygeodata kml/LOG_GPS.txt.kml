@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>Tracks</name>
+</Folder>
+<Folder><name>Layer0</name>
+  <Placemark>
+	<name>Path</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#Layer0">
+		<SimpleData name="tessellate">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>-3.68874,42.349338 -3.688752,42.349345 -3.68876,42.349355 -3.688772,42.349363 -3.688787,42.349372 -3.688793,42.34938 -3.688797,42.34939 -3.688805,42.349407 -3.688817,42.349422 -3.688832,42.349437 -3.688827,42.349457</coordinates></LineString>
+  </Placemark>
+</Folder>
+<Folder><name>Points</name>
+  <Placemark>
+	<name>-0</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:23+00</SimpleData>
+		<SimpleData name="Field_4">Heading: 356.0 </SimpleData>
+		<SimpleData name="Field_5">Time: 2018-12-17T17:09:23Z </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349338 </SimpleData>
+		<SimpleData name="Field_3">Speed: 0.3 mph </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688740 </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.68874,42.349338</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-1</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:24+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.7 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 307.7 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349345 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2216.207 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688752 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:24Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688752,42.349345</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-2</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:25+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.5 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 328.4 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349355 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2220.801 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688760 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:25Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.68876,42.349355</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-3</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:26+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.4 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 314.0 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349363 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2224.738 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688772 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:26Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688772,42.349363</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-4</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:27+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.6 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 306.9 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349372 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2229.003 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688787 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:27Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688787,42.349372</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-5</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:28+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.7 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 329.4 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349380 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2234.580 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688793 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:28Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688793,42.34938</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-6</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:29+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.5 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 346.2 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349390 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2239.501 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688797 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:29Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688797,42.34939</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-7</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:30+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.4 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 339.7 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349407 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2245.079 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688805 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:30Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688805,42.349407</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-8</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:31+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.9 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 330.1 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349422 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2250.328 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688817 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:31Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688817,42.349422</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-9</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:32+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 0.9 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 323.5 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349437 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2255.906 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688832 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:32Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688832,42.349437</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-10</name>
+	<ExtendedData><SchemaData schemaUrl="#Points">
+		<SimpleData name="timestamp">2018/12/17 17:09:33+00</SimpleData>
+		<SimpleData name="Field_4">Speed: 5.1 mph </SimpleData>
+		<SimpleData name="Field_5">Heading: 10.5 </SimpleData>
+		<SimpleData name="Field_2">Latitude: 42.349457 </SimpleData>
+		<SimpleData name="Field_3">Altitude: 2262.139 ft </SimpleData>
+		<SimpleData name="Field_1">Longitude: -3.688827 </SimpleData>
+		<SimpleData name="Field_6">Time: 2018-12-17T17:09:33Z </SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.688827,42.349457</coordinates></Point>
+  </Placemark>
+</Folder>
+<Schema name="Layer0" id="Layer0">
+	<SimpleField name="tessellate" type="int"></SimpleField>
+</Schema>
+<Schema name="Points" id="Points">
+	<SimpleField name="timestamp" type="string"></SimpleField>
+	<SimpleField name="Field_4" type="string"></SimpleField>
+	<SimpleField name="Field_5" type="string"></SimpleField>
+	<SimpleField name="Field_2" type="string"></SimpleField>
+	<SimpleField name="Field_3" type="string"></SimpleField>
+	<SimpleField name="Field_1" type="string"></SimpleField>
+	<SimpleField name="Field_6" type="string"></SimpleField>
+</Schema>
+</Document></kml>
