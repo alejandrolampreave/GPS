@@ -47,6 +47,7 @@ map.on('load', function () {
         data: src
     });
 
+
      map.addLayer({
         'id': 'population',
         'type': 'circle',
@@ -64,7 +65,7 @@ map.on('load', function () {
         }
     });
 
-    map.addLayer({
+    map.addLayer({ //3D de los edificios
         'id': '3d-buildings',
         'source': 'composite',
         'source-layer': 'building',
@@ -89,7 +90,9 @@ map.on('load', function () {
             'fill-extrusion-opacity': .6
         }
     }, labelLayerId);
-    
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl()); 
 
 });
 
