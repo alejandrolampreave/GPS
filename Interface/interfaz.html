@@ -14,97 +14,14 @@
 </head>
 <body>
 
-
-<div id='map'> 
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWxlamFuZHJvbGFtcHJlYXZlIiwiYSI6ImNqcHFzbHBzbTB4NHc0NW9nbjJ5eDNqbmgifQ.TbEYVxeQlVtCp93MXTAZJQ';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 16,
-    center: [-3.689192, 42.349850], 
-    pitch: 20,
-});
-
-//https://raw.githubusercontent.com/alejandrolampreave/GPS/master/Mygeodata%20gjson/mygeodata_merged.json
-var src = "https://raw.githubusercontent.com/alejandrolampreave/GPS/master/Mygeodata%20gjson/LOG_GPS_NMEA.txt.kml-Tracks-Layer0.geojson"
-
-map.on('load', function () {
-
-    var layers = map.getStyle().layers;
-
-    var labelLayerId;
-    for (var i = 0; i < layers.length; i++) {
-        if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-            labelLayerId = layers[i].id;
-            break;
-        }
-    }
-    
-
-     map.addSource("my_data", {
-        type: "geojson",
-        data: src
-    });
-
-
-     map.addLayer({
-        'id': 'population',
-        'type': 'circle',
-        source: 'my_data',
-        // 'source-layer': 'my_data',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                'base': 1.75,
-                'stops': [[12, 2], [22, 180]]
-            },
-            // color circles by ethnicity, using a match expression
-            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': '#f00'
-        }
-    });
-
-    map.addLayer({ //3D de los edificios
-        'id': '3d-buildings',
-        'source': 'composite',
-        'source-layer': 'building',
-        'filter': ['==', 'extrude', 'true'],
-        'type': 'fill-extrusion',
-        'minzoom': 15,
-        'paint': {
-            'fill-extrusion-color': '#aaa',
-
-            // use an 'interpolate' expression to add a smooth transition effect to the
-            // buildings as the user zooms in
-            'fill-extrusion-height': [
-                "interpolate", ["linear"], ["zoom"],
-                15, 0,
-                15.05, ["get", "height"]
-            ],
-            'fill-extrusion-base': [
-                "interpolate", ["linear"], ["zoom"],
-                10, 0,
-                15.05, ["get", "min_height"]
-            ],
-            'fill-extrusion-opacity': .6
-        }
-    }, labelLayerId);
-
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl()); 
-
-});
-
-</script>
-</div>
-
 <div id='upload'>
-<form action="upload_file.php" method="post" enctype="multipart/form-data">
+    <form action="upload_file.php" method="post" enctype="multipart/form-data">
             <input type="file" name="archivo" id="archivo"></input>
             <input type="submit" value="Subir archivo"></input>
-        </form>
+            
+    </form>
 </div>
+
 
 </body>
 </html>
