@@ -1,24 +1,49 @@
 <?php
+/*
+* Script que se encarga de subir un fichero al servidor en formato GeoJSON.
+* @author Alejandro Fernández Lampreave.
+*/
+
 if ($_FILES['archivo']["error"] > 0)
   {
   echo "Error: " . $_FILES['archivo']['error'] . "<br>";
   }
 else
   {
-  echo "Nombre: " . $_FILES['archivo']['name'] . "<br>";
+  echo "Nombre: " . $_FILES['archivo']['name'] . "<br>"; //nombre del archivo + extension.
   echo "Tipo: " . $_FILES['archivo']['type'] . "<br>";
   echo "Tamaño: " . ($_FILES["archivo"]["size"] / 1024) . " kB<br>";
-  echo "Carpeta temporal: " . $_FILES['archivo']['tmp_name'];
- 
-  $movido=move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
+  echo "Carpeta temporal: " . $_FILES['archivo']['tmp_name'] . "<br>";
+  
+/*
+* Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
+* temporales donde se almacena por defecto, a la carpeta donde almacenamos 
+* nuestros archivos (subidas).
+* move_uploaded_file(string $rutaArchivo , string $destino+nombredeseado);
+*/
+$movido=move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
 if( $movido ) {
   echo "Movido a la carpeta subidas";         
 } else {
   echo "No se ha podido mover el archivo deseado";
 }
 
-//shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
+/*
+*Segundo, vamos a llamar a un script hecho en Python que se encarga de 
+*transformar los mensajes NMEA a GeoJSON.
+*De no tener python configurado en el path, indicar donde esta instalado,
+*ej: C:/Users/Alejandro/Anaconda3/python
+*shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
 shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
+  	
+  
+
+//si no gacemos un formulario, pasando la variable que deseemos.
+//<a href="http://url.pagina.destino/?variable1=valor1&variable2=valor2">Enlace a página de destino</a>
+
+ //En caso de querer volver a la página de origen directamente
+ //header("Location: interfaz.php");
+
 
 $compressed = new ZipArchive; 
 $flag = $compressed->open('mygeodata.zip');
