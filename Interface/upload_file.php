@@ -17,5 +17,8 @@ if( $movido ) {
   echo "No se ha podido mover el archivo deseado";
 }
 
+//shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
+shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
+
 }
 ?>
