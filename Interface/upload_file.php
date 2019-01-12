@@ -20,5 +20,15 @@ if( $movido ) {
 //shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
 shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
 
+$compressed = new ZipArchive; 
+$flag = $compressed->open('mygeodata.zip');
+if ($flag === TRUE) {
+  $compressed->extractTo('./mygeodata');
+  $compressed->close();
+  // Archivo descomprimido.
+} else {
+   // Error en la descompresión...
+}
+
 }
 ?>
