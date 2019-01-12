@@ -9,7 +9,7 @@
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:60%; float:left; }
-        #coordenadas {  display:inline-block; top:0; bottom:0;  float:right; }
+        #upload {  display:inline-block; top:0; bottom:0;  float:right; }
     </style>
 </head>
 <body>
@@ -97,6 +97,13 @@ map.on('load', function () {
 });
 
 </script>
+</div>
+
+<div id='upload'>
+<form action="upload_file.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="archivo" id="archivo"></input>
+            <input type="submit" value="Subir archivo"></input>
+        </form>
 </div>
 
 </body>
