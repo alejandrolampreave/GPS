@@ -85,8 +85,8 @@ var map = new mapboxgl.Map({
 });
 
 //https://raw.githubusercontent.com/alejandrolampreave/GPS/master/Mygeodata%20gjson/mygeodata_merged.json
-var src = "./mygeodata/"+"<?php echo $_FILES['archivo']['name'] ?>"+".kml-Tracks-Layer0.geojson"
-
+var extension = ".kml-Tracks-Layer0.geojson";
+var src = "./mygeodata/" + "<?php echo $_FILES['archivo']['name'] ?>" + extension;
 
 map.on('load', function () {
 
