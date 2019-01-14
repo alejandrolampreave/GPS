@@ -103,7 +103,6 @@ void StorageOn(){
 
 void EscribeSD(char *cadena){
 	  UINT bandwidth;
-	  int i;
 
 	  /* Abrir fichero */
 	  if (FAT1_open(&file, "./log_gps.txt", FA_OPEN_ALWAYS|FA_WRITE)!=FR_OK) {
@@ -191,7 +190,7 @@ int main(void)
 
 
   if (xTaskCreate(
-  	   CharGPS, /* función de la tarea*/
+  	   CharGPS, /* Introduce en la cadena de caracteres lo que recibe del módulo GPS*/
   	  "gps", /* nombre de la tarea para el kernel */
   	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
   	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
@@ -202,7 +201,7 @@ int main(void)
   	  }
 
     if (xTaskCreate(
-    	   Imprime, /* función de la tarea*/
+    	   Imprime, /* Se encarga de sacar por pantalla los mensajes NMEA*/
     	  "print", /* nombre de la tarea para el kernel */
     	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
     	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
@@ -213,7 +212,7 @@ int main(void)
     	  }
 
     if (xTaskCreate(
-      	   Acce, /* función de la tarea*/
+      	   Acce, /* Recoge periodicamente los valores de las coordenadas del acelerómetro*/
       	  "Acc", /* nombre de la tarea para el kernel */
       	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
       	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
