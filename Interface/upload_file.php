@@ -79,7 +79,7 @@ if ($flag === TRUE) {
 
 <!--Botón para descargar la imagen del mapa--> 
 <div id="imagen">
-  <a id="enlaceDescarga" href="" download="map.png">Download map image</a> 
+  <a id="enlaceDescarga" href="" download="map.png">Descargar mapa</a> 
 </div>
 
 <div id='map'> 
