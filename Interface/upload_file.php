@@ -10,7 +10,6 @@ if ($_FILES['archivo']["error"] > 0)
   }
 else
   {
-    
   date_default_timezone_set('CET');
   $hoy = date("j-m-Y_H-i-s_");
   $_FILES['archivo']['name']=$hoy.$_FILES['archivo']['name'];
@@ -69,13 +68,19 @@ if ($flag === TRUE) {
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!--Librería para descargar la imagen--> 
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:60%; float:left; }
-        #upload {  display:inline-block; top:0; bottom:0;  float:right; }
+        #imagen {  display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em}
     </style>
 </head>
 <body>
+
+<!--Botón para descargar la imagen del mapa--> 
+<div id="imagen">
+  <a id="enlaceDescarga" href="" download="map.png">Download map image</a> 
+</div>
 
 <div id='map'> 
 <script>
@@ -86,6 +91,7 @@ var map = new mapboxgl.Map({
     zoom: 16,
     center: [-3.689192, 42.349850], 
     pitch: 20,
+    preserveDrawingBuffer: true,
 });
 
 //https://raw.githubusercontent.com/alejandrolampreave/GPS/master/Mygeodata%20gjson/mygeodata_merged.json
@@ -156,6 +162,11 @@ map.on('load', function () {
     // Añadir botonera de zoom y rotación del mapa. 
     map.addControl(new mapboxgl.NavigationControl()); 
 
+    //Obtener la imagen del mapa mostrado en pantala.
+    $('#enlaceDescarga').click(function() {
+        var img = map.getCanvas().toDataURL('image/png')
+        this.href = img
+    })
 });
 
 </script>
