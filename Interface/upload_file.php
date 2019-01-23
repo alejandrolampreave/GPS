@@ -73,6 +73,7 @@ if ($flag === TRUE) {
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:60%; float:left; }
         #imagen {  display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em}
+        #volar {display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em }
     </style>
 </head>
 <body>
@@ -81,6 +82,8 @@ if ($flag === TRUE) {
 <div id="imagen">
   <a id="enlaceDescarga" href="" download="map.png">Descargar mapa</a> 
 </div>
+<!--Botón para volar a tu posición--> 
+<button id='volar'>Fly</button>
 
 <div id='map'> 
 <script>
@@ -167,6 +170,17 @@ map.on('load', function () {
         var img = map.getCanvas().toDataURL('image/png')
         this.href = img
     })
+
+    //Geolocalizar tu posición y centrar el mapa en ella.
+    document.getElementById('volar').addEventListener('click', function () {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        'use strict';
+        map.flyTo({center: [position.coords.longitude,
+            position.coords.latitude], zoom: 14});
+      });
+    }
+    });
 });
 
 </script>
