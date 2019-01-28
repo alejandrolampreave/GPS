@@ -13,10 +13,10 @@ else
   date_default_timezone_set('CET');
   $hoy = date("j-m-Y_H-i-s_");
   $_FILES['archivo']['name']=$hoy.$_FILES['archivo']['name'];
-  echo "Nombre: " . $_FILES['archivo']['name'] . "<br>"; //nombre del archivo + extension.
-  echo "Tipo: " . $_FILES['archivo']['type'] . "<br>";
-  echo "Tamaño: " . ($_FILES["archivo"]["size"] / 1024) . " kB<br>";
-  echo "Carpeta temporal: " . $_FILES['archivo']['tmp_name'] . "<br>";
+  //echo "Nombre: " . $_FILES['archivo']['name'] . "<br>"; //nombre del archivo + extension.
+  //echo "Tipo: " . $_FILES['archivo']['type'] . "<br>";
+  //echo "Tamaño: " . ($_FILES["archivo"]["size"] / 1024) . " kB<br>";
+  //echo "Carpeta temporal: " . $_FILES['archivo']['tmp_name'] . "<br>";
   
 /*
 * Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
@@ -26,7 +26,7 @@ else
 */
 $movido=move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
 if( $movido ) {
-  echo "Movido a la carpeta subidas";         
+  //echo "Movido a la carpeta subidas";         
 } else {
   echo "No se ha podido mover el archivo deseado";
 }
@@ -69,21 +69,26 @@ if ($flag === TRUE) {
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!--Librería para descargar la imagen--> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> <!--Libreria botones-->
+
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:60%; float:left; }
-        #imagen {  display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em}
-        #volar {display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em }
+        #map { position:fixed; top:2.8em; bottom:0; width:100%; float:left;}
+        #imagen {  display:inline-block; top:0; bottom:0;  float:right; margin-right: 1em }
+        #volar {position:relative; display:inline-block; top:0; bottom:0;  float:left; margin-left: 1em }
+        #home {position:relative; display:inline-block; top:0; bottom:0;  float:left; margin-left: 1em }
     </style>
 </head>
 <body>
 
 <!--Botón para descargar la imagen del mapa--> 
 <div id="imagen">
-  <a id="enlaceDescarga" href="" download="map.png">Descargar mapa</a> 
+  <a class="btn btn-success" id="enlaceDescarga" href="" download="map.png">Descargar mapa</a> 
 </div>
 <!--Botón para volar a tu posición--> 
-<button id='volar'>Fly</button>
+<button class="btn btn-success" id='volar'>Centrar en mi posición</button>
+<!--Regresar a la página de inicio-->
+<a class="btn btn-success" id="home" href="index.html">Volver a inicio</a>
 
 <div id='map'> 
 <script>
