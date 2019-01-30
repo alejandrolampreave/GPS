@@ -1891,7 +1891,7 @@
       <group name="Memory">
         <boolgroup name="Dynamic Allocation" v="Enabled">
           <Application_allocated_Heap v="no" />
-          <Heap_Size v="16384" />
+          <Heap_Size v="8192" />
           <Linker_Heap_Base_Symbol v="__HeapBase" />
           <Linker_Heap_Limit_Symbol v="__HeapLimit" />
           <Linker_Heap_Size_Symbol v="__heap_size" />
@@ -2057,6 +2057,110 @@
       </event>
       <event name="vOnPreSleepProcessing" v="don&amp;apos;t generate code" />
       <event name="vOnPostSleepProcessing" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="FAT2" type="FAT_FileSystem">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FAT2" />
+      <FatFs_Version v="R0.12 (Patch 3, 29-April-2016)" />
+      <Tiny v="no" />
+      <Volumes v="1" />
+      <list name="Drives" v="1">
+        <Drive0 v="SD1" />
+      </list>
+      <FS_MINIMIZE v="0" />
+      <Maximum_Sector_Size v="512" />
+      <Relative_Path v="Enabled with f_getcwd()" />
+      <Code_Page v="U.S. (OEM)" />
+      <File_Sharing v="0" />
+      <Multipartion v="no" />
+      <Fast_Seek v="yes" />
+      <Use_Find v="Disable (0)" />
+      <String_Functions v="enable" />
+      <group name="LFN">
+        <Use_LFN v="Disable" />
+        <exFAT v="no" />
+        <Max_LFN_Length v="255" />
+        <LFN_Unicode v="no" />
+      </group>
+      <boolgroup name="Write enabled" v="Enabled">
+        <boolgroup name="Use TimeDate" v="Enabled">
+          <Realtime_clock v="TmDt1" />
+        </boolgroup>
+      </boolgroup>
+      <boolgroup name="Reentrant" v="Disabled" />
+      <Utility v="UTIL1" />
+      <boolgroup name="Shell" v="Disabled" />
+    </Properties>
+    <Methods>
+      <open v="generate code" />
+      <close v="generate code" />
+      <read v="generate code" />
+      <write v="generate code" />
+      <opendir v="generate code" />
+      <readdir v="generate code" />
+      <lseek v="generate code" />
+      <unlink v="generate code" />
+      <mount v="generate code" />
+      <getfree v="generate code" />
+      <sync v="generate code" />
+      <rename v="generate code" />
+      <isWriteProtected v="generate code" />
+      <isDiskPresent v="generate code" />
+      <mkdir v="generate code" />
+      <chmod v="generate code" />
+      <truncate v="generate code" />
+      <stat v="generate code" />
+      <utime v="generate code" />
+      <mkfs v="generate code" />
+      <forward v="don&amp;apos;t generate code" />
+      <chdir v="generate code" />
+      <chdrive v="generate code" />
+      <getcwd v="generate code" />
+      <errFResultMsg v="generate code" />
+      <errDResultMsg v="generate code" />
+      <f_gets v="generate code" />
+      <f_puts v="generate code" />
+      <f_putc v="generate code" />
+      <f_printf v="generate code" />
+      <f_eof v="generate code" />
+      <f_error v="generate code" />
+      <f_tell v="generate code" />
+      <f_size v="generate code" />
+      <f_getlabel v="generate code" />
+      <f_setlabel v="generate code" />
+      <f_expand v="generate code" />
+      <f_findfirst v="generate code" />
+      <f_findnext v="generate code" />
+      <f_opendir v="generate code" />
+      <f_readdir v="generate code" />
+      <f_closedir v="generate code" />
+      <get_fattime v="generate code" />
+      <ParseCommand v="don&amp;apos;t generate code" />
+      <CheckCardPresence v="don&amp;apos;t generate code" />
+      <MountFileSystem v="don&amp;apos;t generate code" />
+      <UnMountFileSystem v="don&amp;apos;t generate code" />
+      <PrintDirectory v="don&amp;apos;t generate code" />
+      <CopyFile v="don&amp;apos;t generate code" />
+      <DeleteFile v="don&amp;apos;t generate code" />
+      <CreateFile v="don&amp;apos;t generate code" />
+      <PrintFile v="don&amp;apos;t generate code" />
+      <PrintHexFile v="don&amp;apos;t generate code" />
+      <MakeDirectory v="don&amp;apos;t generate code" />
+      <ChangeDirectory v="don&amp;apos;t generate code" />
+      <RenameFile v="don&amp;apos;t generate code" />
+      <PrintSector v="don&amp;apos;t generate code" />
+      <PrintDiskInfo v="don&amp;apos;t generate code" />
+      <Benchmark v="don&amp;apos;t generate code" />
+      <Deinit v="generate code" />
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnIdle" v="don&amp;apos;t generate code" />
+      <event name="OnSchedule" v="don&amp;apos;t generate code" />
+      <event name="OnCreateSyncObject" v="don&amp;apos;t generate code" />
     </Events>
   </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>

@@ -78,13 +78,14 @@
 #include "Application.h"
 
 
-const static byte longitud = 1000;
+const static byte longitud = 255;
 const static byte tamano   = 1;
 static FAT1_FATFS fileSystemObject;
+
 static FIL file;
-
+static FIL file2;
+int16_t x,y,z;
 char cadena[128];
-
 static xQueueHandle caracteres;
 
 static void Err(void) {
@@ -95,7 +96,7 @@ void StorageOn(){
 /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
-
+/* Se inicializa el sistema de almacenamiento*/
  FAT1_Init();
  if (FAT1_mount(&fileSystemObject, "0", 1) != FR_OK) /* Comprueba el archivo del sistema */
 	 Err();
@@ -123,11 +124,20 @@ void EscribeSD(char *cadena){
 	  (void)FAT1_close(&file);
 }
 
+
+
 static void Acce(void) {
-	word x;
+	FX1_Enable(); //Activa el acelerometro
+	/* Calibra los diferentes ejes, suponiendo 0G en 'x' e 'y' y la fuerza
+	 * normal de la gravedad 1G en el 'z' */
+	FX1_CalibrateX1g();
+	FX1_CalibrateY1g();
+	FX1_CalibrateZ1g();
 	for(;;) {
-		  FX1_Enable(); /* Activa el acelerometro */
-			x = FX1_GetX();
+		  x = FX1_GetX();
+		  y = FX1_GetY();
+		  z = FX1_GetZ();
+		  vTaskDelay(500/portTICK_RATE_MS);
 	}
 }
 
@@ -137,18 +147,19 @@ static void Imprime (void) {
 
 	StorageOn();
 	for(;;) {
-		LEDR_Neg(); LEDG_Off();//Led rojo
 		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
 			if (ch !='\n'){
 				cadena[i++] = ch;
 				cadena[i]=0;
 			}else{
-				cadena[i++] = '\n';
+				cadena[i++] = ch;
 				if ((i>4 && cadena[3]=='R')){
-				/* Se ha recibido un dato. Se escribe por el puerto serie */
-				for(int j = 0; j < i; j++)
-					while(AS1_SendChar(cadena[j]) != ERR_OK) {}
-				EscribeSD(cadena);
+					for(int j = 0; j < i; j++)
+						while(AS1_SendChar(cadena[j]) != ERR_OK) {} //Se escribe por el puerto serie.
+					if( x>500 || x<-500 || y>500 || y<-500 ){
+						LEDR_Neg(); LEDG_Off();//Led rojo
+						EscribeSD(cadena);
+					}
 				}
 				i=0;
 			}
@@ -159,17 +170,15 @@ static void Imprime (void) {
 static void CharGPS(void) {
 	byte err;
 	char ch;
+
 	GPS_ClearRxBuf(); //limpiamos el buffer del gps
 	for(;;) {
 		LEDR_Off(); LEDG_Neg(); //led verde
-	do {err = GPS_RecvChar(&ch);
-	   } while((err != ERR_OK));
-
-	FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF);
+		do {err = GPS_RecvChar(&ch);
+		} while((err != ERR_OK));
+		FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF);
 	}
 }
-
-
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
 //#include "Application.h"
@@ -179,7 +188,6 @@ int main(void)
 {
   /* Write your local variable definition here */
  	caracteres=FRTOS1_xQueueCreate(longitud,tamano);
-	//int16_t x,y,z;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
@@ -194,7 +202,7 @@ int main(void)
   	  "gps", /* nombre de la tarea para el kernel */
   	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
   	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-  	  5,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+  	  3,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
   	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
     ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
   	  for(;;){} /* error! Probablemente sin memoria */
@@ -205,7 +213,7 @@ int main(void)
     	  "print", /* nombre de la tarea para el kernel */
     	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
     	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-    	  6,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+    	  2,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
     	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
       ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
     	  for(;;){} /* error! Probablemente sin memoria */
@@ -216,7 +224,7 @@ int main(void)
       	  "Acc", /* nombre de la tarea para el kernel */
       	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
       	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
-      	 1,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
+      	  4,/* prioridad de la tarea, cuanto más bajo es el número menor es la prioridad */
       	  NULL /* manejo de la tarea, NULL si ni se va a crear o destruir */
         ) != pdPASS) { /* devuelve pdPASS si se ha creado la tarea */
       	  for(;;){} /* error! Probablemente sin memoria */
