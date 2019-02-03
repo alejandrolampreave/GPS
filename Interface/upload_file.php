@@ -102,7 +102,6 @@ var map = new mapboxgl.Map({
     preserveDrawingBuffer: true,
 });
 
-//https://raw.githubusercontent.com/alejandrolampreave/GPS/master/Mygeodata%20gjson/mygeodata_merged.json
 var extension = ".kml-Tracks-Layer0.geojson";
 var src = "./mygeodata/" + "<?php echo $_FILES['archivo']['name'] ?>" + extension;
 
