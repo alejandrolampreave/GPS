@@ -13,10 +13,6 @@ else
   date_default_timezone_set('CET');
   $hoy = date("j-m-Y_H-i-s_");
   $_FILES['archivo']['name']=$hoy.$_FILES['archivo']['name'];
-  //echo "Nombre: " . $_FILES['archivo']['name'] . "<br>"; //nombre del archivo + extension.
-  //echo "Tipo: " . $_FILES['archivo']['type'] . "<br>";
-  //echo "Tamaño: " . ($_FILES["archivo"]["size"] / 1024) . " kB<br>";
-  //echo "Carpeta temporal: " . $_FILES['archivo']['tmp_name'] . "<br>";
   
 /*
 * Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
