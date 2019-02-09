@@ -83,7 +83,6 @@ const static byte tamano   = 1;
 static FAT1_FATFS fileSystemObject;
 
 static FIL file;
-static FIL file2;
 int16_t x,y,z;
 char cadena[128];
 static xQueueHandle caracteres;
@@ -130,8 +129,8 @@ static void Acce(void) {
 	FX1_Enable(); //Activa el acelerometro
 	/* Calibra los diferentes ejes, suponiendo 0G en 'x' e 'y' y la fuerza
 	 * normal de la gravedad 1G en el 'z' */
-	FX1_CalibrateX1g();
-	FX1_CalibrateY1g();
+	//FX1_CalibrateX1g();
+	//FX1_CalibrateY1g();
 	FX1_CalibrateZ1g();
 	for(;;) {
 		  x = FX1_GetX();
