@@ -4,36 +4,80 @@
 * @author Alejandro Fernández Lampreave.
 */
 
-if ($_FILES['archivo']["error"] > 0)
-  {
+function estxt() {
+  if ($_FILES['archivo']['type'] != 'text/plain'){ //diferente a un txt
+    throw new Exception();
+  } 
+  return true;
+}
+
+if ($_FILES['archivo']["error"] > 0){
   echo "Error: " . $_FILES['archivo']['error'] . "<br>";
+}
+else{
+  try{
+    estxt();
+    //echo 'Si ves esto el archivo es un txt';
+  }catch(Exception $e){
+    echo'<script type="text/javascript">
+        alert("Error en la subida del fichero. Por favor suba un fichero .txt");
+        window.location.href="index.html";
+        </script>'; 
   }
-else
-  {
   date_default_timezone_set('CET');
   $hoy = date("j-m-Y_H-i-s_");
   $_FILES['archivo']['name']=$hoy.$_FILES['archivo']['name'];
   
-/*
-* Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
-* temporales donde se almacena por defecto, a la carpeta donde almacenamos 
-* nuestros archivos (subidas).
-* move_uploaded_file(string $rutaArchivo , string $destino+nombredeseado);
-*/
-$movido=move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
-if( $movido ) {
-  //echo "Movido a la carpeta subidas";         
-} else {
-  echo "No se ha podido mover el archivo deseado";
-}
+  function esNMEA() {
+  $fichero = fopen("./subidas/".$_FILES['archivo']['name'], "r");
+      $linea = fgets($fichero);
+      if($linea[0]!="$"){
+        fclose($fichero);
+        throw new Exception();
+      }
+  fclose($fichero);
+  return true;
+  }
 
-/*
-*Segundo, vamos a llamar a un script hecho en Python que se encarga de 
-*transformar los mensajes NMEA a GeoJSON.
-*De no tener python configurado en el path, indicar donde esta instalado,
-*ej: C:/Users/Alejandro/Anaconda3/python
-*shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
-shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
+  /*
+  * Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
+  * temporales donde se almacena por defecto, a la carpeta donde almacenamos 
+  * nuestros archivos (subidas).
+  * move_uploaded_file(string $rutaArchivo , string $destino+nombredeseado);
+  */
+  try{
+  move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
+  }catch(Exception $e){
+    echo'<script type="text/javascript">
+        alert("Ha habido un error en la subida del fichero");
+        window.location.href="index.html";
+        </script>'; 
+  }
+
+  try {
+    esNMEA();
+    //echo "Movido a la carpeta subidas";
+  }catch(Exception $e){
+    echo'<script type="text/javascript">
+        alert("Por favor suba un fichero con formato NMEA");
+        window.location.href="index.html";
+        </script>'; 
+  }     
+
+  /*
+  *Segundo, vamos a llamar a un script hecho en Python que se encarga de 
+  *transformar los mensajes NMEA a GeoJSON.
+  *De no tener python configurado en el path, indicar donde esta instalado,
+  *ej: C:/Users/Alejandro/Anaconda3/python
+  *shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
+  try{
+  shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
+  }catch(Exception $e){
+    echo'<script type="text/javascript">
+        alert("No ha podido ejecutarse la conversión del archivo");
+        window.location.href="index.html";
+        </script>';     
+  }
   	
   
 
@@ -93,7 +137,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 16,
-    center: [-3.689192, 42.349850], 
+    center: [-3.688889, 42.352357], 
     pitch: 20,
     preserveDrawingBuffer: true,
 });
