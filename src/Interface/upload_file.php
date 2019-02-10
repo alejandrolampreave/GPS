@@ -16,8 +16,7 @@ if ($_FILES['archivo']["error"] > 0){
 }
 else{
   try{
-    estxt();
-    //echo 'Si ves esto el archivo es un txt';
+    estxt(); //comprobamos si es un archivo .txt
   }catch(Exception $e){
     echo'<script type="text/javascript">
         alert("Error en la subida del fichero. Por favor suba un fichero .txt");
@@ -78,25 +77,21 @@ else{
         window.location.href="index.html";
         </script>';     
   }
-  	
-  
 
-//si no gacemos un formulario, pasando la variable que deseemos.
-//<a href="http://url.pagina.destino/?variable1=valor1&variable2=valor2">Enlace a página de destino</a>
-
- //En caso de querer volver a la página de origen directamente
- //header("Location: interfaz.php");
-
-
-$compressed = new ZipArchive; 
-$flag = $compressed->open('mygeodata.zip');
-if ($flag === TRUE) {
-  $compressed->extractTo('./mygeodata');
-  $compressed->close();
-  // Archivo descomprimido.
-} else {
-   // Error en la descompresión...
-}
+  /*
+  *Descomprimimos el archivo generado por MyGeoData.
+  */
+  $compressed = new ZipArchive; 
+  $flag = $compressed->open('mygeodata.zip');
+  if ($flag === TRUE) {
+    $compressed->extractTo('./mygeodata');
+    $compressed->close();
+  } else { // Error en la descompresión...
+      echo'<script type="text/javascript">
+        alert("No ha podido ejecutarse la conversión del archivo");
+        window.location.href="index.html";
+        </script>'
+  }
 
 ?>
 
@@ -142,7 +137,7 @@ var map = new mapboxgl.Map({
     preserveDrawingBuffer: true,
 });
 
-var extension = ".kml-Tracks-Layer0.geojson";
+var extension = ".kml-Tracks-Layer0-Points.geojson";
 var src = "./mygeodata/" + "<?php echo $_FILES['archivo']['name'] ?>" + extension;
 
 map.on('load', function () {
@@ -166,15 +161,12 @@ map.on('load', function () {
         'id': 'population',
         'type': 'circle',
         source: 'my_data',
-        // 'source-layer': 'my_data',
         'paint': {
-            // make circles larger as the user zooms from z12 to z22
+            // hace los circulos mas grandes segun haces zoom, del 12 al z22
             'circle-radius': {
                 'base': 1.75,
                 'stops': [[12, 2], [22, 180]]
             },
-            // color circles by ethnicity, using a match expression
-            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
             'circle-color': '#f00'
         }
     });

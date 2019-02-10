@@ -8,10 +8,10 @@ interpretación de la API de mapbox que muestra los mapas.
 @author: Alejandro Fernández Lampreave
 '''
 
-import sys ##
+import sys 
 import requests
 import re
-miarchivo = sys.argv[1] ##
+miarchivo = sys.argv[1] 
 url = 'https://mygeodata.cloud/api/convert'
 files = {'file': open(miarchivo, 'rb')} 
 data = {'format': 'geojson', 'outcrs': 'EPSG:4326', 'outform': 'binary', 'key': '5PsoGucmRRD2h0c'}
@@ -21,10 +21,3 @@ fname = re.findall("filename=(.+)", d)[0]
 with open(fname, 'wb') as fd:
     for chunk in r.iter_content(1000):
         fd.write(chunk)
-
-
-# In[ ]:
-
-
-
-
