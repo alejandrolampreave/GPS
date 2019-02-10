@@ -103,7 +103,6 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\tasks.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\timers.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Project_Settings\Startup_Code\startup.c</PathName>
-      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Application.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Events.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\main.c</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\System\CPU_Init.c</PathName>
@@ -186,7 +185,6 @@
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\semphr.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\task.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Generated_Code\timers.h</PathName>
-      <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Application.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Sources\Events.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\IO_Map\MK64F12.h</PathName>
       <PathName>D:\G ing informatica\TFG\GPS\DataLogger\Static_Code\PDD\ADC_PDD.h</PathName>

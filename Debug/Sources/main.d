@@ -139,8 +139,7 @@ Sources/main.o: ../Sources/main.c \
  D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/Init_Config.h \
  D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/CPU_Config.h \
  D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/queue.h \
- D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/task.h \
- ../Sources/Application.h
+ D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/task.h
 
 D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/Cpu.h:
 
@@ -423,5 +422,3 @@ D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/CPU_Config.h:
 D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/queue.h:
 
 D:/G\ ing\ informatica/TFG/GPS/DataLogger/Generated_Code/task.h:
-
-../Sources/Application.h:

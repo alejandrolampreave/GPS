@@ -15,6 +15,7 @@
 ** ###################################################################*/
 /*!
 ** @file main.c
+** @author Alejandro Fernandez Lampreave
 ** @version 01.01
 ** @brief
 **         Main module.
@@ -75,7 +76,6 @@
 #include <queue.h>
 #include "KSDK1.h"
 #include "task.h"
-#include "Application.h"
 
 
 const static byte longitud = 255;
@@ -91,6 +91,10 @@ static void Err(void) {
   for(;;){}
 }
 
+/*
+ * Procedimiento encargado de inicializar el sistema de ficheros y deteccion
+ * de tarjeta
+ */
 void StorageOn(){
 /* Deteccion de la tarjeta SD: PTE6 con pull-down! */
  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
@@ -101,6 +105,10 @@ void StorageOn(){
 	 Err();
 }
 
+/*
+ * Procedimiento encargado de escribir en la tarjeta una cadena dada.
+ * @param cadena Cadena que contiene los caracteres del GPS
+ */
 void EscribeSD(char *cadena){
 	  UINT bandwidth;
 
@@ -123,30 +131,33 @@ void EscribeSD(char *cadena){
 	  (void)FAT1_close(&file);
 }
 
-
-
+/*
+ * Tarea que actualiza los valores de los ejes en cada instante.
+ */
 static void Acce(void) {
 	FX1_Enable(); //Activa el acelerometro
 	/* Calibra los diferentes ejes, suponiendo 0G en 'x' e 'y' y la fuerza
 	 * normal de la gravedad 1G en el 'z' */
-	//FX1_CalibrateX1g();
-	//FX1_CalibrateY1g();
 	FX1_CalibrateZ1g();
 	for(;;) {
 		  x = FX1_GetX();
 		  y = FX1_GetY();
 		  z = FX1_GetZ();
-		  vTaskDelay(500/portTICK_RATE_MS);
+		  vTaskDelay(500/portTICK_RATE_MS); //retraso de 1s
 	}
 }
 
+/*
+ * Tarea que imprime los caracteres, tanto por una terminal, como en la
+ * tarjeta.
+ */
 static void Imprime (void) {
 	char ch;
 	int i;
 
 	StorageOn();
 	for(;;) {
-		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){
+		if(FRTOS1_xQueueReceive(caracteres, &ch ,10000) == pdTRUE){ //si se recibe caracter de la cola
 			if (ch !='\n'){
 				cadena[i++] = ch;
 				cadena[i]=0;
@@ -166,6 +177,9 @@ static void Imprime (void) {
 	}
 }
 
+/*
+ * Tarea encargada de introducir al final de la cola los caracteres del GPS.
+ */
 static void CharGPS(void) {
 	byte err;
 	char ch;
@@ -175,7 +189,7 @@ static void CharGPS(void) {
 		LEDR_Off(); LEDG_Neg(); //led verde
 		do {err = GPS_RecvChar(&ch);
 		} while((err != ERR_OK));
-		FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF);
+		FRTOS1_xQueueSendToBack(caracteres, &ch , (portTickType) 0xFFFFFFFF); //metemos el caracter a la cola
 	}
 }
 
@@ -208,7 +222,7 @@ int main(void)
   	  }
 
     if (xTaskCreate(
-    	   Imprime, /* Se encarga de sacar por pantalla los mensajes NMEA*/
+    	   Imprime, /* Se encarga de sacar por pantalla y de escibir los mensajes NMEA*/
     	  "print", /* nombre de la tarea para el kernel */
     	  configMINIMAL_STACK_SIZE, /* tamaño pila asociada a la tarea */
     	  (void*)NULL, /*puntero a los parámetros iniciales de la tarea */
