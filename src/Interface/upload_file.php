@@ -42,7 +42,7 @@ else{
   * Primero, movemos el archivo con formato NMEA que hemos subido de la carpeta de
   * temporales donde se almacena por defecto, a la carpeta donde almacenamos 
   * nuestros archivos (subidas).
-  * move_uploaded_file(string $rutaArchivo , string $destino+nombredeseado);
+  * move_uploaded_file(string $rutaArchivo , string $destino+nombredeseado)
   */
   try{
   move_uploaded_file($_FILES['archivo']['tmp_name'],"subidas/" . $_FILES['archivo']['name']);
@@ -55,7 +55,6 @@ else{
 
   try {
     esNMEA();
-    //echo "Movido a la carpeta subidas";
   }catch(Exception $e){
     echo'<script type="text/javascript">
         alert("Por favor suba un fichero con formato NMEA");
@@ -68,7 +67,7 @@ else{
   *transformar los mensajes NMEA a GeoJSON.
   *De no tener python configurado en el path, indicar donde esta instalado,
   *ej: C:/Users/Alejandro/Anaconda3/python
-  *shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo);*/
+  *shell_exec('/path/to/python /path/to/your/script.py ' . $nombreArchivo)*/
   try{
   shell_exec('python ./subidas/convert_NMEA-GeoJSON.py ./subidas/'.$_FILES['archivo']['name'] );
   }catch(Exception $e){
@@ -86,7 +85,7 @@ else{
   if ($flag === TRUE) {
     $compressed->extractTo('./mygeodata');
     $compressed->close();
-  } else { // Error en la descompresión...
+  }else { // Error en la descompresión...
       echo'<script type="text/javascript">
         alert("No ha podido ejecutarse la conversión del archivo");
         window.location.href="index.html";

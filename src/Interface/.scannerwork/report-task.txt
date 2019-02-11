@@ -3,5 +3,5 @@ projectKey=alejandrolampreave_GPS
 serverUrl=https://sonarcloud.io
 serverVersion=7.7.0.21686
 dashboardUrl=https://sonarcloud.io/dashboard?id=alejandrolampreave_GPS
-ceTaskId=AWi-omXR1T0eadXyTQLG
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWi-omXR1T0eadXyTQLG
+ceTaskId=AWjdi6PlfKyRSqG24fXJ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWjdi6PlfKyRSqG24fXJ
