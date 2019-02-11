@@ -89,7 +89,7 @@ else{
       echo'<script type="text/javascript">
         alert("No ha podido ejecutarse la conversión del archivo");
         window.location.href="index.html";
-        </script>'
+        </script>';
   }
 
 ?>
