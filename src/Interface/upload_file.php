@@ -136,6 +136,9 @@ var map = new mapboxgl.Map({
     preserveDrawingBuffer: true,
 });
 
+/*Mofificamos el ratio de píxeles lógicos que hay por píxel físico, de forma 
+*que podamos sobrepasar el máximo permitido por la API de mapbox para su
+*posterior descarga en alta resolución*/
 var dpi = 300;
 Object.defineProperty(window, 'devicePixelRatio', {
     get: function() {return dpi / 96}
