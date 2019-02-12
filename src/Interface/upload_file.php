@@ -136,6 +136,11 @@ var map = new mapboxgl.Map({
     preserveDrawingBuffer: true,
 });
 
+var dpi = 300;
+Object.defineProperty(window, 'devicePixelRatio', {
+    get: function() {return dpi / 96}
+});
+
 var extension = ".kml-Tracks-Layer0-Points.geojson";
 var src = "./mygeodata/" + "<?php echo $_FILES['archivo']['name'] ?>" + extension;
 
