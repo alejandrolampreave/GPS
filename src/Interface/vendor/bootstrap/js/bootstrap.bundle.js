@@ -2947,7 +2947,7 @@
     sideValue = Math.max(Math.min(popper[len] - arrowElementSize, sideValue), 0);
 
     data.arrowElement = arrowElement;
-    data.offsets.arrow = (_data$offsets$arrow = {}, defineProperty(_data$offsets$arrow, side, Math.round(sideValue)), defineProperty(_data$offsets$arrow, altSide, ''), _data$offsets$arrow);
+    data.offsets.arrow = (_data$offsets$arrow = {} defineProperty(_data$offsets$arrow, side, Math.round(sideValue)) defineProperty(_data$offsets$arrow, altSide, '') _data$offsets$arrow);
 
     return data;
   }
