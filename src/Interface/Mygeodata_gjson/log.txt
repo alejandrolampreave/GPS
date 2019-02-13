@@ -1,1 +1,0 @@
-Warning 1: The output driver does not natively support DateTime type for field timestamp. Misconversion can happen. -mapFieldType can be used to control field type conversion.
