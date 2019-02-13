@@ -1,0 +1,135 @@
+\capitulo{3}{Conceptos teóricos}
+
+Inicialmente, uno de los apartados que más dificultad presentaba el proyecto era que tendría que manejarme con un estándar de posicionamiento y se tendría que realizar sobre un sistema embebido, nunca antes había trabajado con uno. A continuación se detallan algunos de los conceptos más importantes que ayudarán a la comprensión del proyecto.
+
+\section{Sistema embebido}
+Se denomina \textit{Sistema embebido} \cite{embebido} a aquel sistema electrónico que está diseñado para un propósito específico. Suelen ser compactos, realizan tareas sencillas y tienen todos o la mayoría de componentes que necesitan para desarrollar su función incorporados.
+
+Las características de un \textit{Sistema embebido} son \cite{embebido2}:
+\begin{itemize}
+\tightlist
+\item
+	Deben ser sistemas robustos.
+\item
+	Deben ser sistemas confiables, es decir que trabaje correctamente (reliability).
+\item
+	Después de un fallo deben volver a funcionar en un periodo corto de tiempo (maintainability).
+\item 
+	Deben estar disponibles en cualquier momento (availability).
+\item 
+	La comunicación ha de ser confidencial y autentificada.
+\item 
+	Son eficientes desde un punto de vista energético, de peso, de coste y de cantidad de código.	
+\item 
+	Habitualmente nos les encontramos sin teclado, ratón ni pantalla.
+\end{itemize}
+
+\section{Sistema de Posicionamiento Global GPS}
+Entendemos por \textit{GPS} \cite{GPS}, como un sistema de posicionamiento global de radionavegación, con origen en Los Estados Unidos de América. Ofrece gratuitamente posicionamiento, navegación y cronometría de forma ininterrumpida a toda la tierra y sin número límite de usuarios. Solo es necesario contar con un receptor GPS, el sistema te proporcionará tu localización y hora local, independientemente de las condiciones climáticas y tu posición.
+
+A día de hoy el \textit{GPS} se ha convertido en una herramienta imprescindible en todos los medios de transporte, ya sea tierra mar o aire y es utilizado a diario por los servicios de emergencia a la hora de localizar, coordinar y socorrer.
+Además, se ha convertido en los últimos años, en un elemento de vital importancia en operaciones bancarias o en las redes energéticas, entre otras, ya que se gana precisión cronométrica.
+
+\section{Estándar NMEA}
+NMEA \cite{NMEA} corresponde a la abreviatura National Marine Electronics Association es una asociación creada por un grupo de marcas relacionadas con la electrónica naval, a la que de forma progresiva se fueron adhiriendo más grupos y colectivos oficiales. \cite{NMEA2}
+
+En la versión de NMEA0183 ya existían GPS enviando información a través de este protocolo, sin embargo, solo estaba diseñado para enviar o recibir una señal y en ningún caso era capaz de recibir dos señales distintas. Para tal efecto se ayudaba de lo que se conoce como un distribuidor NMEA, cuya función es la de recibir las señales de cada dispositivo, procesarlas, y emitir una nueva señal con la información en una misma cadena.
+
+Con la nueva versión NMEA 2000, podemos prescindir de este distribuidor ya que soporta la conexión de diferentes equipos enviando y recibiendo información simultáneamente.
+
+El propósito del estándar NMEA a día de hoy principalmente reside en dar un mismo soporte común a una gran variedad de GPS, en lugar de que cada uno tenga que desarrollar el suyo propio. Lo que incrementa la dificultad del estándar es que no hay solo una cadena con información, hay varias con distintos propósitos que, aunque no siempre se aprovechan todas.
+
+Vamos a poner un ejemplo de una de las cadenas más frecuentes en NMEA: \cite{NMEA3}.
+\$GPGGA,172009.00,4205.7041778,N,09054.4977280,W,4,14,1.00,394.123,M,
+28.199,M,0.10,0000*39
+
+Todas las cadenas empiezan por \$ y los campos van separados por comas.
+
+\begin{itemize}
+\tightlist
+\item
+    GP: representa que se trata de una posición GPS.
+\item
+    172009.00: hora, 17:20:09 UTC.
+\item
+    4205.7041778: latitud.
+\item
+    N: punto cardinal de la latitud, Norte.
+\item
+	09054.4977280: longitud.
+\item
+	W: punto cardinal de la longitud, Oeste. 
+\item
+	4: precisión de la coordenada (mín 1-4 max).
+\item
+	14: número de satélites usados.
+\item
+	1.00: Dispersión de la precisión horizontal o incertidumbre (HDOP).
+\item
+	394.123: altura de la antena.
+\item
+	M: unidad de medida de la altura de la antena.
+\item
+	28.199: altura geoidal (restando la altura de la antena obtenemos la altura elipsoidal HAE).
+\item
+	M: unidad usada en la altura geoidal.
+\item
+	0.10: segundos desde la última actualización (opcional).
+\item
+	0000: ID de la estación (opcional).
+\item
+	*39: checksum.
+\end{itemize}
+
+Aparte del mensaje NMEA \$GPGGA hay otros frecuentemente utilizados como \$GPGLL y \$GPRMC que son muy similares y también incluyen las coordenadas. Pero hay otros menos utilizados capaces de aportar diferente información que no detallaremos por no sernos de utilidad. Como por ejemplo \$GPGSA, \$GPGSV, \$GPVTG o \$GPGST.
+
+\section{Sistema operativo de tiempo real para sistemas empotrados}
+Hablamos de sistema operativo de tiempo real \cite{tiemporeal} o RTOS cuando la importancia no recae sobre los usuarios si no sobre los procesos, de forma que se le exige dar una respuesta en un tiempo previamente determinado, si no, diremos que ha fallado. Los RTOS disponen de mecanismos de comunicación, sincronización, acceso a recursos compartidos y sincronización. Destacan: FreeRTOS, MQx y VxWorks.
+
+Algunas de sus características son \cite{tiemporeal_c}:
+\begin{itemize}
+\tightlist
+\item
+	El uso de memoria es más bien escaso.
+\item
+	Un evento en el hardware puede ejecutar una tarea.
+\item
+	El código sirve para múltiples arquitecturas de CPU.
+\item
+	Usualmente poseen tiempos de respuesta predecibles.
+\end{itemize}
+
+\subsection{FreeRTOS}
+FreeRTOS \cite{FreeRTOS} es uno de los sistemas operativos de tiempo real existentes, apto para al menos 35 plataformas de microcontrolador diferentes. Una de sus principales ventajas reside en que se encuentra distribuida bajo la licencia gratuita y de libre uso MIT \cite{MIT}.
+
+Está escrito en C, para facilitar su legibilidad, portabilidad y mantenibilidad. 
+Diseñado para ser simple y pequeño, lo que facilita su utilización en sistemas empotrados, consta de métodos para la creación de hilos (con prioridades), semáforos, temporizadores etc. Las tareas se ejecutan en función de la prioridad y se van rotando por medio de una interrupción.
+
+\section{CRS}
+La función de un sistema de coordenadas de referencia\cite{crs} es definir, junto con la ayuda de las coordenadas, la forma en la que un mapa bidimensional se relaciona con lugares reales de la tierra. Este mapa bidimensional será proyectado en un GIS. (programa informático que se utiliza para relacionar datos geográficos).
+Los CRS pueden dividirse en sistemas de referencia de coordenadas geográficos o proyectados.
+El sistema de coordenadas geográficas utiliza los grados de longitud, latitud y en ocasiones altitud para representar la situación.
+La latitud se representa tomando como referencia la línea del ecuador y se divide a cada hemisferio en 90 secciones.
+La longitud se basa en el meridiano de Greenwich y son líneas perpendiculares al ecuador.
+El sistema de referencia de coordenadas proyectado normalmente se define en un plano bidimensional denominado plano XY. X será el eje horizontal e Y el eje vertical. 
+En ocasiones se añade un tercer eje, el Z, por lo que el sistema se definirá en un plano tridimensional.
+
+\section{EPSG}
+Acrónimo de European Pretoleum Survey Group,\cite{epsg} es una organización que se relaciona con la industria del petróleo en Europa. Este organismo desarrolló un archivo de parámetros geodésicos que contiene información sobre las proyecciones cartográficas de todo el mundo.
+En la actualidad, las tareas del EPSG las lleva a cabo el Subcomité de Geodesia del Comité de Geomática de la OGP.
+Este archivo es de gran importancia ya que es utilizado para la definición de datos de posición en los Sistemas de Información Geográfica. Será de gran utilidad para las actividades que requieran trabajar con datos espaciales en un ambiente digital.
+
+\section{UART}
+Universal Asynchronous Receiver-Transmitter.\cite{uart} Se trata de un bus serie muy usado en microcontroladores, encargado de recibir y transmitir información de forma asíncrona entre ordenadores y otros microcontroladores. Es posible su utilización a través de software en caso necesario. Es en el caso concreto de los ordenadores donde se utilizan los “puerto serie” o COM. La velocidad de transmisión con la que se envía y recibe información, es expresada en baudios y mide la cantidad de datos (bits) que se envían en un segundo. Actualmente está siendo sustituido por otras comunicaciones como la SATA o USB, sin embargo, persiste en la industria.
+
+\section{I2C}
+Acrónimo de Inter-Integrated Circuit.\cite{i2c} Estándar de comunicación creado en un principio por Philips para las televisiones, ahora destaca por su implementación en la conexión entre microcontroladores o con periféricos.
+
+\section{SPI}
+Serial Peripheral Interface. \cite{spi} Otro estándar de comunicación creado por Motorola, en este caso periféricos con comunicación en serie y síncronos. Tiene la peculiaridad de que permite la conexión uno a varios (maestro-esclavos) a través de Full Duplex.
+
+\section{Tarjeta microSD}
+También conocida como TransFlash,\cite{tarjeta} fue creada por SanDisk en el 2005 con el objetivo de almacenar información digital incorporándolas en diferentes sistemas. Trabajan a 3.3V, apenas llegan a los 15 milímetros en su parte más alargada, pero sin embargo, pueden llegar alcanzar capacidades de 2TB. Actualmente se pueden adquirir tarjetas de diferentes tamaños velocidades y capacidades. Como desventaja remarcar que no disponen de ningún sistema de protección contra escritura.
+
+\section{Acelerémetro}
+Un acelerómetro\cite{acelerometro} es una herramienta encargada de medir vibraciones o bien la aceleración que experimenta un cuerpo. La fuerza que se genera con el movimiento ejerce una presión sobre un material piezoeléctrico, que a su vez produce una diferencia de potencial que puede ser expresada en fuerzas G. La carga es directamente proporcional a la aceleración debido a que la masa no varía y depende directamente de la fuerza experimentada(F=m.a).

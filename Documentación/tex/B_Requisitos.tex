@@ -1,0 +1,222 @@
+\apendice{Especificación de Requisitos}
+
+\section{Introducción}
+En este apartado se incluyen los objetivos y requisitos marcados al inicio, entre el alumno y el tutor para el proyecto.
+De manera adicional, se han añadido algunos no establecidos al inicio pero que se han considerado pertinentes a lo largo del desarrollo.
+
+\section{Objetivos generales}
+El desarrollo de este proyecto tiene el objetivo de desentramar la cadena NMEA aportada por el módulo GPS adherido a la placa de desarrollo FRDM-K64F, almacenar los mensajes NMEA en la tarjeta microSD activándose con el movimiento y conseguir mostrar en un mapa la ruta seguida por el usuario.
+
+\section{Catálogo de requisitos}
+En esta sección detallaremos los requisitos funcionales y no funcionales del proyecto.
+
+\subsection{Requisitos funcionales}
+\begin{itemize}
+\tightlist
+\item
+    \textbf{RF1-Conexión del GPS:} El GPS debe establecer conexión satelital.
+\item
+    \textbf{RF2-Almacenar las coordenadas:} La placa guarda la información en la tarjeta.
+\item
+    \textbf{RF3-Almacenamiento de archivos NMEA:} Subir el archivo del usuario al servidor.
+\item
+    \textbf{RF4-Conversión de archivos:} Transformar el archivo NMEA a uno con extensión GeoJSON.
+\item
+    \textbf{RF5-Descompresión del fichero:} Descomprimir el fichero generado por MyGeoData.
+\item
+	\textbf{RF6-Mostrar mapa:} Representa en un mapa las coordenadas del fichero.
+\item
+    \textbf{RF7-Geolocalizar posición:} Geolocaliza tu posición y centra el mapa en donde estés.
+\item
+    \textbf{RF8-Descargar mapa:} Descarga el mapa que se visualice en ese momento como una imagen PNG.
+\item
+    \textbf{RF9-Modificar vista del mapa:} Añade o quita zoom, rota el mapa sobre su eje o cambia de vista.
+\item  
+    \textbf{RF10-Mensaje de error:} En caso de subir un fichero no admitido se mostrará un mensaje de error con el motivo.
+\end{itemize}
+
+\subsection{Requisitos no funcionales}
+\begin{itemize}
+\tightlist
+\item
+    \textbf{RNF1-Usabilidad:} El usuario debe sentirse familiarizado con la interfaz y ésta ha de ser \textit{user friendly}. Además debe ser \textit{responsive design} de forma que la web se amolde a las diferentes pantallas. 
+\item
+    \textbf{RNF2-Eficiencia:} tanto el módulo GPS almacenando coordenadas, como la web mostrando la ruta, deben tener el menor tiempo de respuesta posible.
+\item
+    \textbf{RNF3-Escalabilidad:} El proyecto debe ser escalable para que se puedan aumentar sus funcionalidades de forma rápida y sencilla.
+\item
+    \textbf{RNF4-Mantenibilidad:} Deben proporcionarse mejoras y mantenimiento de forma periódica.
+\item
+    \textbf{RNF5-Confiabilidad:} El proyecto ha de realizar las funciones para las que fue creado obteniendo los resultados esperados.
+\item
+    \textbf{RNF6-Disponibilidad:} La aplicación debe estar disponible el máximo tiempo posible, minimizando posibles caídas temporales del sistema.
+\end{itemize}
+
+\clearpage
+\section{Especificación de requisitos}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 1}            & \cellcolor[HTML]{EFEFEF}\textbf{Conexión del GPS.}                                                                   \\ \hline
+\textbf{Descripción}     & El GPS debe establecer conexión satelital. \\ \hline
+\textbf{Precondiciones}  & A la placa de desarrollo se le suministra corriente.\\ \hline
+\textbf{Acciones}        & El módulo GPS busca comunicación con los satélites.\\ \hline
+\textbf{Postcondiciones} & El GPS transmite su posición 1 vez por segundo.                   \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                  \\ \hline
+\end{tabular}
+\caption{RF1 - Conexión del GPS.}
+\label{RF1}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 2}            & \cellcolor[HTML]{EFEFEF}\textbf{Almacenar las coordenadas.}                                                                   \\ \hline
+\textbf{Descripción}     & La placa guarda la información en la tarjeta. \\ \hline
+\textbf{Precondiciones}  & Se ha inicializado el sistema de almacenamiento y hay una tarjeta introducida.\\ \hline
+\textbf{Acciones}        & La placa comienza a escribir en la tarjeta microSD.\\ \hline
+\textbf{Postcondiciones} & Obtenemos un fichero con los mensajes NMEA transmitidos por el GPS. \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                  \\ \hline
+\end{tabular}
+\caption{RF2 - Almacenar las coordenadas.}
+\label{RF2}
+\end{table}
+
+%%se sube el archivo a temporal, se le pone fecha, se mueve, se convierte, se almacena la conversión.
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 3}            & \cellcolor[HTML]{EFEFEF}\textbf{Almacenamiento de archivos NMEA.}                                                                   \\ \hline
+\textbf{Descripción}     & Subir el archivo del usuario al servidor. \\ \hline
+\textbf{Precondiciones}  & El usuario selecciona el archivo que quiere subir.\\ \hline
+\textbf{Acciones}        & El archivo es enviado a una carpeta temporal y es movido a ``subidas''.\\ \hline
+\textbf{Postcondiciones} & Queda almacenado el archivo. \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF3 - Almacenamiento de archivos NMEA.}
+\label{RF3}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 4}            & \cellcolor[HTML]{EFEFEF}\textbf{Conversión de archivos.}                                                                   \\ \hline
+\textbf{Descripción}     & Transformar el archivo NMEA a uno con extensión GeoJSON. \\ \hline
+\textbf{Precondiciones}  & El usuario debe seleccionar un archivo local y subirlo.\\ \hline
+\textbf{Acciones}        & Se ejecuta el script en Python de la API de MyGeoData.\\ \hline
+\textbf{Postcondiciones} & Se genera un fichero con extensión zip. \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF4 - Conversión de archivos.}
+\label{RF4}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 5}            & \cellcolor[HTML]{EFEFEF}\textbf{Descompresión del fichero.}                                                                   \\ \hline
+\textbf{Descripción}     & Descomprimir el fichero generado por MyGeoData. \\ \hline
+\textbf{Precondiciones}  & Debe existir el fichero comprimido de MyGeoData.\\ \hline
+\textbf{Acciones}        & Se descomprime el fichero.\\ \hline
+\textbf{Postcondiciones} & Aparecen los archivos descomprimidos dentro de una carpeta. \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF5 - Descompresión del fichero.}
+\label{RF5}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 6}            & \cellcolor[HTML]{EFEFEF}\textbf{Mostrar mapa.}                                                                   \\ \hline
+\textbf{Descripción}     & Representa en un mapa las coordenadas del fichero. \\ \hline
+\textbf{Precondiciones}  & Disponer de un archivo en formato GeoJSON.\\ \hline
+\textbf{Acciones}        & La API de Mapbox utiliza ese archivo.\\ \hline
+\textbf{Postcondiciones} & Se representa un mapa con la ruta. \\ \hline
+\textbf{Importancia}     & Alta.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF6 - Mostrar mapa.}
+\label{RF6}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 7}            & \cellcolor[HTML]{EFEFEF}\textbf{Geolocalizar posición.}                                                                   \\ \hline
+\textbf{Descripción}     & Geolocaliza tu posición y centra el mapa en donde estés. \\ \hline
+\textbf{Precondiciones}  & El mapa debe estar parcialmente cargado.\\ \hline
+\textbf{Acciones}        & El usuario selecciona ``Centrar en mi posición''.\\ \hline
+\textbf{Postcondiciones} & Se obtiene un mapa centrado en tu posición actual. \\ \hline
+\textbf{Importancia}     & Baja.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF7 - Geolocalizar posición.}
+\label{RF7}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 8}            & \cellcolor[HTML]{EFEFEF}\textbf{Descargar mapa.}                                                                   \\ \hline
+\textbf{Descripción}     & Descarga el mapa que se visualice en ese momento como una imagen PNG. \\ \hline
+\textbf{Precondiciones}  & El mapa debe estar cargado por completo.\\ \hline
+\textbf{Acciones}        & El usuario selecciona ``Descargar mapa''.\\ \hline
+\textbf{Postcondiciones} & Se inicia la descarga del mapa. \\ \hline
+\textbf{Importancia}     & Baja.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF8 - Descargar mapa.}
+\label{RF8}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 9}            & \cellcolor[HTML]{EFEFEF}\textbf{Modificar vista del mapa.}                                                                   \\ \hline
+\textbf{Descripción}     & Añade o quita zoom, rota el mapa sobre su eje o cambia de vista. \\ \hline
+\textbf{Precondiciones}  & El mapa debe estar parcialmente cargado.\\ \hline
+\textbf{Acciones}        & El usuario selecciona algún botón de modificación del mapa de la vista actual o se desplaza a través de él.\\ \hline
+\textbf{Postcondiciones} & Se obtiene un mapa con diferente vista. \\ \hline
+\textbf{Importancia}     & Baja.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF9 - Modificar vista del mapa.}
+\label{RF9}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{EFEFEF}}l |p{0.8\linewidth}|}
+\hline
+\textbf{RF 10}            & \cellcolor[HTML]{EFEFEF}\textbf{Mensaje de error.}                                                                   \\ \hline
+\textbf{Descripción}     & En caso de subir un fichero no admitido se mostrará un mensaje de error con el motivo. \\ \hline
+\textbf{Precondiciones}  & Haber seleccionado un fichero para subir.\\ \hline
+\textbf{Acciones}        & El usuario presiona ``Subir archivo''.\\ \hline
+\textbf{Postcondiciones} & De ser un fichero inválido saltará una alerta explicando el motivo. \\ \hline
+\textbf{Importancia}     & Media.                                                                                                                   \\ \hline   
+\end{tabular}
+\caption{RF10 - Mensaje de error.}
+\label{RF10}
+\end{table}
+
+\clearpage
+\section{Diagrama de casos de uso}
+En esta sección mostraremos el diagrama de casos de uso de nuestra aplicación.
+\imagen{casodeuso.PNG}{Diagrama de casos de uso del proyecto}

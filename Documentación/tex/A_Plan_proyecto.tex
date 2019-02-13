@@ -1,0 +1,190 @@
+\apendice{Plan de Proyecto Software}
+
+\section{Introducción}
+En este primer apartado de los anexos se encuentra toda la información sobre cómo se ha ido desarrollando en el tiempo el proyecto. De igual forma, un análisis sobre la viabilidad tanto económica como legal.
+
+\section{Planificación temporal}
+El trabajo de fin de grado se ha ido desarrollando a base de \textit{sprints} de 1 o 2 semanas de duración. Cada semana se hacía una revisión con el tutor de los objetivos que se habían marcado y dependiendo de si se habían alcanzado o no, se enfatizaba más sobre los mismos o se establecían nuevos objetivos. Algunas herramientas como ZenHub y GitHub han ayudado mucho en este proceso. En el GitHub del proyecto se pueden observar las diferentes fases por las que se ha ido pasando \url{https://github.com/alejandrolampreave/GPS}.
+
+\subsection{Sprint 1 - 03/10/2018-10/10/2018}
+La primera semana se dedica a repasar y profundizar sobre el funcionamiento de GitHub y a instalar e informarme sobre extensiones como ZenHub, para ello se ven diversos videotutoriales. Se realiza el primer \textit{issue} de prueba asociado al primer \textit{milestone}, me lo asigno a mi mismo y le pronostico una duración.
+
+Además empiezo a configurar mi IDE siguiendo un tutorial a base de eclipse, librerías y plugins, pero se descubre que está obsoleto y nos decantamos por la instalación de Kinetis Design Studio que lo integra todo.
+
+Podemos ver con más detalle en el Sprint 1 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 12 horas y al final se dedicaron 13 horas.
+
+\subsection{Sprint 2 - 10/10/2018-17/10/2018}
+La segunda semana se termina de instalar Kinetis y se realiza la primera práctica de Sistemas Empotrados, basada en un \textit{Hola Mundo} para familiarizarnos con el entorno de desarrollo. Una vez finalizada y ejecutada sin errores, el IDE se corrompe, no dejando cargar Processor Expert de ninguna de las maneras, quedando bloqueado.
+
+Podemos ver con más detalle en el Sprint 2 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 9 horas y al final se dedicaron 16 horas.
+
+\subsection{Sprint 3 - 17/10/2018-24/10/2018}
+Los objetivos de este \textit{sprint} fueron arreglar Kinetis y documentarme sobre la comunicación entre el módulo GPS hacia la placa, para ello me leí el manual \textit{Adafruit Ultimate GPS Logger Shield}. Tras buscar mucha información por internet, hacer una reinstalación parcial de Processor Expert, reinstalar Kinetis desde cero, limpiar registros, configuraciones y parámetros, no se encuentra una solución definitiva, de forma que se opta por un formateo completo del ordenador. Además quedan soldadas las conexiones Digital I/O 0 y 1 con TX y RX respectivamente para transmitir los datos recogidos por el GPS a la placa.
+
+Podemos ver con más detalle en el Sprint 3 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 45 horas y al final se dedicaron 50 horas.
+
+\subsection{Sprint 4 - 24/10/2018-31/10/2018}
+Una vez arreglado Kinetis, por fin se empieza con el proyecto en sí, el objetivo se marca en conseguir almacenar las coordenadas del acelerómetro en la tarjeta microSD. Después de instalar y configurar todos los componentes oportunos y de escribir el código, se consigue. Este \textit{sprint} será el primero que se mostrará en ZenHub pero los anteriores se pueden ver en GitHub.
+
+Podemos ver con más detalle en el Sprint 4 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 21 horas y al final se dedicaron 30 horas.
+
+\subsection{Sprint 5 - 07/11/2018-21/11/2018}
+Primer \textit{sprint} que nos llevaría más de una semana, se plantea querer almacenar las coordenadas que arroja el GPS en la tarjeta microSD. Antes, las enviamos a la terminal Termite para ver qué muestra. 
+
+Conseguiremos almacenar información en la tarjeta microSD pero no nos daremos cuenta hasta unos días más tarde que los datos son incompletos.
+
+Podemos ver con más detalle en el Sprint 5 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 42 horas y al final se dedicaron 46 horas.
+
+\subsection{Sprint 6 - 21/11/2018-28/11/2018 }
+Esta fue la semana más caótica del proyecto, recién surgido el problema de la semana pasada se opta por avanzar sobre la funcionalidad de que solo se almacene información cuando se esté en movimiento gracias al acelerómetro. Reviso el manual del acelerómetro \textit{FXOS8700CQ} que incorpora la placa, sin obtener ninguna conclusión válida sobre esta funcionalidad.
+Mientras tanto, sigo pensando cómo puedo solucionar el problema de la pérdida de información al escribir en la microSD.
+
+Podemos ver con más detalle en el Sprint 6 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 2 horas y al final se dedicaron 10 horas.
+
+\subsection{Sprint 7 - 28/11/2018-05/12/2018}
+Finalmente, para tratar de arreglar la pérdida de caracteres, se opta por incluir en nuestro código un sistema operativo en tiempo real como \textit{FreeRTOS}, de forma que administre las diferentes tareas. Agregamos dos componentes nuevos y escribimos las tareas para así, lograr el objetivo.
+
+Podemos ver con más detalle en el Sprint 7 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 45 horas y al final se dedicaron 50 horas.
+
+\subsection{Sprint 8 - 05/12/2018-12/12/2018}
+Esta semana fue un alto en el camino, se decidió avanzar bastante con la memoria, con la que se llevaba algo de retraso y actualizar el \textit{.gitIgnore} ya que estaba subiendo metadatos al repositorio.
+
+Podemos ver con más detalle en el Sprint 8 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 22 horas y al final se dedicaron 26 horas.
+
+\subsection{Sprint 9 - 12/12/2018-26/12/2018}
+Durante estas dos semanas se elegirá la API con la que representaremos las coordenadas recogidas, finalmente nos decantamos por Mapbox y creamos una interfaz básica en html para poder probar nuestro fichero de coordenadas, después de convertirlo manualmente a la extensión \textit{GeoJSON}.
+
+Podemos ver con más detalle en el Sprint 9 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 29 horas y al final se dedicaron 30 horas.
+
+\subsection{Sprint 10 - 26/12/2018-09/01/2019}
+Se fijó como objetivo que la conversión entre NMEA y GeoJSON fuera transparente al usuario, había varias opciones pero finalmente se optó por ayudarnos de Mygeodata por una cuestión de tiempo, haciendo una petición a través de un \textit{script} de Python.
+
+Podemos ver con más detalle en el Sprint 10 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 8 horas y al final se dedicaron 20 horas. 
+
+\subsection{Sprint 11 - 09/01/2019-16/01/2019}
+Ahora que la conversión del fichero funcionaba de forma óptima, era hora de juntar todo, se habilitó la subida de archivos al servidor, conseguimos ejecutar la conversión de forma autónoma y se descomprimió el directorio que generaba MyGeoData, para poder acceder al archivo convertido y representarlo en el mapa. Además se acometieron algunos cambios en la interfaz de la página.
+
+Podemos ver con más detalle en el Sprint 11 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 7 horas y al final se dedicaron 15 horas.
+
+\subsection{Sprint 12 - 16/01/2019-23/01/2019}
+En este \textit{sprint} se decidió que debíamos implementar alguna mejora en el código ya fuera de manera gráfica o alguna funcionalidad nueva. Conseguimos fechar los archivos subidos, añadimos el botón de ``Descargar imagen'' y el de ``Centrar mapa en mi posición'', intentamos \textit{hostear} la página, finalizamos la memoria y empezamos los anexos.
+
+Podemos ver con más detalle en el Sprint 12 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 10 horas y al final se dedicaron 11 horas.
+
+\subsection{Sprint 13 - 23/01/2019-30/01/2019}
+Esta semana la dedicamos a avanzar en los anexos, crear la máquina virtual con la configuración necesaria para el correcto visionado de la página web y añadimos a nuestra interfaz una plantilla HTML para que fuera más atractiva al usuario.
+
+Podemos ver con más detalle en el Sprint 13 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 29 horas y se cumplió con la estimación.
+
+\subsection{Sprint 14 - 30/01/2019-06/02/2019}
+El objetivo primordial fue habilitar el acelerómetro para la detección de movimiento y en caso de no detectarlo, pausar el registro de coordenadas en la tarjeta microSD para no almacenar información de forma redundante. Además terminaremos los anexos y comprobaremos la calidad del código con Sonarcloud.
+
+Podemos ver con más detalle en el Sprint 14 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 29 horas y se cumplió la estimación.
+
+\subsection{Sprint 15 - 06/02/2019-13/02/2019}
+Incorporamos excepciones al código, se hicieron los test para las pruebas del sistema, subimos los instaladores del proyecto y grabamos la ruta que se entrega con el proyecto.
+
+Podemos ver con más detalle en el Sprint 15 del repositorio, las diferentes actividades que se acometieron. 
+Se calculó que tardaría 16 horas y al final se dedicaron 15 horas.
+
+\section{Estudio de viabilidad}
+En este apartado se hará el análisis sobre la viabilidad económica y legal del proyecto.
+
+\subsection{Viabilidad económica}
+
+\subsubsection{Coste de personal}
+Vamos a calcular el coste de tener a un programador a sueldo a lo largo de 18 semanas, o lo que es lo mismo 4 meses y medio. Promediando 22 horas a la semana a un precio por hora de 9\euro  , el sueldo es el que se muestra:
+\begin{table}[ht!]
+\centering
+\begin{tabular}{l}
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{c}{\cellcolor[HTML]{EFEFEF}\textbf{Salario mensual}} \\
+22 horas\/ semana * 4 semanas * 15\euro \/ hora = 1320\euro            
+\end{tabular}
+\caption{Salario mensual}
+\label{CosteMensual}
+\end{table}
+
+A esos 1320\euro  habría que sumarle los abonos a la seguridad social por parte de la empresa, en nuestro caso un 23.60\% por contingencias comunes, un 1.35\% por AT y EP (Accidente de Trabajo y Enfermedad Profesional), un 5.50\% por desempleo y un 0.60 por formación. \cite{seguridadsocial} Hace un total de 31.05\%. 
+
+\begin{table}[ht!]
+\centering
+\label{my-label}
+\begin{tabular}{ll}
+Salario mensual          	& 1.320\euro    \\
+Seguridad Social (31.05\%) 	& 409,86\euro  \\ \hline
+Coste mensual            	& 1.729,86\euro \\
+Por 4 meses y medio         &             \\ \hline
+\textbf{Coste total del personal}     & 7.784,37\euro 
+\end{tabular}
+\caption{Coste total del personal.}
+\end{table}
+
+\subsubsection{Coste de hardware}
+Para desarrollar el proyecto se ha hecho uso de un porátil con un Intel Core i3 M370, una Nvidia GeForce 315M, disco duro sólido de 240GB y 8GB de memoria RAM con un coste total de 700\euro . Consideraremos una vida útil de 7 años, por lo que el coste amortizado para 4 meses y medio son 37.5\euro .
+Calculemos ahora el coste total del hardware sumando la placa de desarrollo,el módulo GPS y la tarjeta microSD:
+\begin{table}[ht!]
+\centering
+\label{my-label}
+\begin{tabular}{ll}
+Portatil coste amortizado    				& 37,5\euro  \\
+Placa de desarrollo FRDM-K64F \cite{placa} 	& 32,52\euro \\
+Ultimate GPS logger shield \cite{gps}      	& 39,06\euro \\ 
+Tarjeta microSD 16gb 				     	& 3,9\euro 	 \\ \hline
+\textbf{Coste total} 						& 112,98\euro
+\end{tabular}
+\caption{Coste total del hardware.}
+\end{table}
+
+\subsubsection{Otros costes}
+Tendremos en consideración otros gastos como internet:
+
+Fibra óptica simétrica 42\euro /mes x 4 meses y medio = 189\euro
+
+\subsubsection{Coste total}
+Por lo tanto el coste total del proyecto sumando todas las cantidades anteriores es de:
+\begin{table}[ht!]
+\centering
+\label{my-label}
+\begin{tabular}{ll}
+Coste de personal    & 7.784,37\euro \\
+Coste de hardware    & 112,98\euro   \\
+Otros costes         & 189\euro      \\ \hline
+\textbf{Coste total} & 8.086,35\euro
+\end{tabular}
+\caption{Coste total del proyecto.}
+\end{table}
+
+\subsubsection{Beneficios}
+Una vez calculados los gastos por desarrollar el proyecto es hora de calcular los posibles beneficios de la venta del proyecto o bien de su explotación. Teniendo en cuenta que los costes han rondado los 8.000\euro , con que hubiera un comprador dispuesto a ofrecer 12.000\euro  y sacar 4.000\euro  de beneficios nos daríamos por satisfechos.
+
+El sistema está orientado a toda la población en general que tenga intención de registrar una ruta, ya sea gente deportista o del mundo del motor, como también jefes a empleados en una flota de vehículos o padres controladores desconfiados de sus hijos y viceversa.
+
+Aparte de la venta, también podría interesarnos un sistema de suscripciones al servicio de forma que, o bien compraran ellos el \textit{hardware} o se lo alquilamos y pagan por el derecho de ingresar a la página y subir sus ficheros de coordenadas. 
+
+A un precio de 20\euro  mensuales por suscripción, con 34 personas suscritas durante 1 año conseguiríamos recuperar todo el dinero invertido. 
+
+Sin duda es un riesgo asumible teniendo en cuenta que el coste del proyecto no es muy elevado y los ingresos pueden dispararse a corto medio plazo. Ideal para inversores con no mucho capital, dispuestos a arriesgar y con opciones a disparar sus beneficios.
+
+\subsection{Viabilidad legal}
+Hablando desde el punto de vista de la viabilidad legal del proyecto, éste se encuentra bajo una licencia de tipo, ``GNU General Public License v3.0'' la cual permite el uso comercial, la modificación, su distribución, el uso privado y el uso de patentes. Evitando así cualquier tipo de responsabilidad y garantía. \cite{gpslicense}
+
+Si hablamos de los términos de uso de Mapbox expresan de forma clara que no debes vender su código a terceros pero no hay problema si tu aplicación lo integra para dar servicio a tus propios usuarios finales. \cite{mapbox}
+
+La plantilla HTML que hemos incluido\cite{pagina} en nuestro proyecto cuenta con la licencia MIT (Massachusetts Institute of Technology), cuya única condición es que se distribuya la licencia original con todas las copias del software que se hagan.
+
+Por último Mygeodata recalca que no debes reproducir, duplicar, vender o utilizar sus servicios si lo vas a hacer con mala intención. \cite{mygeodata}

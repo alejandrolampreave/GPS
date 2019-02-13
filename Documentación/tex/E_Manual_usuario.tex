@@ -1,0 +1,48 @@
+\apendice{Documentación de usuario}
+
+\section{Introducción}
+Vamos a explicar cómo grabar una ruta con la placa GPS, así como la subida del fichero generado a la web para poder visualizarla en el mapa.
+\section{Requisitos de usuarios}
+Para poder registrar una ruta necesitamos:
+\begin{itemize}
+	\item
+	Disponer de una placa de desarrollo FRDM-K64F con un módulo GPS incorporado y cableado como se ha detallado en la memoria.
+    \item
+    Tener grabada en su memoria flash (como se entrega) el programa que le va a permitir almacenar las coordenadas.
+    \item
+    Disponer de un ordenador con una correcta instalación de XAMPP y Python (dado que no está \textit{hosteada}).
+    \item
+    Un navegador instalado y conexión a internet.
+    \item
+    Una tarjeta microSD.
+    \item
+    Un soporte \textit{hardware} que permita leer tarjetas microSD.
+\end{itemize}
+
+\section{Instalación}
+El proyecto, propiamente dicho, no requiere ser instalado previamente en un ordenador para funcionar, dado que se trata de una página web y la placa GPS va con el programa incorporado, pero sí se debe haber hecho una correcta configuración previa, como ya se ha hecho referencia. 
+
+\section{Manual del usuario}
+Una vez que está todo correctamente configurado, solo queda poder utilizar el proyecto. Para ello vamos a dividirlo en dos partes claramente diferenciadas.
+\subsection{Grabar la ruta}
+Debemos suministrar corriente a la placa de desarrollo, para lo cual utilizaremos una batería externa conectada por micro USB, que nos brinda máxima movilidad. Debemos esperar a que consiga conexión con los satélites, el led \textit{fix} rojo lo indicará cuando deje de parpadear de forma constante, y lo haga cada 3 segundos aproximadamente. 
+
+Se recomienda que el módulo GPS esté lo menos cubierto posible, ya que ayudará a su rápida conexión, de no ser así podría tardar hasta media hora. Se recuerda que en caso de necesidad se le podría acoplar una antena GPS externa, que le otorga mejor conexión. Ahora solo queda empezar a moverse y automáticamente se empezarán a almacenar las coordenadas, el led rojo será en encargado de indicar que se están almacenando las coordenadas correctamente en la tarjeta microSD. En caso de detenerse se parará el almacenamiento, para una mayor eficiencia.
+
+\subsection{Mostrar la ruta}
+Una vez finalizada la ruta, simplemente debemos extraer la tarjeta microSD de la placa e introducirla a nuestro ordenador. Veremos un archivo llamado ``LOG\_GPS\_NMEA.txt'' ese será nuestro archivo, abrimos la página web, \url{http://localhost/interface/index.html} y daremos a ``Seleccionar archivo'', escogeremos nuestro archivo y seleccionaremos ``Subir archivo''.
+
+De forma automática nuestras coordenadas serán almacenadas en el directorio \textit{/subidas}, las convertirá a formato GeoJSON y las almacenará en \textit{/mygeodata} y se mostrará la ruta en el mapa.
+\imagen{subir.PNG}{Página principal donde subiremos los archivos.}
+
+\subsection{Información de la página}
+A modo informativo se nos muestra una serie de cajas con información sobre el proyecto. Así como de presentación para posibles nuevos usuarios.
+\imagen{web1.PNG}{Características generales de la página y funcionalidad básica.}
+\imagen{web2.PNG}{Herramientas del mapa y opción a GPS.}
+\imagen{web3.PNG}{Opiniones y preguntas.}
+
+\subsection{Opciones de la interfaz}
+Se nos presentan algunas herramientas en la ventana donde se muestra la ruta. La primera ``Centrar en mi posición'', te saltará una solicitud para poder detectar tu posición, tras aceptarla, el mapa se centrará en tu localización. También tienes la opción de moverte por el mapa, tienes a tu disposición unos controles a la derecha para poder añadir o quitar zoom y volver a orientarte hacia el norte. Además, podemos descargar la imagen con la ruta en alta resolución si seleccionamos ``Descargar imagen''.
+
+Seleccionando con el botón derecho del ratón se nos permite cambiar en ángulo de visión del mapa y rotarlo. De esta forma podemos visualizar los edificios en 3D.
+\imagen{3D.PNG}{Edificios en 3D tras haber cambiado la vista.}

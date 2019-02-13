@@ -1,0 +1,48 @@
+\capitulo{2}{Objetivos del proyecto}
+
+En este capítulo trataremos de abordar cuáles han sido los objetivos estipulados en el proyecto que denominaremos objetivos generales y también nombraremos como objetivos técnicos aquellos que vienen dados a la hora de llevar a cabo los anteriores.
+
+\section{Objetivos generales}
+\begin{itemize}
+\tightlist
+\item
+    Almacenar las coordenadas suministradas por el GPS en la tarjeta microSD. 
+\item
+	Desarrollar una web que muestre la ruta almacenada.
+\item
+    Poder almacenar los datos en archivos de texto a modo de histórico.
+\item
+    Poder descargar una imagen del mapa con la ruta.
+\end{itemize}
+
+\clearpage
+
+\section{Objetivos técnicos}
+\begin{itemize}
+\tightlist
+\item
+	Cablear los pines Tx y Rx tanto de envío como de recepción de datos del módulo GPS con los pines digitales I/O, 0 y 1 del mismo.
+\item
+	Desentramar la cadena GPS transmitida por el módulo GPS, adherido a la placa de desarrollo.
+\item
+	Enviar los datos del módulo GPS en modo soft serial a través del puerto (UART3) y por puerto serie (UART0) al ordenador.
+\item
+	Guardar los mensajes NMEA recibidos en la tarjeta microSD.
+\item
+	Incluir un sistema operativo de tiempo real (RTOS) para la gestión de los procesos.
+\item
+    Desarrollar una interfaz web intuitiva y clara para el usuario que permita la subida de ficheros.
+\item
+	Los archivos deberán ser convertidos de NMEA a GeoJSON.
+\item
+	Los ficheros se guardarán en el servidor acompañados de la fecha y hora.
+\item
+    La ventana de la interfaz debe adaptarse a diferentes tamaños y resoluciones de pantalla.
+\item
+    La aplicación podrá utilizarse en cualquier dispositivo con un navegador instalado.
+\item
+    La aplicación deberá representar las coordenadas recogidas en el menor tiempo posible.
+\item
+    Emplear Git como herramienta de control de versiones incluido en la plataforma GitHub.
+\end{itemize}
+
