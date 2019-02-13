@@ -104,7 +104,7 @@
       try {
         if (!_n && _i["return"] != null) _i["return"]();
       } finally {
-        if (_d) throw _e;
+        
       }
     }
 
@@ -1668,8 +1668,9 @@
               icon = _normalized$key.icon;
           if (!additions[prefix]) additions[prefix] = {};
           additions[prefix][iconName] = icon;
+          return additions;
         });
-        return additions;
+        
       }
     }]);
 
